@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ <mapper namespace="userSQL">  <!-- 매퍼가 중복될수있으니 namespace 로 이름을 정해주어야함. -->
+
+ 	<insert id="join" parameterType="user">     <!-- 넘어온 변수들의 파일경로 --> <!-- user : Alias로 지정해준 경로임  -->
+ 		insert into userinfo(userid,userpassword,username,userbirth,userphone,gender,useremail)values(#{userid},#{userpassword},#{username},#{userbirth},#{userphone},#{gender},#{useremail})
+ 	</insert>
+ 	
+ 	<select id ="getUser" parameterType="String" resultType="user">
+ 		select * from userinfo where userid=#{id}
+ 	</select>
+
+	<select id="login" parameterType="java.util.Map" resultType="String">
+		select userid from userinfo where userid=#{userid} and userpassword=#{userpassword}
+	</select>
+	
+	
+	<select id="kakaologin" parameterType="String" resultType="String">
+		select userid from userinfo where useremail=#{kakao_email}
+	
+	</select>
+	
+	
+	<select id="findIdComplete" parameterType="java.util.Map" resultType="String">
+		select userid from userinfo where useremail=#{useremail} and username=#{username}
+	</select>
+	
+	<select id="findpasswordcomplete" parameterType="java.util.Map" resultType="String">
+		select userid from userinfo where useremail=#{useremail} and username=#{username}
+	
+	</select>
+	
+	
+	<update id="changepassword" parameterType="java.util.Map">
+		update userinfo set userpassword=#{userpassword} where userid=#{userid}
+	
+	</update>
+	
+	
+	
+	
+	
+	
+	
+	<insert id="profileimageupload" parameterType="user.bean.UserImageDTO">
+		insert into userfile(fileseq,userid,filename) values(fileseq.nextval, #{userid}, #{filename})
+
+	</insert>
+	
+	
+	
+	<update id="profileimageupdate" parameterType="user.bean.UserImageDTO">
+		update userfile set filename=#{filename} where userid=#{userid}
+
+	</update>
+	
+	
+	<select id="profilelist" parameterType="String" resultType="String">
+		select filename from userfile where userid=#{userid}
+	</select>
+	
+	
+	
+	
+	
+	
+	 	<select id="update" parameterType="user">
+ 		update userinfo set username=#{username}, userpassword=#{userpassword}, userphone=#{userphone}, useremail=#{useremail} where userid=#{userid}
+ 	</select>
+ 	
+ 	
+ 	<delete id="delete" parameterType="java.util.Map">
+  		delete userinfo where userid=#{userid} and userpassword=#{userpassword}
+    </delete>
+    
+    
+    
+    
+     <select id="delete2" parameterType="String" resultType="String">
+    	select USERPASSWORD from userinfo where userid=#{id} 
+    </select>
+    
+ 	<delete id="deleteFinal" parameterType="java.util.Map">
+  		delete from userinfo where userid=#{userid} and userpassword=#{userpassword}
+    </delete>
+	
+	
+	
+	
+	
+	
+
+
+ 
+ </mapper>

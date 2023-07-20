@@ -1,0 +1,548 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family: 'NanumBarunGothic';
+    font-style: normal;
+    font-weight: 400;
+    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot');
+    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot?#iefix') format('embedded-opentype'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.woff') format('woff'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.ttf') format('truetype');
+}
+   
+@font-face {
+    font-family: 'NanumBarunGothic';
+    font-style: normal;
+    font-weight: 700;
+    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.eot');
+    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.eot?#iefix') format('embedded-opentype'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.woff') format('woff'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.ttf') format('truetype')
+}
+   
+@font-face {
+    font-family: 'NanumBarunGothic';
+    font-style: normal;
+    font-weight: 300;
+    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.eot');
+    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.eot?#iefix') format('embedded-opentype'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.woff') format('woff'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.ttf') format('truetype');
+}
+   
+.nanumbarungothic * {
+    font-family: 'NanumBarunGothic', sans-serif;
+}
+
+* {
+    font-family: 'NanumBarunGothic', sans-serif;
+}
+
+/* Desktop First */
+
+/* 반응형 웹 */
+.title { font-size: 18px; }
+
+@media (max-width: 1023px) {
+  .title { font-size: 16px; }
+}
+
+@media (max-width: 767px) {
+  .title { font-size: 14px; }
+}
+
+@media (max-width: 639px) {
+  .title { font-size: 12px; }
+} /* 반응형 웹 */
+
+/*Header Start*/
+#header {
+    border-bottom: 1px solid #ddd;
+    position: fixed;
+    width: 100%;
+    margin: auto;
+    background-color: white;
+    Z-index: 1000;
+}
+    
+#header .headerContent{
+    display: flex;
+    align-items: center;
+    width: 1140px;
+    margin: auto;
+}
+    
+#header .headerContent > div.logo h1{
+    margin: 0;
+}
+    
+#header .headerContent > div.logo a{
+    margin: 0;
+    font-size: 30px;
+    font-weight: bold;
+    color: yellowgreen;
+    text-decoration: none;
+}
+    
+#header .headerContent > div.menu{
+    flex: 1;
+    min-width: 780px;
+}
+    
+#header .headerContent > div.menu ul {
+    display: flex;
+    justify-content:center;
+    list-style: none;
+    margin: 0;
+    margin-right: 170px;
+    padding: 0;
+}
+    
+#header .headerContent > div.menu ul li{
+    margin-left: 50px;
+    margin-right: 30px;
+}
+    
+#header .headerContent > div.menu ul li a{
+    display: block;
+    padding: 20px 0;
+    font-size: 20px;
+    font-weight: 800;
+    color: black;
+    text-decoration: none;
+}
+
+div.header-r{
+    min-width: 90px;
+}
+    
+div.header-r > a{
+    text-decoration: none;
+    color: black;
+}
+    
+div.header-r > span.header-bar{
+    display: inline-block;
+    width: 1px;
+    height: 16px;
+    margin: 1px 1px 3px 1px;
+   	background-color: #d8d8d8;
+    vertical-align: middle;
+    content: '';
+}
+    
+div.header-r > a.search_btn > img{
+    width: 23px;
+    height: 23px;
+    vertical-align: top;
+    margin-top: 1px;
+}
+    
+/*Header End*/
+
+/* Submenu Start */
+
+div.headerSub{ 
+    height: 50px;
+    text-align: center;
+    padding-left: 200px;
+    border-bottom: 1px solid rgba(0,0,0,.12);
+    line-height: 3;
+    padding-right: 480px;
+}
+
+a.headerSubSpan{
+    text-decoration: none;
+    color: #202020;
+    padding: 0 22px 0 22px;
+}
+
+a.headerSubSpan:hover{
+    color:#00ab33;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+/*End subHeader*/
+/* #content .container > div.menu2 ul li a :hover{
+   color: yellowgreen; 안되는 이유 a가 떨어져있어서,,
+} */
+
+/* 카테고리 */
+#content2  {
+    width:auto;
+    height: 140px;
+    background-color: #10c838;
+}
+
+#content2 .container > div.category {
+    flex: 1;
+    min-width: 800px;
+}
+ 
+
+#content2 .container > div.category ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    
+}
+
+#content2 .container > div.category ul li {
+    text-align: center;
+    margin: 20px;
+    color: #000;
+    border: 1px solid green; 
+    border-radius: 50%; 
+    padding: 10px;
+    width: 110px;
+    height: 100px;
+    font-family: 'NanumSquareNeo-Variable';
+}
+
+
+#content2 .container .category ul li a{
+   color: whitesmoke;
+   text-decoration: none;
+}
+
+/* 오늘의 모금함  */
+
+#apply {
+    color: black;
+    width: 800px;
+    margin-top: 30px;
+    padding-left:350px;
+}
+
+#apply h2 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 700;
+    color: #00ab33;
+    margin-bottom: 10px;
+}
+
+#apply .container {
+    display: flex;
+    justify-content: center;
+    border: 1px solid #65db7f;
+    border-radius: 26px;
+    min-width: 800px;
+}
+
+#apply .container .left_cont {
+    width: 40%;
+    padding-top: 20px;
+}
+
+#apply .container .right_cont {
+    width: 60%;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+#apply .container .smallbox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    font-weight: 700;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    margin-right: 20px;
+    background-color: #65db7f;
+}
+
+#apply .container .right_cont > div {
+    display: flex;
+}
+
+#apply .container .right_cont .left_txt {
+    width: 40%;
+    text-align: right; /* Add text-align right */
+    margin-right: 20px; /* Add margin-right */
+}
+
+#apply .container .right_cont .right_txt {
+    width: 100%;
+}
+
+#apply .container .right_cont p {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+}
+
+#apply .container .right_cont p .count {
+    font-size: 22px;
+    font-weight: 700;
+    color: #00ab33;
+}
+
+#apply .container .right_cont p .num {
+    font-size: 22px;
+    font-weight: 700;
+    color: #00ab33;
+}
+
+#apply .container .right_cont p .unit {
+    font-size: 16px;
+    font-weight: 500;
+    color: #707070;
+}
+
+#apply .container .right_cont .donation_line {
+    border-left: 1px solid #65db7f;
+    margin-left: 20px;
+    padding-left: 20px;
+    margin-top: 30px;
+}
+
+.donationcard_text{
+  padding-left: 160px;
+}
+
+.select-container {
+    overflow: hidden;
+    clear: both;
+    min-width: 800px;
+    padding-right:50px;
+    padding-bottom:10px;
+  }
+
+  #selectbox {
+    position: static;
+    float: right;
+    margin-top: 30px;
+    background-color: white;
+    width: fit-content;
+    height: 40px;
+    color: black;
+
+}
+
+/* 진행중 모금함 */
+.container{
+ min-width: 800px;
+}
+
+.card-container {
+    min-width: 800px;/* 카드를 3개씩 1열로 배치 */
+/*     display: flex;
+    flex-wrap: wrap;
+    justify-content:space-between;
+    margin: 0 auto; */
+  } 
+
+  .card {
+     width:310px;
+     height:450px;
+    float: left;
+    margin: 0 0 24px 24px;
+    margin-bottom: 20px;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    width: 30%;
+    z-index: 1;
+ 
+
+  }
+
+  .card-body{
+    padding:10px;
+    height: auto;
+  }
+  
+  .card-title {
+     color:black;
+     font-style:bold;
+    font-size: 20px;
+    margin: 0 0 6px 0;
+    padding: 0;
+    font-family: 'NanumBarunGothic', sans-serif;
+    text-decoration: none;
+  }
+
+  .card h2 {
+     color:gray;
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+    font-family: 'NanumBarunGothic', sans-serif;
+    text-decoration: none;
+  }
+  .card img {
+    display: block;
+    margin: 20px auto;
+    max-width: 100%;
+    width: 100%;
+  }
+
+.card p {
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+}
+
+
+
+.progress{
+  height: 5px;
+   margin-top: 13px;
+   background-color: #e8e8e8;
+}
+
+.progress_bar{
+  display: inline-block;
+   height: 100%;
+   background-color: #10c838;
+   text-align: right;
+   vertical-align: top;
+}
+
+
+.percent {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 10px 0 5px 0;
+  padding: 0;
+}
+
+.price {
+  font-size: 16px;
+  color: #666;
+  margin: 0;
+  padding: 0;
+}
+
+  
+
+
+/* 더보기 버튼 */
+.more_btn {
+    min-width: 800px;
+    display: flex; /* flexbox 사용 */
+    justify-content: center; /* 가로 중앙 정렬 */
+    align-items: center; /* 세로 중앙 정렬 */
+    width: 100%;
+    margin-top: 30px;
+    padding-top: 1px;
+    margin-bottom: 30px;
+    clear: both;
+    border: 1px solid #e5e5e5;
+    background-color: #f6f6f6;
+    line-height: 42px;
+    color: #333;
+    cursor: pointer; /* 커서 모양 변경 */
+  }
+
+
+
+/* footer */
+/*Footer Start*/
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.footer * {
+  box-sizing: border-box;
+}
+
+.footer {
+  position: relative;
+  background: #f6f6f6;
+  padding-top: 50px;
+  background-color: #fff;
+  font-size: 14px;
+  line-height: 19px;
+  color: #202020;
+}
+
+.footer_menu {
+  clear: both;
+  display: flex;
+  padding: 10px 0;
+  border: 1px solid #bcbcbc;
+  background-color:#f6f6f6;
+}
+/*
+.footer_menu_left {
+flex: 1;
+float: left;
+}
+*/
+.footer_menu_right {
+  width: 1140px;
+  margin: auto;
+/*
+flex: 9;
+float: right;
+*/
+}
+
+.footer_menu_right ul {
+list-style-type: none;
+color: #828282;
+margin: 0;
+padding: 0;
+min-width: 1140px;
+}
+
+.footer_menu_right ul li {
+  display: inline-block;
+  margin: 15px 20px 15px 0;
+  vertical-align: middle;
+}
+
+.footer_menu_right ul li a {
+text-decoration: none;
+color: #828282;
+}
+
+.item {
+display: inline-block;
+}
+
+.footer_info_wrap {
+  box-sizing: border-box;
+  color: rgb(130, 130, 130);
+  display: block;
+  font-family: NanumBarunGothic,"나눔바른고딕","Nanum Barun Gothic",Sans-serif;
+  font-size: 14px;
+  line-height: 19px;
+  padding-bottom: 50px;
+  padding-top: 22px;
+  position: relative;
+  width: 1140px;
+  margin: auto;
+}
+
+.footer_info_inner {
+  display: flex;
+  width: 1140px;
+  margin: auto;
+}
+/*
+.footer_info_left {
+  flex: 1;
+  float: left;
+}
+.footer_info_right {
+  flex: 9;
+  float: right;
+}
+*/
+
+.footer_info_right ul {
+  list-style-type: none;
+  color: #828282;
+  margin: auto;
+  padding: 0;
+}
+
+
+
+/*Footer End*/

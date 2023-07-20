@@ -1,0 +1,141 @@
+
+/*Header Start*/
+#header {
+    border-bottom:1px solid #ddd;
+    position: fixed;
+    width: 100%;
+    margin: auto;
+    background-color: white;
+    Z-index:1000;
+    }
+    
+    #header .headerContent{
+    display:flex;
+    align-items: center;
+    width: 1140px;
+    margin: auto;
+    }
+    
+    #header .headerContent > div.logo h1{
+    margin: 0;
+    }
+    
+    #header .headerContent > div.logo a{
+    margin:0;
+    font-size: 30px;
+    font-weight: bold;
+    color:yellowgreen;
+    text-decoration: none;
+    }
+    
+    #header .headerContent > div.menu{
+    flex:1;
+    min-width: 780px;
+    }
+    
+    #header .headerContent > div.menu ul {
+    display: flex;
+    justify-content:center;
+    list-style: none;
+    margin: 0;
+    margin-right: 170px;
+    padding: 0;
+    }
+    
+    #header .headerContent > div.menu ul li{
+    margin-left: 50px;
+    margin-right: 30px;
+    }
+    
+    #header .headerContent > div.menu ul li a{
+    display: block;
+    padding: 20px 0;
+    font-size: 20px;
+    font-weight: 800;
+    color: black;
+    text-decoration: none;
+    }
+
+    div.header-r{
+        min-width: 90px;
+    }
+    
+    div.header-r > a{
+        text-decoration: none;
+        color: black;
+    }
+    
+    div.header-r > span.header-bar{
+        display: inline-block;
+        width: 1px;
+        height: 16px;
+        margin: 1px 1px 3px 1px;
+        background-color: #d8d8d8;
+        vertical-align: middle;
+        content: '';
+    }
+    
+    div.header-r > a.search_btn > img{
+        width: 23px;
+        height: 23px;
+        vertical-align: top;
+        margin-top: 1px;
+    }
+
+    
+/*Header End*/
+
+
+.post {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 100px;
+   
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    /* margin-top: 50px; */
+  }
+  
+
+.form-group_title {
+    padding-top: 100px;
+    /* display: flex; 
+    justify-content: space-between; 
+    align-items: center;*/
+} 
+
+.btn-primary{
+    text-align: center;
+    background-color:#00ab33;
+    border-color: #00ab33;
+
+
+}
+
+.btn-primary:hover {
+    color: #fff;
+    background-color: #00ab33;
+    border-color: #00ab33;
+}
+
+
+.btn-secondary {
+    background-color:white;
+    color: black;
+}
+
+.btn-secondary:hover {
+    color: black;
+    background-color: white;
+    border-color: #545b62;
+}
+
+
+/*  select 이미지 */
+
+.select_img img { margin:50px 0;}
+
+
+
+

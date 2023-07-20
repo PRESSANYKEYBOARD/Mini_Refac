@@ -1,0 +1,461 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family: 'NanumBarunGothic';
+    font-style: normal;
+    font-weight: 400;
+    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot');
+    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot?#iefix') format('embedded-opentype'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.woff') format('woff'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.ttf') format('truetype');
+   }
+   
+   @font-face {
+    font-family: 'NanumBarunGothic';
+    font-style: normal;
+    font-weight: 700;
+    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.eot');
+    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.eot?#iefix') format('embedded-opentype'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.woff') format('woff'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.ttf') format('truetype')
+   }
+   
+   @font-face {
+    font-family: 'NanumBarunGothic';
+    font-style: normal;
+    font-weight: 300;
+    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.eot');
+    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.eot?#iefix') format('embedded-opentype'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.woff') format('woff'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.ttf') format('truetype');
+   }
+   
+   .nanumbarungothic * {
+    font-family: 'NanumBarunGothic', sans-serif;
+   }
+
+   * {
+    font-family: 'NanumBarunGothic', sans-serif;
+   }
+
+
+
+
+
+/*Start Header*/
+
+#header {
+    border-bottom:1px solid #ddd;
+    position: fixed;
+    width: 100%;
+    margin: auto;
+    background-color: white;
+    Z-index:1000;
+    }
+    
+    #header .headerContent{
+    display:flex;
+    align-items: center;
+    width: 1140px;
+    margin: auto;
+    }
+    
+    #header .headerContent > div.logo h1{
+    margin: 0;
+    }
+    
+    #header .headerContent > div.logo a{
+    margin:0;
+    font-size: 30px;
+    font-weight: bold;
+    color:yellowgreen;
+    text-decoration: none;
+    }
+    
+    #header .headerContent > div.menu{
+    flex:1;
+    min-width: 780px;
+    }
+    
+    #header .headerContent > div.menu ul {
+    display: flex;
+    justify-content:center;
+    list-style: none;
+    margin: 0;
+    margin-right: 170px;
+    padding: 0;
+    }
+    
+    #header .headerContent > div.menu ul li{
+    margin-left: 50px;
+    margin-right: 30px;
+    }
+    
+    #header .headerContent > div.menu ul li a{
+    display: block;
+    padding: 20px 0;
+    font-size: 20px;
+    font-weight: 800;
+    color: black;
+    text-decoration: none;
+    }
+
+    div.header-r{
+        min-width: 90px;
+    }
+    
+    div.header-r > a{
+        text-decoration: none;
+        color: black;
+    }
+    
+    div.header-r > span.header-bar{
+        display: inline-block;
+        width: 1px;
+        height: 16px;
+        margin: 1px 1px 3px 1px;
+        background-color: #d8d8d8;
+        vertical-align: middle;
+        content: '';
+    }
+    
+    div.header-r > a.search_btn > img{
+        width: 23px;
+        height: 23px;
+        vertical-align: top;
+        margin-top: 1px;
+    }
+
+	div#header div.menu a:hover {
+	    color: #00ab33 !important;
+	}
+    
+/*End Header*/
+
+
+
+
+
+/*Start subHeader*/
+
+div.headerSub{
+    height: 50px;
+    text-align: center;
+    padding-left: 200px;
+    border-bottom: 1px solid rgba(0,0,0,.12);
+    line-height: 3;
+}
+
+a.headerSubSpan{
+    text-decoration: none;
+    color: #202020;
+    padding: 0 22px 0 22px;
+}
+
+a.headerSubSpan:hover{
+    color:#00ab33;
+    font-weight: 700;
+    cursor: pointer;
+    
+}
+
+/*End subHeader*/
+
+
+
+
+
+/*Start Content*/
+
+div.content{
+    margin: 45px auto 0 auto;
+    width: 1140px;
+
+}
+
+div.contentTitle {
+    margin: 45px 0;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+div.contentTitleMain > div > a{
+    font-size: 30px;
+    color: #00ab33;
+    font-weight: 600;
+}
+
+div.contentTitleSub {
+    line-height: 20px;
+    font-size: 13px;
+    letter-spacing: -1px;
+}
+
+div.contentTitleSub > em {
+    font-style: normal;
+}
+
+
+
+
+/*admin login 시*/
+div.updateNoticeDiv{
+    text-align: right;
+    padding: 5px;
+}
+
+button.updateNoticeBtn{
+    border-radius: 3px;
+    border-color: rgba(0,0,0,.1);
+    background-color: #f6f6f6;
+    color: #666666;
+    text-align: center;
+    padding: 1px 10px;
+}
+
+button.deleteNoticeBtn{
+    border-radius: 3px;
+    border-color: rgba(0,0,0,.1);
+    background-color: #f6f6f6;
+    color: #666666;
+    text-align: center;
+    padding: 1px 10px;
+}
+
+
+
+
+
+div.contentViewWrap{
+    width: 1140px;
+    margin: auto;
+    border-top: 2px solid #00ab33;
+    margin-bottom: 100px;
+}
+
+div.contentViewTitle > strong > span#contentBoardTableLabel1{
+    margin-right: 10px;
+    background-color: #999;
+    border-top: #999;
+    border-bottom: #999;
+    display: inline-block;
+    min-width: 40px;
+    padding: 0 5px;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    border-radius: 15px;
+    font-size: 13px;
+    color: #fff;
+    font-weight: normal;
+    border: 1px solid #fff;
+}
+
+
+
+div.contentViewTitle{
+    background: #f6f6f6;
+
+    padding: 12px;
+    font-size: 16px;
+    color: #666;
+    font-weight: 400;
+    text-align: left;
+    background: #f6f6f6;
+    border-bottom: 1px solid #e1e1e1;
+
+    display: flex;
+}
+
+div.contentViewTitleDate{
+    flex: auto;
+    text-align: right;
+}
+
+
+
+
+
+div.contentViewCont{
+    padding-top: 30px;
+}
+
+div.contentViewContInner{
+    padding: 30px 29px 34px;
+}
+
+div.contentViewContInner > p{
+    color: rgb(51, 51, 51);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.0;
+}
+
+
+
+
+
+div.contentViewPage{
+    border-top: 1px solid rgba(0,0,0,.06);
+    border-bottom: 1px solid rgba(0,0,0,.06);
+}
+
+span.contentViewPage {
+    text-decoration: none;
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+    padding: 13px 29px;
+    color: #828282;
+}
+
+div.contentViewPageInner1{
+    display: table-cell;
+    width: 67px;
+    vertical-align: middle;
+}
+
+div.contentViewPageInner2{
+    display: table-cell;
+    width: 100%;
+    vertical-align: middle;
+}
+
+div.contentViewPageInner3{
+    display: table-cell;
+    width: 170px;
+    text-align: right;
+    vertical-align: middle;
+}
+
+span.contentViewPageInner11{
+    display: inline-block;
+    padding: 4px 15px;
+    border: 1px solid rgba(0,0,0,.15);
+    font-size: 14px;
+    line-height: 1.36;
+    margin-right: 9px;
+}
+
+
+
+a.contentViewListBtn{
+    text-decoration: none;
+    display: block;
+    width: 166px;
+    margin: 50px auto 0;
+    padding: 13px 0 12px;
+    border-radius: 3px;
+    font-size: 15px;
+    border-color: rgba(0,0,0,.1);
+    background-color: #00ab33;
+    color: #fff;
+    line-height: 1.19;
+    text-align: center;
+}
+
+/*End Content*/
+
+
+
+
+
+/*Start Footer*/
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.footer * {
+    box-sizing: border-box;
+}
+
+.footer {
+    position: relative;
+    background: #f6f6f6;
+    padding-top: 50px;
+    background-color: #fff;
+    font-size: 14px;
+    line-height: 19px;
+    color: #202020;
+}
+
+.footer_menu {
+    clear: both;
+    display: flex;
+    padding: 10px 0;
+    border: 1px solid #bcbcbc;
+    background-color:#f6f6f6;
+}
+/*
+.footer_menu_left {
+flex: 1;
+float: left;
+}
+*/
+.footer_menu_right {
+    width: 1140px;
+    margin: auto;
+/*
+flex: 9;
+float: right;
+*/
+}
+
+.footer_menu_right ul {
+list-style-type: none;
+color: #828282;
+margin: 0;
+padding: 0;
+min-width: 1140px;
+}
+
+.footer_menu_right ul li {
+    display: inline-block;
+    margin: 15px 20px 15px 0;
+    vertical-align: middle;
+}
+
+.footer_menu_right ul li a {
+text-decoration: none;
+color: #828282;
+}
+
+.item {
+display: inline-block;
+}
+
+.footer_info_wrap {
+    box-sizing: border-box;
+    color: rgb(130, 130, 130);
+    display: block;
+    font-family: NanumBarunGothic,"나눔바른고딕","Nanum Barun Gothic",Sans-serif;
+    font-size: 14px;
+    line-height: 19px;
+    padding-bottom: 50px;
+    padding-top: 22px;
+    position: relative;
+    width: 1140px;
+    margin: auto;
+}
+
+.footer_info_inner {
+    display: flex;
+    width: 1140px;
+    margin: auto;
+}
+/*
+.footer_info_left {
+    flex: 1;
+    float: left;
+}
+.footer_info_right {
+    flex: 9;
+    float: right;
+}
+*/
+
+.footer_info_right ul {
+    list-style-type: none;
+    color: #828282;
+    margin: auto;
+    padding: 0;
+}
+
+/*End Footer*/

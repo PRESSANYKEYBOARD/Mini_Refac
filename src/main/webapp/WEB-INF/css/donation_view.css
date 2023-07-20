@@ -1,0 +1,1154 @@
+@charset "UTF-8";
+
+/* 폰트 설정 */
+
+@font-face {
+    font-family: 'NanumBarunGothic';
+    font-style: normal;
+    font-weight: 400;
+    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot');
+    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot?#iefix') format('embedded-opentype'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.woff') format('woff'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.ttf') format('truetype');
+}
+   
+   @font-face {
+    font-family: 'NanumBarunGothic';
+    font-style: normal;
+    font-weight: 700;
+    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.eot');
+    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.eot?#iefix') format('embedded-opentype'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.woff') format('woff'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.ttf') format('truetype')
+}
+   
+   @font-face {
+    font-family: 'NanumBarunGothic';
+    font-style: normal;
+    font-weight: 300;
+    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.eot');
+    src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.eot?#iefix') format('embedded-opentype'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.woff') format('woff'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.ttf') format('truetype');
+}
+
+.nanumbarungothic * {
+    font-family: 'NanumBarunGothic', sans-serif;
+   }
+
+* {
+    font-family: 'NanumBarunGothic', sans-serif;
+}
+
+html {
+	height: 100%;
+	margin: 0 auto;
+} 
+
+body {
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+/* Desktop First */
+
+/* 반응형 웹 */
+
+@media (max-width: 1023px) {
+  .title { font-size: 16px; }
+}
+
+@media (max-width: 767px) {
+  .title { font-size: 14px; }
+}
+
+@media (max-width: 639px) {
+  .title { font-size: 12px; }
+} 
+/* 반응형 웹 */
+
+/* .btn-close {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin: 10px;
+  background: url("https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-close-512.png") no-repeat center center;
+  background-size: contain;
+  border: none;
+  outline: none;
+  cursor: pointer;
+} */
+
+.count-wrap { /* 수량 */
+	position: relative;
+	padding: 0 38px;
+	border: 1px solid #ddd;
+	overflow: hidden;
+	width: 136px;
+}
+
+.count-wrap > button {border: 0;background: #ddd;color: #000;width: 38px;height: 38px;position: absolute;top: 0;font-size: 12px;}
+.count-wrap > button.minus {left: 0;}
+.count-wrap > button.plus {right: 0;}
+.count-wrap .inp {border: 0;height: 38px;text-align: center;display: block;width: 100%;}
+
+/* 자바스크립트로 추가될 클래스 */
+.nav-up {
+    top: -40px; /* 헤더 높이와 같게  */
+}
+
+select{
+	width: 350px;
+	text-align : center;
+}
+
+/*Header Start*/
+#header {
+    border-bottom:1px solid #ddd;
+    position: fixed;
+    width: 100%;
+    margin: auto;
+    background-color: white;
+    Z-index:1000;
+}
+    
+#header .headerContent{
+    display:flex;
+    align-items: center;
+    width: 1140px;
+    margin: auto;
+}
+    
+#header .headerContent > div.logo h1{
+    margin: 0;
+}
+    
+#header .headerContent > div.logo a{
+    margin:0;
+    font-size: 30px;
+    font-weight: bold;
+    color:yellowgreen;
+    text-decoration: none;
+}
+    
+#header .headerContent > div.menu{
+    flex:1;
+    min-width: 780px;
+}
+    
+#header .headerContent > div.menu ul {
+    display: flex;
+    justify-content:center;
+    list-style: none;
+    margin: 0;
+    margin-right: 170px;
+    padding: 0;
+}
+    
+#header .headerContent > div.menu ul li{
+    margin-left: 50px;
+    margin-right: 30px;
+}
+    
+#header .headerContent > div.menu ul li a{
+    display: block;
+    padding: 20px 0;
+    font-size: 20px;
+    font-weight: 800;
+    color: black;
+    text-decoration: none;
+}
+
+div.header-r{
+    min-width: 90px;
+}
+    
+div.header-r > a{
+    text-decoration: none;
+    color: black;
+}
+    
+div.header-r > span.header-bar{
+    display: inline-block;
+    width: 1px;
+    height: 16px;
+    margin: 1px 1px 3px 1px;
+    background-color: #d8d8d8;
+    vertical-align: middle;
+    content: '';
+}
+    
+div.header-r > a.search_btn > img{
+    width: 23px;
+    height: 23px;
+    vertical-align: top;
+    margin-top: 1px;
+}
+
+/*Header End*/
+
+.header2  { /* 하위 메뉴 시작 */
+    position: relative;
+    z-index: 1;
+    min-height: 50px;
+    margin-bottom: -1px;
+    padding: 0 5px;
+    border-bottom: 1px solid rgba(0,0,0,.12);
+    text-align: center;
+} 
+
+.header2 .container {
+	min-width: 1400px;
+}
+
+.menu2 { /* 하위 메뉴  */
+    padding-top: 70px;
+    flex: 1;
+}
+
+.menu2 ul { /* 하위 메뉴 */
+    display: flex;
+    position: relative;
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    padding-right: 60px;
+}
+
+.menu2 ul li { /* 하위 메뉴 */
+    margin: 10px;
+    margin-left: 50px;
+}
+
+.menu2 ul li a { /* 하위 메뉴 */
+    display: block;
+    font-size: 15px;
+    color:gray;
+    text-decoration: none;   
+}
+
+.menu2 ul li a:hover { /* 하위 메뉴 */
+    color: yellowgreen;
+    text-decoration: none;
+    text-align: center;
+}
+
+.header3 { /* header3 시작 */
+    width: 1140px;
+    margin: 0 auto;
+    padding: 50px 0 45px;
+    background-color: #fff;
+}
+
+.header3_img { /* 이미지 */
+  
+    position: relative;
+    float: left;
+    width: 750px;
+}
+
+.header3_summary { /* 펀딩 내용 */
+	
+	/* background-color:blue; */
+	padding-right: 30px;
+    position: relative; 
+    padding-top: 200px;
+    margin:70px;
+}
+
+div.header3_summary_inner1{
+	display: block;
+    font-size: 23px;
+    font-weight: 800;
+    line-height: normal;
+    letter-spacing: -.5px;
+}
+
+.dday { /* 남은 일수 */
+	display: inline-block;
+    position: relative;
+    min-width: 54px;
+    padding: 3px 9px;
+    background-color: #ed5a5a;
+    border-radius: 13px;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.33;
+    color: #fff;
+    letter-spacing: -.4px;
+    text-align: center;
+    margin-bottom:20px;
+}
+
+.title { /* h3 타이틀 */
+	white-space: pre-wrap;
+	word-wrap: break-word;
+	word-break: normal;
+    min-height: 82px;
+    margin-top: 12px;
+    font-size: 28px;
+    font-weight: 900;
+    line-height: 1.32;
+    letter-spacing: -1px;
+}
+
+.graph { /* 목표금액 % */
+  /*   width: 345px; */
+    margin-top: 2px;
+    color:#00ab33;
+}
+
+.rate { /* 목표를 포착했다. */
+	width: 345px;
+    margin-top: 2px;
+    text-align: right;
+}
+
+.per { /* % */
+    font-size: 50px;
+    color: #00ab33;
+}
+
+.progress{
+  height: 5px;
+   background-color: #e8e8e8;
+    
+}
+
+.progress_bar{
+  display: inline-block;
+   height: 100%;
+   background-color: #10c838;
+   text-align: right;
+   vertical-align: top;
+   
+  
+}
+
+
+.credit_goal { /* 목표금액 메인 */
+    float: left;
+    margin-top: 13px;
+    font-size: 15px;
+    line-height: 1.13;
+    color: #828282;
+    letter-spacing: -.6px;
+}
+
+.credit { /* 금액 */
+    display: inline-block;
+    margin: 0 1px -1px 0;
+    font-size: 16px;
+    letter-spacing: -.4px;
+    vertical-align: bottom;
+}
+
+.credit_much { /* 얼마요? 메인 */
+    
+    margin-top: 14px;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.11;
+    letter-spacing: -.8px;
+}
+
+.much { /* 얼마요? */
+	/* display: inline-block; */
+    margin: 0 1px -3px 0;
+    font-size: 23px;
+    line-height: 1.13;
+    letter-spacing: -1px;
+    vertical-align: bottom;
+}
+
+.company_main { /* 회사소개 메인 */
+	overflow: hidden;
+    display: table;
+    position: relative;
+    width: 350px;
+    height: 60px;
+    margin: 40px 10px 0;
+    table-layout: fixed;
+    padding-top: 10px
+}
+
+.company_img { /* 회사 로고 */
+ 	display: table-cell;
+    width: 50px;
+    height: 36px;
+    padding-right: 10px;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+.company_img2 { /* 회사 로고 내부 */
+	background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: cover;
+    width: 60px;
+    height: 60px;
+    background-origin: border-box;
+    border: 1px solid rgba(0,0,0,.05);
+    border-radius: 50%;
+}
+
+.company_text { /* 회사 소개글 */
+	float: right;
+	padding-top: 10px;
+	padding-bottom: 1.5px;
+    position: relative;
+    width: 100%;
+    vertical-align: middle;
+}
+
+.company_text_con {
+	float: right;
+    position: relative;
+    width: 100%;
+    vertical-align: middle;
+}
+
+.company_text1 { /* 회사명 */
+	float: right;
+	padding-top: 8px;
+	margin-right: 15px;
+	overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: block;
+    font-size: 16px;
+    font-weight: 700;
+    color: #000;
+    letter-spacing: -.3px;
+}
+
+.company_text2 { /* 회사소개 */
+	float: right;
+	margin-right: 15px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: block;
+    font-size: 14px;
+    color: #666;
+}
+
+.dropdown { /* 드롭다운 리스트 */
+   	position: relative;
+	font-size: 15px;
+    width: 100%;
+    height: 100%;
+    margin-bottom: 13px;
+}
+
+.selectbox { /* 셀렉트 박스 굳이 적용 안해도 될 것 같긴 함 */
+	position: relative;
+    float: right;
+    margin-top: 30px;
+    background-color: white;
+    width: 100%;
+    height: 100%; 
+    color: black;
+}
+
+.total { /* 총 수량과 총 금액 위의 요소 공백*/
+    margin-top: 15px;
+}
+
+.total_left { /* 총 수량 */
+    float: left;
+    margin: 6px 0 0 1px;
+    font-size: 14px;
+    color: #666;
+}
+
+.total_right { /* 총 금액 */
+	float: right;
+	margin: 6px 0 0 1px;
+	margin-right: 10px;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.funding_go { /* 펀딩 참여하기 */
+	display: flex;
+    margin-top: 18px;
+    float: left;
+}
+
+.funding_go_button { /* 펀딩 참여/종료 버튼 */
+    display: inline-block;
+    width: 350px;
+    height: 54px;
+    background-color: #07c8ff;
+    border: 1px solid rgba(0,0,0,.02);
+    border-radius: 3px;
+    font-size: 19px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: -.3px;
+    margin-right: 100px;
+}
+
+.funding_go_button a { /* 내부의 a태그 */
+	text-align: center;
+	color: #fff;
+    position: relative;
+    text-decoration: none;
+}
+
+.donae {
+	display: inline-block;
+	font-size: 13px;
+}
+
+.content { /* content 전체 내용 */
+    display: block;
+    width: 1060px;
+    margin: 0 auto;
+}
+
+.content_list { /* 스토리 소식후기 */
+	min-width: 1140px;
+	z-index: 2000;
+	margin: 0 120px;
+}
+
+.content_list ul {
+    display: flex;
+    position: relative;
+    justify-content: start;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    padding-right: 38px;
+}
+
+.content_list ul li {
+	margin-left: 50px;
+    margin-right: 30px;
+}
+
+.content_list ul li a {
+	display: block;
+    padding: 20px 0;
+    font-size: 20px;
+    font-weight: 800;
+    color: black;
+    text-decoration: none;
+}
+
+.content_list ul li a:hover {
+    color: yellowgreen;
+    text-decoration: none;
+    text-align: center;
+} /* 소식 후기 끝 */
+
+.content_left { /* content 왼쪽 내용 */
+	float: left;
+    width: 600px;
+    padding-bottom: 50px;
+    padding-top: 60px;
+}
+
+.content_left1 {
+ 	margin-bottom: 60px;
+}
+
+.content_right { /* content 오른쪽 내용 */
+    float: right;
+    width: 360px;
+    padding-top: 60px;
+}
+
+.content_hidden { /* 스크롤 내리면 뜨는 펀딩 */
+    position: fixed;
+    top: 71px;
+    right: 0;
+    left: 0;
+    z-index: 40;
+    background-color: #fff;
+}
+
+.content_hidden_middle { /* 스크롤 내리면 뜨는 펀딩 */
+	width: 1060px;
+    padding: 24px 0 21px;
+    margin: 0 auto;
+    line-height: 0;
+}
+
+.content_guide { /* 결제 방법 및 배송 안내 */
+    padding: 40px 0 40px;
+    border-top: 1px solid #000;
+}
+
+.content_guide > h4 { /* 결제 방법 및 배송 안내 */
+    display: block;
+    /* font-family: NanumSquareWebFont,dotum,Sans-serif; */
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.19;
+    color: #202020;
+    letter-spacing: -.6px;
+}
+
+.content_guide_inner2 { /* 1차 배송, 2차 배송 */
+    display: block;
+    margin-top: 21px;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.4;
+    color: #202020;
+    letter-spacing: -.3px;
+}
+
+.content_guide_inner > span {
+    padding: 1px 3px 0;
+    margin: 2px -3px 0;
+    background-image: linear-gradient(180deg,#e9f5ff,#e9f5ff);
+    color: #0091ff;
+}
+
+.content_sns { /* 참고정보 */
+    padding: 40px 0 48px;
+    border: 1px solid #000;
+    border-width: 1px 0;
+}
+
+.content_sns ul { /* 아이콘들 */
+	margin: 14px -8px -8px;
+}
+
+.content_sns ul li { /* 문의하기 스마트스토어 홈페이지 인스타그래 */
+	display: inline-block;
+    width: 84px;
+    vertical-align: top;
+    padding: 8px 7px;
+}
+
+.content_sns ul li a {
+    display: block;
+    font-size: 0;
+    text-align: center;
+    text-decoration: none;
+}
+
+.content_sns ul li a span { /* 문의하기 끝 */
+    overflow: hidden;
+    text-align: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: block;
+    margin-top: 5px;
+    font-size: 13px;
+    color: #333;
+    margin-left: 3px;
+}
+
+.content_reply { /* 참여내역 전체 */
+    padding-top: 35px;
+}
+
+.content_reply p { /* 총 ??명이 참여하였습니다. */
+    padding: 25px 0 22px;
+    background-color: #fcfcfc;
+    border: 1px solid rgba(0,0,0,.05);
+    font-size: 20px;
+    line-height: 1.11;
+    letter-spacing: -.5px;
+    text-align: center;
+}
+
+.content_reply ul { /* 댓글 내역 */
+    margin-top: 10px;
+}
+
+.content_reply ul li { /* 댓글 내역 */
+    overflow: hidden;
+    padding: 25px 0;
+    border-bottom: 1px solid rgba(0,0,0,.05);
+}
+
+.reply_thumbnail { /* 유저의 사진 */
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: cover;
+    float: left;
+    position: relative;
+    margin-right: 20px;
+}
+
+.reply_date { /* 날짜 시간 */
+    margin-top: 5px;
+    font-size: 15px;
+    line-height: 1.23;
+    color: #828282;
+    padding-left: 10px;
+    padding-top: 10px;
+}
+
+.reply_user { /* 누구인가? */
+	margin-top: 8px;
+	padding-left: 10px;
+}
+
+.funding_reward { /* 리워드 선택부터 가상 계좌 선택까지의 영역 */
+    position: relative;
+    width: 348px;
+    margin-top: 18px;
+    border-top: 1px solid rgba(0,0,0,.05);
+    padding-top: 18px;
+}
+
+.funding_reward_list { /* .funding_reward의 ul */
+	list-style: none;
+	margin-top: 1px;
+    border: 1px solid #000;
+    border-width: 1px 0;
+}
+
+.funding_reward_list li { /* .funding_reward의 ul 밑의 li 요소들 */
+	position: relative;
+    padding: 5px 0;
+}
+
+.funding_reward_list span {
+	position: absolute;
+    right: 0;
+    bottom: 27px;
+    font-size: 15px;
+}
+
+.funding_reward_list1 { /* 수량 선택 */
+    position: relative;
+    width: 120px;
+    margin-top: 10px;
+}
+
+.funding_reward_list2 span {
+	float: right;
+    right: 0;
+    font-size: 15px;
+}
+
+.reward_annae { /* 리워드 안내 */
+    font-size: 20px;
+    font-weight: 800;
+    line-height: 1.35;
+    letter-spacing: -.3px;
+}
+
+.reward_annae > a { /* 자세히 보기 > */
+	float: right;
+    right: -10px;
+    padding: 10px;
+    margin-top: -38px;
+    font-size: 13px;
+    color: #333;
+    letter-spacing: -.3px;
+    text-decoration: underline;
+}
+
+.reward_cham {
+    display: block;
+    padding: 14px 16px 12px;
+    border-bottom: 1px solid rgba(0,0,0,.08);
+    font-size: 17px;
+    line-height: 1.35;
+    color: #202020;
+    letter-spacing: -.6px;
+}
+
+.reward_cham1_left { /* ~원 펀딩 참여 */
+    margin-right: 4px;
+    color: #00ab33;
+}
+
+.reward_cham1_right { /* 남은 수량 */
+   	float: right;
+    top: 11px;
+    right: 15px;
+    border: 1px solid rgba(0,0,0,.1);
+    border-radius: 19px;
+    padding: 6px 9px 4px;
+    font-size: 13px;
+    line-height: 1.15;
+    color: #333;
+    letter-spacing: -.3px;
+    margin-top: -25px;
+}
+
+.reward_set { /* 상품 내역 */
+    padding: 21px 16px 29px;
+}
+
+.reward_set ul { /* 상품 내역 */
+    margin-top: 13px;
+}
+
+.reward_set ul li { /* 현재 ~명 펀딩 참여 */
+	font-size: 14px;
+    line-height: 1.43;
+    color: #828282;
+    letter-spacing: -.2px;
+} /* 오른쪽 컨텐트 내역 종료 */
+
+.reward_set ul li a {
+    display: block;
+    font-size: 0;
+    text-align: center;
+}
+
+.reward_set ul li span {
+    overflow: hidden;
+    margin-top: 5px;
+    font-size: 13px;
+    color: #333;
+}
+
+
+
+
+
+
+.donation_btn { 
+    display: inline-block;
+    width: 270px;
+    height: 52px;
+    background-color: #10c838;;
+    border: 1px solid rgba(0,0,0,.02);
+    border-radius: 3px;
+    font-size: 19px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: -.3px;
+}
+
+
+
+.content_left1-1 {
+	padding-bottom: 10px;
+}
+
+.content_left1-2 {
+    margin-top: 10px;
+    font-size: 17px;
+    line-height: 1.53;
+    color: #333;
+    white-space: pre-line;
+}
+
+/*Footer Start*/
+
+.footer * {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.footer {
+	clear: both; /* 푸터가 영역을 침범할 때 float 초기화 */
+    position: relative;
+    background: #f6f6f6;
+    padding-top: 50px;
+    background-color: #fff;
+    font-size: 14px;
+    line-height: 19px;
+    color: #202020;
+}
+
+.footer_menu {
+    clear: both;
+    display: flex;
+    padding: 10px 0;
+    border: 1px solid #bcbcbc;
+    background-color:#f6f6f6;
+}
+/*
+.footer_menu_left {
+flex: 1;
+float: left;
+}
+*/
+.footer_menu_right {
+    width: 1140px;
+    margin: auto;
+/*
+flex: 9;
+float: right;
+*/
+}
+
+.footer_menu_right ul {
+	list-style-type: none;
+	color: #828282;
+	margin: 0;
+	padding: 0;
+	min-width: 1140px;
+}
+
+.footer_menu_right ul li {
+    display: inline-block;
+    margin: 15px 20px 15px 0;
+    vertical-align: middle;
+}
+
+.footer_menu_right ul li a {
+	text-decoration: none;
+	color: #828282;
+}
+
+.item {
+display: inline-block;
+}
+
+.footer_info_wrap {
+    box-sizing: border-box;
+    color: rgb(130, 130, 130);
+    display: block;
+    font-family: NanumBarunGothic,"나눔바른고딕","Nanum Barun Gothic",Sans-serif;
+    font-size: 14px;
+    line-height: 19px;
+    padding-bottom: 50px;
+    padding-top: 22px;
+    position: relative;
+    width: 1140px;
+    margin: auto;
+}
+
+.footer_info_inner {
+    display: flex;
+    width: 1140px;
+    margin: auto;
+}
+/*
+.footer_info_left {
+    flex: 1;
+    float: left;
+}
+.footer_info_right {
+    flex: 9;
+    float: right;
+}
+*/
+
+.footer_info_right ul {
+    list-style-type: none;
+    color: #828282;
+    margin: auto;
+    padding: 0;
+}
+
+/*Footer End*/
+
+.content_page { /* 페이지 버튼 영역 */
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-top: 26px;
+	font-size: 0;
+}
+
+.page_pre, .page_next { /* 이전, 다음 버튼 */
+	display: inline-block;
+	width: 60px;
+	height: 34px;
+	margin-right: 10px;
+	font-size: 14px;
+	color: #555;
+	text-align: center;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+.page_numbers { /* 페이지 번호 */
+  	display: inline-flex;
+}
+
+.page_link { /* 페이지 번호 */
+  	display: inline-block;
+  	width: 34px;
+  	height: 34px;
+  	margin-right: 10px;
+  	font-size: 14px;
+  	color: #555;
+  	text-align: center;
+  	border: 1px solid #ccc;
+  	border-radius: 4px;
+  	cursor: pointer;
+}
+
+.page_link.active { /* 현재 버튼을 누르면 페이지 번호의 배경 색상 바뀜 */
+  	background-color: #555;
+  	color: #fff;
+  	border-color: #555;
+}
+
+#my_modal { /* 모달 */
+	position: absolute;
+    display: none;
+    width: 379px;
+    padding: 56px 30px 40px;
+    background-color: #fefefe;
+    border: 1px solid #888;
+    border-radius: 3px;
+    text-align: center;
+}
+
+#my_modal .modal_close_btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.header strong { /* 펀딩 참여 전 확인하세요!!! */
+	display: block;
+    font-size: 26px;
+    line-height: 1.12;
+    color: #000;
+    letter-spacing: -.2px;
+}
+
+.my_modal .container { /* 펀딩은 ~ 예야 결제를 취소~ */
+	padding-top: 10px;
+    margin-top: 12px;
+    border-top: 1px solid #ddd;
+}
+
+.notice { 
+	padding: 10px 0;
+    margin-top: 8px;
+    background-color: #f7f7f7;
+}
+
+.notice span {
+	font-weight: 700;
+	color: #0091ff;
+}	
+
+.point { /* ~일이 가장 빠른 결제입니다. */
+	font-size: 14px;
+    line-height: 1.43;
+    letter-spacing: -.1px;
+}
+
+.guide { /* 결제 이후에는 ~ */
+    padding: 10px 0 14px;
+    margin-top: 12px;
+    border: 1px solid #ddd;
+    border-width: 1px 0;
+    font-size: 13px;
+    line-height: 1.4;
+    color: #666;
+    letter-spacing: -.1px;
+    text-align: left;
+}
+
+.agree {  /* 약관 동의 */
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.agree_all { /* 모두 동의 */
+	margin-bottom: 12px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(0,0,0,.03);
+}
+
+.agree_all label { /* 약관 및 개인정보 관련사항 ~ 모두 동의 ~  */
+    display: inline-block;
+    vertical-align: top;
+}
+
+.agree_need { /* 필수 동의 */
+	position: relative;
+    min-height: 19px;
+    padding-left: 25px;
+    font-size: 12px;
+    line-height: 19px;
+    color: #202020;
+    text-align: left;
+    letter-spacing: -.3px;
+}
+
+.agreeguide_link { /* 자세히 보기 */
+	display: inline-block;
+    margin-left: 8px;
+    text-decoration: underline;
+    vertical-align: top;
+}
+
+.agreeguide_preview { /* 약관 개정안내 */
+	overflow-x: hidden;
+    overflow-y: auto;
+    height: 120px;
+    margin-top: 7px;
+    border: 1px solid #e0e0e0;
+    padding: 14px;
+    font-size: 12px;
+    line-height: 17px;
+    color: #828282;
+    text-align: left;
+    
+}
+
+.agree_choice { /* 선택 동의 */
+	position: relative;
+	padding-top: 10px;
+    min-height: 19px;
+    padding-left: 25px;
+    font-size: 12px;
+    line-height: 19px;
+    color: #202020;
+    text-align: left;
+    letter-spacing: -.3px;
+}
+
+.agree_choice_text { /* 선택 동의 창 밑에 있는 텍스트 */
+	padding-left: 45px;
+	margin-top: 8px;
+    font-size: 12px;
+    line-height: 17px;
+    text-align: left;
+    color: #828282;
+}
+
+.agree_warming { /* 필수 동의 체크를 안 했을 시... */
+	margin-top: 8px;
+    font-size: 12px;
+    color: #ed5a5a;
+    text-align: left;
+}
+
+.agree_button { /* 동의.비동의 버튼 div */
+	margin-top: 20px;
+}
+
+.button_disagree { /* 비동의 버튼 */
+	display: inline-block;
+    width: 120px;
+    height: 50px;
+    padding-top: 3px;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: -1px;
+}
+
+.button_agree { /* 동의 버튼 */
+	display: inline-block;
+    width: 120px;
+    height: 50px;
+    padding-top: 3px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: -1px;
+	margin-left: 16px;
+    background-color: #50bcdf;
+}
+
+.btn-close { /* 모달 창 닫기 버튼 */
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+}

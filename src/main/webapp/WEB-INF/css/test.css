@@ -1,0 +1,106 @@
+
+#header {
+    border-bottom:1px solid #ddd;
+}
+
+#header .container{
+    display:flex;
+    align-items: center;
+}
+
+#header .container > div.logo h1{
+   margin: 0;
+}
+
+#header .container > div.logo a{
+    margin:0;
+    font-size: 30px;
+    font-weight: bold;
+    color:yellowgreen;  
+} 
+
+
+#header .container > div.menu{
+    flex:1;
+}
+
+
+#header .container > div.menu ul {
+   display: flex;
+   justify-content:center;
+   list-style: none;
+   margin: 0;
+   padding: 0;
+}
+
+#header .container > div.menu ul li{
+   margin-left: 50px;
+   margin-right: 30px;
+}
+
+#header .container > div.menu ul li a{
+    display: block;
+    padding: 20px 0;
+    font-size: 20px;
+    font-weight: 800;
+    color:black
+
+}
+
+#content .container > div.menu2{
+    flex: 1;
+}
+
+#content .container > div.menu2 ul {
+    display: flex;
+    justify-content:center;
+    list-style:none;
+    margin: 0;
+    padding: 0;
+}
+
+#content .container > div.menu2 ul li{
+    margin: 20px;
+    margin-left: 50px;
+}
+
+#content .container > div.menu2 ul li a{
+    display: block;
+    font-size: 15px;
+    color:gray;   
+}
+
+#content .container > div.menu2 ul li a:hover {
+    color: yellowgreen;
+    text-decoration: none;
+    text-align: center;
+}
+/* #content .container > div.menu2 ul li a :hover{
+   color: yellowgreen; 안되는 이유 a가 떨어져있어서,,
+} */
+
+#content2  {
+    width:auto;
+    height: 150px;
+    background-color: #10c838;
+}
+
+#content2 .container > div.category {
+    flex: 1;
+}
+ 
+
+#content2 .container > div.category ul {
+    display: flex;
+    justify-content: space-evenly;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    
+}
+
+#content2 .container > div.category ul li {
+    text-align: center;
+    margin: 80px;
+  
+}
