@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ <mapper namespace="donationSQL">  <!-- 매퍼가 중복될수있으니 namespace 로 이름을 정해주어야함. -->
+
+
+ 	<insert id="write" parameterType="board.bean.BoardDDTO">
+ 		insert into boardD values(seq_boardD.NEXTVAL, #{fileName}, #{bdExpireDate}, #{bdSubject},#{bdGoalPercent},#{bdGoalAmount},#{bdCumulativeAmount}, 
+									#{bdRealAmount}, #{bdContent}, #{bdIsExpired}, #{bdTagName}, #{bdDonaGroup}, #{categorydona}, #{bdStartDate})
+ 	</insert>
+
+ 	
+ 	<insert id="formQwrite" parameterType="board.bean.FormQDTO">
+ 		insert into formQ values(FORMQSEQ.NEXTVAL, #{formQCate1}, #{formQCate2}, #{formQEmail1}, #{formQEmail2}, #{formQPhone1}, #{formQPhone2}, 
+ 									#{formQPhone3}, #{formQContent},#{formQrcptdate})
+ 	</insert>
+ 	
+ 	
+ 	<insert id="donationWrite" parameterType="board.bean.BoardDDTO">
+ 		INSERT INTO boardD VALUES(SEQ_BOARDD.NEXTVAL
+							, #{fileName, jdbcType=VARCHAR}
+							, #{bdExpireDate, jdbcType=DATE}
+							, #{bdSubject, jdbcType=VARCHAR}
+							, #{bdGoalAmount}
+							, #{bdCumulativeAmount}
+							, #{bdContent,jdbcType=VARCHAR}
+							, #{bdTagName, jdbcType=VARCHAR}
+							, #{bdDonaGroup, jdbcType=VARCHAR}
+							, #{bdImg}
+							, #{bdThumbImg}
+							, #{categorydona}
+							, #{bdStartDate, jdbcType=DATE})
+
+ 	</insert>
+ 	
+ 	
+ 	<select id="card_view" resultType="board.bean.BoardDDTO">
+ 		select bdSeq,fileName,bdsubject, bdcumulativeamount, bdcontent, bddonagroup from boardd order by bdSeq desc
+ 	</select>
+ 	
+ 	
+ 	<select id="boardview_list" parameterType="String" resultType="board.bean.BoardDDTO">
+ 		select * from boardD where bdseq = #{bdseq}
+ 	</select>
+ 	
+
+
+ 	<select id="donationUpdateLoad" parameterType="String" resultType="board.bean.BoardDDTO">
+ 		select * from boardD where bdSeq = #{bdSeq}
+ 	</select>
+ 	
+ 	<update id="UpdateDonation" parameterType="board.bean.BoardDDTO">
+		UPDATE boardD 
+		SET
+		    fileName = #{fileName, jdbcType=VARCHAR}, 
+		    bdExpireDate = #{bdExpireDate, jdbcType=DATE}, 
+		    bdSubject = #{bdSubject, jdbcType=VARCHAR}, 
+		    bdGoalAmount = #{bdGoalAmount}, 
+		    bdCumulativeAmount = #{bdCumulativeAmount}, 
+		    bdContent = #{bdContent,jdbcType=VARCHAR}, 
+		    bdTagName = #{bdTagName, jdbcType=VARCHAR}, 
+		    bdDonaGroup = #{bdDonaGroup, jdbcType=VARCHAR}, 
+		    bdImg = #{bdImg}, 
+		    bdThumbImg = #{bdThumbImg},
+		    categorydona = #{categorydona},
+		    bdStartDate = #{bdStartDate, jdbcType=DATE}
+		WHERE 
+		    bdSeq = #{bdSeq}
+ 	</update>
+ 	
+ 	<delete id="donationDelete" parameterType="String">
+ 		delete from boardd where bdseq=#{bdSeq}
+ 	
+ 	</delete>
+ 	
+ 	<select id="getRelatedPostsByCategory" parameterType="String" resultType="board.bean.BoardDDTO">
+    	SELECT * FROM boardD WHERE categorydona = #{category}
+	</select>
+ 	
+ 	<select id="CardChildList" parameterType="String" resultType="board.bean.BoardDDTO">
+		SELECT * FROM BOARDD WHERE categorydona=#{child}
+	</select>
+ 	
+ 	
+ 	
+ 
+ 	
+
+ 	
+ </mapper>
