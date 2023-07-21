@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="reset" href="../css/reset.css" />
+  <link rel="stylesheet" href="donation_writeform44.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <title>Document</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+    <!-- 헤더시작 -->
+    <div>
+     <div id="header">
+       <div class="headerContent">
+         <div class="logo"><a href ="#"></a></div>
+         <img src="../img/logo.png" alt="로고" width="250" height="60">
+         <div class="menu">
+           <ul>
+             <li><a href="">기부</a></li>
+                     <li><a href="">펀딩</a></li>
+                     <li><a href="">고객센터</a></li>
+                   </ul>
+                 </div>
+                 
+                 <div class="header-r">
+                   <a href="#" class="login_btn">로그인</a>
+                   <span class="header-bar"></span>
+                   <a href="#" class="search_btn">
+                     <img src="../image/funmain_image/enlargement.png" alt="enlargement.png">
+                   </a>
+               </div>
+           </div>
+     </div>
+  </div>
+  <!-- 헤더 끝 -->
+
+  <!-- post -->
+  
+  <div class="post">
+    <form action="save-post.php" method="POST" enctype="multipart/form-data">
+      <div class="form-group_title">
+        <label for="title" style="width: 50%;">제목</label>
+        <input type="text" class="form-control" id="title" name="title" required>
+      </div>
+
+      <div class="form-group">
+        <label for="goal_amount">목표금액</label>
+        <input type="text" class="form-control" id="goal_amount" name="goal_amount" required>
+      </div>
+
+      
+        <div class="form-group">
+          <label for="post_period_start">게시 시작일</label>
+          <input type="date" class="form-control" id="post_period_start" name="post_period_start" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="post_period_end">게시 종료일</label>
+          <input type="date" class="form-control" id="post_period_end" name="post_period_end" required>
+        </div>
+        
+        <div class="form-group">
+        <label for="editor">내용</label>
+        <textarea id="editor"></textarea>
+        <!-- CKEditor 4 -->
+        <script src="https://cdn.ckeditor.com/4.16.2/full-all/ckeditor.js"></script>
+        <script>
+        CKEDITOR.replace('editor', {
+            language: 'ko'
+        });
+        </script> 
+
+        <div class="form-group">
+            <label for="hashtags">해시태그</label>
+            <input type="text" class="form-control" id="hashtags" name="hashtags">
+            <small class="form-text text-muted">해시태그는 쉼표로 구분하여 입력하세요 (예: #나눔 #참여 )</small>
+        </div>
+	</div>
+
+        <!-- 이미지 파일 선택 및 미리보기 -->
+        <input type="file" id="fileInput">
+        <img id="preview">
+        <script>
+          const fileInput = document.getElementById('fileInput');
+          const preview = document.getElementById('preview');
+        
+          fileInput.addEventListener('change', function() {
+            const file = fileInput.files[0];
+            const reader = new FileReader();
+            reader.addEventListener('load', function() {
+              preview.src = reader.result;
+            }, false);
+            if (file) {
+              reader.readAsDataURL(file);
+            }
+          });
+        </script>
+   
+
+        <!-- <div class="form-group">
+            <label for="file">첨부 파일</label>
+            <input type="file" class="form-control-file" id="file" name="file">
+        </div> -->
+
+
+
+
+        <button type="submit" class="btn-primary" style="width: 20%; font-weight: bold">작성 완료</button>
+        <button type="reset" class="btn-secondary">취소</button>
+        </form>
+        </div>
+
+        
+</body>
+</html>

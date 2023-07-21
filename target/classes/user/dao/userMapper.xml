@@ -15,13 +15,11 @@
 	<select id="login" parameterType="java.util.Map" resultType="String">
 		select userid from userinfo where userid=#{userid} and userpassword=#{userpassword}
 	</select>
-	
-	
+
 	<select id="kakaologin" parameterType="String" resultType="String">
 		select userid from userinfo where useremail=#{kakao_email}
 	
 	</select>
-	
 	
 	<select id="findIdComplete" parameterType="java.util.Map" resultType="String">
 		select userid from userinfo where useremail=#{useremail} and username=#{username}
@@ -32,41 +30,26 @@
 	
 	</select>
 	
-	
 	<update id="changepassword" parameterType="java.util.Map">
 		update userinfo set userpassword=#{userpassword} where userid=#{userid}
 	
 	</update>
-	
-	
-	
-	
-	
-	
 	
 	<insert id="profileimageupload" parameterType="user.bean.UserImageDTO">
 		insert into userfile(fileseq,userid,filename) values(fileseq.nextval, #{userid}, #{filename})
 
 	</insert>
 	
-	
-	
 	<update id="profileimageupdate" parameterType="user.bean.UserImageDTO">
 		update userfile set filename=#{filename} where userid=#{userid}
 
 	</update>
 	
-	
 	<select id="profilelist" parameterType="String" resultType="String">
 		select filename from userfile where userid=#{userid}
 	</select>
-	
-	
-	
-	
-	
-	
-	 	<select id="update" parameterType="user">
+
+	<select id="update" parameterType="user">
  		update userinfo set username=#{username}, userpassword=#{userpassword}, userphone=#{userphone}, useremail=#{useremail} where userid=#{userid}
  	</select>
  	
@@ -75,10 +58,7 @@
   		delete userinfo where userid=#{userid} and userpassword=#{userpassword}
     </delete>
     
-    
-    
-    
-     <select id="delete2" parameterType="String" resultType="String">
+    <select id="delete2" parameterType="String" resultType="String">
     	select USERPASSWORD from userinfo where userid=#{id} 
     </select>
     

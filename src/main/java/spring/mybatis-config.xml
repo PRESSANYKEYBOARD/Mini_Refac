@@ -2,17 +2,11 @@
 <!DOCTYPE configuration
  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
  "https://mybatis.org/dtd/mybatis-3-config.dtd">
-<configuration>  <!-- config설정시작 -->
+ 
+<configuration>  <!-- config 설정 시작 -->
    <typeAliases>
       <typeAlias type="user.bean.UserDTO" alias="user" />
       <typeAlias type="board.bean.FundingDTO" alias="funding" />
    </typeAliases>
    
-
-   <!-- 
-   <mappers>
-      <mapper resource="user/dao/userMapper/xml" />
-   </mappers>
-    -->
-   
-</configuration>  <!-- config설정끝 -->
+</configuration>  <!-- config 설정 끝 -->

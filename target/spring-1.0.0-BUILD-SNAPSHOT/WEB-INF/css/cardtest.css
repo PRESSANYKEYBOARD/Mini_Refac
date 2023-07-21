@@ -1,0 +1,84 @@
+
+
+
+
+*{
+	margin:0;
+	padding:0;
+}
+
+ul,li{
+	list-style:none;
+	
+}
+
+a{
+	color:inherit;
+	text-decoration: none;
+}
+
+.list_wrap{
+	padding-top:40px;
+	width:950px;
+}
+.list_wrap_wrap{
+	padding-left:400px;
+	padding-right:400px;
+	padding-bottom:70px;
+}
+
+.list_wrap ul{
+	font-size:0;
+}
+
+
+.list_wrap .item{
+	display:inline-block;
+	width:30%;
+	margin-left:5%;
+	margin-top:40px;
+	box-shadow: 0px 0px 5px rgba(0,0,0,0.2);
+	
+}
+.list_wrap .item:nth-child(-n+3){
+	margin-top:0;
+}
+.list_wrap .item:nth-child(3n-2){
+	margin-left:0;
+}
+
+.list_wrap .item .image{
+	width:100%;
+	height:160px;
+	background:url(../images/exam1.jpg);
+	background-repeat :no-repeat;
+	background-position:50% 50%;
+	background-size:cover;
+}
+
+
+.list_wrap .item .cont{
+	padding:20px;
+}
+
+.list_wrap .item strong{
+	display:block;
+	margin: 0px 0 10px 0;
+	font-size:16px;
+	letter-spacing:-1px; 
+}
+
+.list_wrap .item p{
+	
+	font-size:13px;
+	letter-spacing:-1px;
+}
+
+.list_wrap .item a{
+	display:inline-block;
+	margin-top:10px;
+	padding: 5px 10px;
+	background:#eee;
+	font-size:13px;
+	letter-spacing:-1px;
+}
