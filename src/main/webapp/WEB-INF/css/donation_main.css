@@ -164,16 +164,18 @@ a.headerSubSpan:hover{
 
 /* 카테고리 */
 #content2  {
-    width:auto;
-    height: 140px;
-    background-color: #10c838;
+  width: auto;
+  height: 140px;
 }
 
 #content2 .container > div.category {
-    flex: 1;
-    min-width: 800px;
+  flex: 1;
+  min-width: 800px;
 }
- 
+
+#content2 .container {
+  background-color: #10c838;
+}
 
 #content2 .container > div.category ul {
     display: flex;
@@ -485,8 +487,6 @@ a.headerSubSpan:hover{
   margin: 0;
   padding: 0;
 }
-
-
 
 .progress{
   height: 5px;
