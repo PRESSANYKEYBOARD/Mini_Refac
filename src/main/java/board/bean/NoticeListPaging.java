@@ -17,7 +17,6 @@ public class NoticeListPaging {
 	// private String checkOpt;
 	// private String searchCont;
 
-	
 	public void makePagingHTML() {
 		pagingHTML = new StringBuffer();
 		

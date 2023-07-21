@@ -41,14 +41,16 @@ public class SpringConfiguration {
 	}
 	
 	@Bean
-	public SqlSessionFactory sqlSessionFactory() throws Exception{
+	public SqlSessionFactory sqlSessionFactory() throws Exception {
 		SqlSessionFactoryBean sqlSessionFactoryBean = new SqlSessionFactoryBean();
-		sqlSessionFactoryBean.setDataSource(dataSource());		
+		sqlSessionFactoryBean.setDataSource(dataSource());	
 		sqlSessionFactoryBean.setConfigLocation(new ClassPathResource("spring/mybatis-config.xml"));
-		sqlSessionFactoryBean.setMapperLocations(new ClassPathResource("user/dao/userMapper.xml"), new ClassPathResource("board/dao/fundingMapper.xml"), new ClassPathResource("board/dao/donationMapper.xml"), new ClassPathResource("board/dao/supportMapper.xml"));
+		sqlSessionFactoryBean.setMapperLocations(new ClassPathResource("user/dao/userMapper.xml"), 
+												 new ClassPathResource("board/dao/fundingMapper.xml"), 
+												 new ClassPathResource("board/dao/donationMapper.xml"), 
+												 new ClassPathResource("board/dao/supportMapper.xml"));
 		
 		return sqlSessionFactoryBean.getObject(); // sqlSessionFactory를 리턴해주는 메소드
-
 	}
 	
 	@Bean
@@ -75,8 +77,6 @@ public class SpringConfiguration {
     public ByteArrayMultipartFileEditor byteArrayMultipartFileEditor() {
         return new ByteArrayMultipartFileEditor();
     }
-	
-	
 }
 
 /*
@@ -94,7 +94,6 @@ private ApplicationContext context;
 */
  	//sqlSessionFactoryBean.setMapperLocations(context.getResources("classpath:*/dao/*Mapper.xml")
 
- 
 
 //SpringConfiguration 일반 자바 파일이 아니다.
 //applicationContext.xml과 같은 환경설정 파일이다.

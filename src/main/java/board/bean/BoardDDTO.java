@@ -6,7 +6,6 @@ import lombok.Setter;
 @Setter
 @Getter
 public class BoardDDTO {
-	
 	private int bdSeq;
 	private String fileName;
 	private String bdExpireDate;
@@ -22,8 +21,4 @@ public class BoardDDTO {
 	private String bdThumbImg; 
 	private String categorydona;
 	private String bdStartDate;
-
-	
-
-
 }

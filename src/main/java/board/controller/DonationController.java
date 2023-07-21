@@ -179,12 +179,8 @@ public class DonationController {
 	
 		
 		donationService.UpdateDonation(boardDDTO);
-
 	}
 
-
-   
-   
    // 삭제
    @PostMapping(value="donationDelete")
    @ResponseBody
@@ -192,9 +188,6 @@ public class DonationController {
 	   System.out.println("delete" + bdSeq);
       donationService.donationDelete(bdSeq);   
    }
-	
-	
-	
 	
 	//카테고리 구현 
    @PostMapping(value="donationmain_cate")
@@ -209,13 +202,4 @@ public class DonationController {
 
 		return donationService.CardChildList(child);
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
 }

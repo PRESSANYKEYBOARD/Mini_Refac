@@ -20,8 +20,6 @@ import board.bean.EditorDTO;
 @Controller
 public class EditorController {
 
-		
-	
 		@RequestMapping("/file_uploader")
 		 public String file_uploader(HttpServletRequest request, HttpServletResponse response, EditorDTO editorDTO){
 			 String return1=request.getParameter("callback");

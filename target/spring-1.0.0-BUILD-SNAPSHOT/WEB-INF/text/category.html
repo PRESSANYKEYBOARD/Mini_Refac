@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>category.html here</title>
+</head>
+<body>
+
+<!-- 1depth 카테고리 -->
+<select name="formQcategory1"
+          id="formQcategory1-1"
+          style="border: 1px solid #DCDCDC;
+                 height: 48px;
+                 width: 700px;
+                 padding-left: 20px;
+                 color: #4c4c4c;
+                 background: url(/assets/web/images/icons/common/ico_barrow_g.svg) no-repeat 95% 50%;"
+>
+  <option style="font-size: 16px;
+                  color: #4c4c4c;">문의/신고</option>
+  <option value="문의하기"
+    data-target="#formQcategory2-1"
+          style="font-size: 16px;
+                  color: #4c4c4c;">문의하기</option>
+  <option value="신고하기"
+    data-target="#formQcategory2-2"
+          style="font-size: 16px;
+                  color: #4c4c4c;">신고하기</option>
+</select>
+
+
+<!-- 2depth 카테고리: 문의하기 -->
+<select name="formQcategory2"
+          id="formQcategory2-1"
+       style="border: 1px solid #DCDCDC;
+              height: 48px;
+              width: 700px;
+              padding-left: 20px;
+              color: #4c4c4c;
+              background: url(/assets/web/images/icons/common/ico_barrow_g.svg) no-repeat 95% 50%;"          
+>
+  <option style="font-size: 16px;
+                     color: #4c4c4c;">문의 세부사항 선택</option>
+  <option value="일반"
+          style="font-size: 16px;
+                     color: #4c4c4c;">일반</option>
+  <option value="장애/오류"
+          style="font-size: 16px;
+                     color: #4c4c4c;">장애/오류</option>
+  <option value="서비스 개선 제안"
+          style="font-size: 16px;
+                     color: #4c4c4c;">서비스 개선 제안</option>
+</select>
+
+
+<!-- 2depth 카테고리: 신고하기 -->
+<select name="formQcategory2"
+          id="formQcategory2-2"
+       style="border: 1px solid #DCDCDC;
+              height: 48px;
+              width: 700px;
+              padding-left: 20px;
+              color: #4c4c4c;
+              background: url(/assets/web/images/icons/common/ico_barrow_g.svg) no-repeat 95% 50%;"          
+>
+  <option style="font-size: 16px;
+                   color: #4c4c4c;">신고 세부사항 선택</option>
+  <option value="명예훼손"
+        style="font-size: 16px;
+                   color: #4c4c4c;">명예훼손</option>
+  <option value="개인정보침해"
+          style="font-size: 16px;
+                     color: #4c4c4c;">개인정보침해</option>
+  <option value="불법촬영물"
+          style="font-size: 16px;
+                     color: #4c4c4c;">불법촬영물</option>
+  <option value="기타"
+          style="font-size: 16px;
+                     color: #4c4c4c;">기타</option>
+</select>
+
+
+</body>
+</html>
