@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="supportSQL">
+
+	<!-- 문의/신고하기 -->
+	<insert id="consult" parameterType="java.util.Map">
+ 		INSERT INTO FORMQ VALUES(FORMQSEQ.nextval, #{formQCate1}, #{formQCate2}, #{formQEmail1}, #{formQEmail2}, #{formQPhone1}, #{formQPhone2}, #{formQPhone3}, #{formQContent}, SYSDATE)
+ 	</insert>
+
+
+	<!-- 공지사항 목록 -->
+	<select id="getNoticeList" parameterType="java.util.Map" resultType="board.bean.NoticeDTO">
+		SELECT * FROM (SELECT ROWNUM RN, A.* 
+						 FROM (SELECT * FROM NOTICE ORDER BY NOTICESEQ DESC) A) 
+		WHERE RN BETWEEN #{startNum} AND #{endNum}
+ 	</select>
+ 	
+ 	<!-- 공지사항 목록: 총 글 수 -->
+ 	<select id="getTotalA" resultType="int">
+		SELECT COUNT(*) FROM NOTICE
+ 	</select>
+
+	<!-- 공지사항 검색 -->
+<select id="getSearchList" parameterType="java.util.Map" resultType="board.bean.NoticeDTO">
+  SELECT *
+  FROM (
+    SELECT ROWNUM RN, A.*
+    FROM (
+      SELECT *
+      FROM NOTICE
+      WHERE
+        <if test="searchCont != null and !searchCont.isEmpty()">
+          <choose>
+            <when test="checkOpt == 'titleAndContent'">
+              (NOTICESUBJECT LIKE '%' || #{searchCont} || '%' OR NOTICECONTENT LIKE '%' || #{searchCont} || '%')
+            </when>
+            <when test="checkOpt == 'title'">
+              NOTICESUBJECT LIKE '%' || #{searchCont} || '%'
+            </when>
+            <when test="checkOpt == 'content'">
+              NOTICECONTENT LIKE '%' || #{searchCont} || '%'
+            </when>
+            <otherwise>
+              1 = 0  <!-- 공란 반환 -->
+            </otherwise>
+          </choose>
+        </if>
+      ORDER BY NOTICESEQ DESC
+    ) A
+  )
+  WHERE RN BETWEEN #{startNum} AND #{endNum}
+</select>
+
+
+<select id="getSearchTotalA" parameterType="java.util.Map" resultType="java.lang.Integer">
+  SELECT COUNT(*) AS count
+  FROM NOTICE
+  <where>
+    <if test="searchCont != null and !searchCont.isEmpty()">
+      <choose>
+        <when test="checkOpt == 'titleAndContent'">
+          AND (NOTICESUBJECT LIKE '%' || #{searchCont} || '%' OR NOTICECONTENT LIKE '%' || #{searchCont} || '%')
+        </when>
+        <when test="checkOpt == 'title'">
+          AND NOTICESUBJECT LIKE '%' || #{searchCont} || '%'
+        </when>
+        <when test="checkOpt == 'content'">
+          AND NOTICECONTENT LIKE '%' || #{searchCont} || '%'
+        </when>
+        <otherwise>
+          AND 1 = 0  <!-- 공란 반환 -->
+        </otherwise>
+      </choose>
+    </if>
+  </where>
+</select>
+
+
+
+
+
+ 	
+ 	<!-- 공지사항 게시글 -->
+ 	<select id="getNoticeView" resultType="board.bean.NoticeDTO">
+		SELECT * FROM NOTICE WHERE NOTICESEQ=#{noticeSeq}
+ 	</select>
+
+ 	<!-- 공지사항 게시글 -->
+ 	<delete id="deleteNotice" parameterType="int">
+ 		DELETE FROM NOTICE WHERE NOTICESEQ=#{noticeSeq}
+ 	</delete>
+
+	<!-- 글 삭제를 대비하여, seq가 아닌 rownum 사용 --> 	
+	<select id="getNoitceListPre" parameterType="int" resultType="board.bean.NoticeDTO">
+		SELECT * FROM (SELECT * 
+		                 FROM (SELECT ROWNUM RN, AA.* 
+		                         FROM (SELECT * 
+		                                 FROM NOTICE
+		                             ORDER BY NOTICESEQ) AA))
+		                                WHERE RN=((SELECT RN
+		                                             FROM (SELECT ROWNUM RN, AA.* 
+		                                                     FROM (SELECT * 
+		                                                             FROM NOTICE
+		                                                         ORDER BY NOTICESEQ) AA)
+		                                                            WHERE NOTICESEQ=#{noticeSeqInt})-1)
+	</select> 	
+ 	
+	<select id="getNoitceListNext" parameterType="int" resultType="board.bean.NoticeDTO">
+		SELECT * FROM (SELECT * 
+		                 FROM (SELECT ROWNUM RN, AA.* 
+		                         FROM (SELECT * 
+		                                 FROM NOTICE
+		                             ORDER BY NOTICESEQ) AA))
+		                                WHERE RN=((SELECT RN
+		                                             FROM (SELECT ROWNUM RN, AA.* 
+		                                                     FROM (SELECT * 
+		                                                             FROM NOTICE
+		                                                         ORDER BY NOTICESEQ) AA)
+		                                                            WHERE NOTICESEQ=#{noticeSeqInt})+1)
+	</select> 	
+ 	
+</mapper>

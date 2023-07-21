@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ <mapper namespace="fundingSQL">
+	
+	<!-- 펀딩 댓글에서 boardF 게시글 번호와 일치하는지?  -->
+	<!-- <select id="selectBoardF" resultMap="boardFMap">
+	  select boardFSeq, userId, boardFExpireDate, boardFIsExpired, boardFSubject, boardFGoalAmount, boardFContent, boardFSendDate, boardFTotRewardCnt
+	  from boardF
+	  where boardFSeq = #{boardFSeq}
+	</select> -->
+ 
+	<insert id="fundingWrite" parameterType="board.bean.FundingDTO">
+				insert into boardF(
+				    boardFSeq,
+				    userId,
+				    fileName,
+				    comName,
+				    comText,
+				    boardFExpireDate,
+				    boardFIsExpired,
+				    boardFSubject,
+				    boardFGoalAmount,
+				    boardFContent,
+				    boardFSendDate,
+				    boardFTotRewardCnt,
+				    boardFRewardSelect,
+				    boardFRewardPrice,
+				    boardFThumbnail
+				    )
+				values(
+				    SEQ_BOARDFSEQ.nextval,
+				    #{userId},
+				    #{fileName},
+				    #{comName},
+				    #{comText},
+				    #{boardFExpireDate},
+				    #{boardFIsExpired},
+				    #{boardFSubject},
+				    #{boardFGoalAmount},
+				    #{boardFContent},
+				    #{boardFSendDate},
+				    #{boardFTotRewardCnt},
+					#{boardFRewardSelect},
+			        #{boardFRewardPrice},
+			        #{boardFThumbnail}
+					)
+	</insert>
+	
+	<select id="fundingGetBoard" parameterType="int" resultType="board.bean.FundingDTO">
+	    SELECT * FROM boardF WHERE boardFSeq = #{boardFSeq}
+	</select>
+	
+	<select id="fundingGetBoardList" resultType="board.bean.FundingDTO">
+	    SELECT * FROM boardF ORDER BY boardFSeq DESC
+	</select>
+	
+	<select id="fundingThumnail" parameterType="int" resultType="board.bean.FundingDTO">
+	    SELECT BOARDFTHUMBNAIL FROM boardF where boardFSeq = #{boardFSeq}
+	</select>
+	 
+	<select id="fundingThumnailList" resultType="board.bean.FundingDTO">
+		SELECT BOARDFTHUMBNAIL FROM boardF ORDER BY boardFSeq DESC
+	</select>
+	
+	<update id="fundingUpdate" parameterType="board.bean.FundingDTO">
+		UPDATE boardF SET 
+				    fileName = #{fileName},
+				    comName = #{comName},
+				    comText = #{comText},
+				    boardFExpireDate = #{boardFExpireDate},
+				    boardFIsExpired = #{boardFIsExpired},
+				    boardFSubject = #{boardFSubject},
+				    boardFGoalAmount = #{boardFGoalAmount},
+				    boardFContent = #{boardFContent},
+				    boardFSendDate = #{boardFSendDate},
+				    boardFTotRewardCnt = #{boardFTotRewardCnt},
+				    boardFRewardSelect = #{boardFRewardSelect},
+				    boardFRewardPrice = #{boardFRewardPrice},
+				    boardFThumbnail = #{boardFThumbnail}
+				Where boardFSeq = #{boardFSeq}
+	</update>
+	
+	<delete id="fundingDelete" parameterType="int">
+		DELETE FROM boardF WHERE boardFSeq = #{boardFSeq}
+	</delete>
+	
+	<select id="getBoardListByLast" parameterType="int" resultType="board.bean.FundingDTO">
+		select * from boardF order by boardFSeq DESC
+	</select>
+	
+	<select id="funList_ing" parameterType="int" resultType="board.bean.FundingDTO">
+		select * from boardF where boardFIsExpired = "N" order by boardFExpireDate ASC
+	</select>
+	
+	<select id="funList_end" parameterType="int" resultType="board.bean.FundingDTO">
+		select * from boardF where boardFIsExpired = "Y" DESC
+	</select>
+    
+    <select id="getBoardListByRewardPrice" parameterType="int" resultType="board.bean.FundingDTO">
+	    select boardF.*, sum(rewardFPrice) as totalRewardAmount
+	    from boardF
+	    left join rewardF on boardF.boardFSeq = rewardF.boardFSeq
+	    group by boardF.boardFSeq
+	    order by totalRewardAmount DESC
+	</select>
+	
+	
+	<select id="orderbydate" parameterType="String" resultType="board.bean.FundingDTO">
+	
+	 <choose>
+       <!-- option1: 최신 순 -->
+       <when test="selectbox== 'option1'">
+         select * from boardf order by boardFSeq desc
+       </when>
+       <!-- option2: 모금률 높은 순 -->
+       <when test="selectbox == 'option2'">
+         select * from boardf order by boardFRealAmount desc
+       </when>
+       <!-- option3: 모금액 적은 순 -->
+       <when test="selectbox == 'option3'">
+         select * from boardf order by boardFExpireDate
+       </when>
+       <!-- 기본값 -->
+       
+     </choose>
+	
+	
+	
+	
+	</select>
+    
+</mapper>
