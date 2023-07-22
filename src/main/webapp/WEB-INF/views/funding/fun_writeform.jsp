@@ -7,48 +7,39 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="reset" href="/Hangeulum/css/reset.css" />
 <link rel="stylesheet" href="/Hangeulum/css/donation_writeform44.css" />
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-<script type="text/javascript"
-	src="http://code.jquery.com/jquery-3.6.4.min.js"></script>
-<script
-	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	
+<link rel="reset" href="/Hangeulum/css/styleReset.css" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+	
 <title>Document</title>
 </head>
 <body>
 
-	<!-- 헤더시작 -->
-	<div>
-		<div id="header">
-			<div class="headerContent">
-				<div class="logo">
-					<a href="#"></a>
-				</div>
-				<img src="/Hangeulum/image/funmain_image/logo_main.png" alt="로고"
-					width="250" height="60">
-				<div class="menu">
-					<ul>
-						<li><a href="">기부</a></li>
-						<li><a href="/Hangeulum/funding/fun_main">펀딩</a></li>
-						<li><a href="">고객센터</a></li>
-					</ul>
-				</div>
-
-				<div class="header-r">
-					<a href="/Hangeulum/user/loginForm" class="login_btn">로그인</a> <span class="header-bar"></span>
-					<a href="#" class="search_btn"> <img
-						src="/Hangeulum/image/funmain_image/enlargement.png"
-						alt="enlargement.png">
-					</a>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- 헤더 끝 -->
+<div>
+    <div id="header">
+        <div class="headerContent">
+            <a href="/Hangeulum/"><img src="/Hangeulum/image/logo.png" alt="로고" width="250" height="60"></a>
+            <div class="menu">
+                <ul>
+                    <li><a href="/Hangeulum/donation/donation_main">기부</a></li>
+                    <li><a href="/Hangeulum/funding/fun_main">펀딩</a></li>
+                    <li><a href="/Hangeulum/support/noticeList">고객센터</a></li>
+                </ul>
+            </div>
+    
+            <div class="header-r">
+                <a href="#" class="login_btn">로그인</a>
+                <span class="header-bar"></span>
+                <a href="#" class="search_btn">
+                    <img src="/Hangeulum/image/enlargement.png" alt="enlargement.png">
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
 
 	<!-- post -->
 	<div class="post">
