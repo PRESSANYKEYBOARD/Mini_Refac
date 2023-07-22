@@ -72,50 +72,53 @@
 
 <!-- 카테고리 -->
 <div id="content2">
-    <div class="container">
-        <div class="category">
-            <ul>    
-                <li>
-                    <a class="category-link-total" href="#">
-                        <span id="category-1"></span>
-                         <div style="color:green;">
-                        <i class="fas fa-heart fa-3x" ></i></div>
-                        <p class="testPtag">전체 보기</p>
-                    </a>
-                </li>
-
-                <li>
-                   <a class="category-link-child" href="#" data-category="2">
-                        <span id="category-2"></span>
-                        <div style="color:green";>
-                        <i class="fas fa-child fa-3x" ></i></div>
-                        <p class="child">아동</p>
-                    </a>
-                </li>
-                <li>
-                    <a class="category-link-adult" href="#" data-category="3">
-                        <span id="category-3"></span>
-                        <div style="color:green";>
-                            <i class="fa-solid fa-person-cane fa-3x"></i></div>
-                        <p class="adult">어르신</p>
-                    </a>
-                </li>
-                <li>
-                     <a class="category-link-disabled" href="#" data-category="4">
-                        <span id="category-4"></span>
-                        <div style="color:green";>
-                            <i class="fa-solid fa-wheelchair-move fa-3x"></i></div>
-                        <p class="disabled">장애인</p>
-                    </a>
-                </li>
-            </ul>
-        </div>
+  <div class="container">
+    <div class="category">
+      <ul>
+      	<li>
+      	  <a class="category-link-total" href="#">
+      	    <span id="category-1"></span>
+      	    <div class="icon-bg icon-bg-total">
+      	      <i class="fas fa-heart fa-3x"></i>
+      	    </div>
+      	    <p class="testPtag">전체 보기</p>
+      	  </a>
+      	 </li>
+      	 <li>
+      	  <a class="category-link-child" href="#" data-category="2">
+      	    <span id="category-2"></span>
+      	    <div class="icon-bg icon-bg-child">
+      	      <i class="fas fa-child fa-3x"></i>
+      	    </div>
+      	    <p class="child">아동</p>
+      	  </a>
+      	 </li>
+      	 <li>
+      	  <a class="category-link-adult" href="#" data-category="3">
+      	    <span id="category-3"></span>
+      	    <div class="icon-bg icon-bg-adult">
+      	      <i class="fa-solid fa-person-cane fa-3x"></i>
+      	    </div>
+      	    <p class="adult">어르신</p>
+      	  </a>
+      	 </li>
+      	 <li>
+      	  <a class="category-link-disabled" href="#" data-category="4">
+      	    <span id="category-4"></span>
+      	    <div class="icon-bg icon-bg-disabled">
+      	      <i class="fa-solid fa-wheelchair-move fa-3x"></i>
+      	    </div>
+      	    <p class="disabled">장애인</p>
+      	  </a>
+      	</li>
+      </ul>
     </div>
+  </div>
 </div>
 
 <!-- 오늘의 모금함  -->
 
-<div id="apply" style="padding-right: 100px; padding-left: -7px;">
+<div id="apply">
     <div class="container">
         <div class="left_cont">
             <span class="smallbox">TODAY</span>
@@ -123,36 +126,70 @@
         </div>
         <div class="right_cont">
             <div class="donation_line">
-                <p class="right_txt">
-                    <span class="count">10,678<small class="unit">명이</small></span>
-                    <span class="num">58,009,000<small class="unit">원을</small></span>
-                    기부하였습니다.
+                <p class="donation-item">
+		          <span class="people">10,678<small class="unit">명이</small></span>
+		        </p>
+		        <p class="donation-item">
+		          <span class="amount">58,009,000<small class="unit">원을</small></span>
                 </p>
+                <p class="donation-item">기부하였습니다.</p>
             </div>
         </div>
     </div>
 </div>
 
-<br/>
-<br/>
-<br/>
-
-
-
 <!-- 진행 중 모금함 -->
-	<div class="container">
-    <div class="container-card"></div>
-    </div>
+<div role="main" id="main_content" class="main_content">
+  <div class="content_header"> <!-- 추가: content_header 클래스 -->
+    <h4 class="content_category">
+      모금함
+      <span class=collection_box_cnt id="donacount"></span>
+      개
+    </h4>
+    
+	<div class="dropdown">
+	  <label for="selectbox"></label>
+	  <select id="selectbox">
+	    <option value="option">추천 순</option>
+	    <option value="option">최신 순</option>
+	    <option value="option">모금액 많은 순</option>
+	    <option value="option">모금액 적은 순</option>
+	    <option value="option">모금률 높은 순</option>
+	    <option value="option">종료 임박 순</option>
+	  </select>
+	</div>
+	<button id="donae_writeButton" class="write-btn">글쓰기</button> <!-- 글쓰기 버튼 추가 -->
+  </div> <!-- content_header 끝 -->
 
+	<div class="container-card">
+	  <div class="card-container">
+	    <!-- 카드 예시 -->
+	    <div class="card">
+	      <img src="https://via.placeholder.com/150" alt="Image">
+	      <div class="card-body">
+	        <h2 class="card-title">카드 제목</h2>
+	        <h4>부제목</h4>
+	        <p class="card-content">카드 내용을 설명하는 텍스트입니다. 내용은 여기에 작성하십시오.</p>
+	        <div class="progress">
+	          <div class="progress_bar" style="width: 60%;"></div>
+	        </div>
+	        <p class="percent">60%</p>
+	        <p class="price">₩10,000 / ₩20,000</p>
+	      </div>
+	    </div>
+	  </div>
+	</div>
 
-
+</div>
 
     <!-- 더보기 버튼  -->
     <div class="container">
-        <a href="#" id="load"><div class="more_btn">더보기</div></a>
+        <div class="more_btn">더보기
+        	<a href="#" id="load"></a>
+        </div>
     </div>
-    
-		    <script>
+
+	<script>
 		    $(function(){
 		  var cards = $("div.card"); // 모든 카드 요소를 가져옴
 		  var numToShow = 2; // 한번에 보여줄 갯수
