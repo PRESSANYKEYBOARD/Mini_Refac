@@ -57,6 +57,7 @@
 	</div> <!-- container 끝 -->
 	
 	<!-- 슬라이드 -->
+	<div class="custom-carousel-container"> <!-- custom-carousel-container 시작 -->
 		<div id="carouselExampleIndicators" class="carousel slide"
 			data-bs-ride="carousel">
 			<ol class="carousel-indicators">
@@ -89,79 +90,36 @@
 				class="visually-hidden">Next</span>
 			</a>
 		</div> <!-- 슬라이드 끝 -->
+	</div> <!-- custom-carousel-container 끝 -->
 	
-	<div class="category">
-<!-- 		<ul class="category_exercise" role="tablist" aria-label="활동 카테고리">
-			<li class="FundingHomeCategory_item" role="presentation">
-				<input type="radio" id="fundingHome_All" name="funding" role="tab" aria-controls="fundingHome_tab" class="fundingHomeCategory_input">
-					<label for="fundingHome_tabAll" class="FundingHomeCategory_label">전체</label>
-			</li>
-			<li class="FundingHomeCategory_item" role="presentation">
-				<input type="radio" id="fundingHome_2" name="funding" role="tab" aria-controls="fundingHome_tab" class="fundingHomeCategory_input">
-					<label for="fundingHome_tab2" class="FundingHomeCategory_label">일자리 창출</label>
-			</li>
-			<li class="FundingHomeCategory_item" role="presentation">
-				<input type="radio" id="fundingHome_3" name="funding" role="tab" aria-controls="fundingHome_tab" class="fundingHomeCategory_input">
-					<label for="fundingHome_tab3" class="FundingHomeCategory_label">공정 무역</label>
-			</li>				
-			<li class="FundingHomeCategory_item" role="presentation">
-				<input type="radio" id="fundingHome_4" name="funding" role="tab" aria-controls="fundingHome_tab" class="fundingHomeCategory_input">
-					<label for="fundingHome_tab4" class="FundingHomeCategory_label">친환경</label>
-			</li>
-			<li class="FundingHomeCategory_item" role="presentation">
-				<input type="radio" id="fundingHome_5" name="funding" role="tab" aria-controls="fundingHome_tab" class="fundingHomeCategory_input">
-					<label for="fundingHome_tab5" class="FundingHomeCategory_label">기부</label>
-			</li>
-		</ul> -->
+	<form id="orderbyForm" name="orderbyForm">	
+		<div class="category">
+		  <div class="dropdown">
+		    <label for="selectbox1"></label>
+		    <select id="selectbox1">
+		      <option value="option1">전체</option>
+		      <option value="option2">진행중</option>
+		      <option value="option3">종료</option>
+		    </select>
+		    <label for="selectbox2"></label>
+		    <select id="selectbox2">
+			    <option value="option1">최신 순</option>
+			    <option value="option2">참여금액 순</option>
+		      <option value="option3">종료임박 순</option>
+		    </select>
+		    <a href="/Hangeulum/funding/fun_writeForm" class="button">글쓰기</a>
+		  </div>
+		  <div>
+		  </div>
 		</div>
-		
-<!-- 	<div class="dropdown">
-		<label for="selectbox"></label>
-			<select id="selectbox">
-				<option value="option1">전체</option>
-	            <option value="option2">진행중</option>
-	            <option value="option3">종료</option>
-			</select>
-            <select id="selectbox">
-	            <option value="option1">최신 순</option>
-	            <option value="option2">참여금액 순</option>
-	            <option value="option3">참여율 순</option>
-	            <option value="option4">종료임박 순</option>
-        	</select>
-		</div> 드롭다운 끝
-	<div></div>
-	</div> 카테고리 끝 -->
-	
-	
-<form id="orderbyForm" name="orderbyForm">	
-	<div class="category">
-	  <div class="dropdown">
-	  
-	    <label for="selectbox1"></label>
-	    <select id="selectbox1">
-	      <option value="option1">전체</option>
-	      <option value="option2">진행중</option>
-	      <option value="option3">종료</option>
-	    </select>
-	    <label for="selectbox2"></label>
-	    <select id="selectbox2">
-		    <option value="option1">최신 순</option>
-		    <option value="option2">참여금액 순</option>
-	      <option value="option3">종료임박 순</option>
-	    </select>
-	    <a href="/Hangeulum/funding/fun_writeform" class="button">글쓰기로 가기</a>
-	  </div>
-	  <div>
-	  </div>
-	</div>
-	 
-		<div class="content">
-		  <div class="container text-center">
-		    <div class="row" id="funding-list">
-		    </div> <!-- row -->
-		  </div> <!-- container text-center -->
-		</div> <!-- content 끝 -->
-			
+		 
+			<div class="content">
+			  <div class="container text-center">
+			    <div class="row" id="funding-list">
+			    </div> <!-- row -->
+			  </div> <!-- container text-center -->
+			</div> <!-- content 끝 -->
+				
 		</form>
 		
 		<%--Start Footer--%>

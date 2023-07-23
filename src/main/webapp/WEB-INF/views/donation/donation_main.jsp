@@ -140,26 +140,27 @@
 
 <!-- 진행 중 모금함 -->
 <div role="main" id="main_content" class="main_content">
-  <div class="content_header"> <!-- 추가: content_header 클래스 -->
-    <h4 class="content_category">
-      모금함
-      <span class=collection_box_cnt id="donacount"></span>
-      개
-    </h4>
-    
-	<div class="dropdown">
-	  <label for="selectbox"></label>
-	  <select id="selectbox">
-	    <option value="option">추천 순</option>
-	    <option value="option">최신 순</option>
-	    <option value="option">모금액 많은 순</option>
-	    <option value="option">모금액 적은 순</option>
-	    <option value="option">모금률 높은 순</option>
-	    <option value="option">종료 임박 순</option>
-	  </select>
+	<div class="content_header">
+	  <h4 class="content_category">
+	    모금함
+	    <span class="collection_box_cnt" id="donacount"></span>
+	    개
+	  </h4>
+	  <div class="sort-write-container"> <!-- 여기에 새로운 div를 추가합니다. -->
+	    <div class="dropdown">
+	      <label for="selectbox"></label>
+	      <select id="selectbox">
+	        <option value="option">추천 순</option>
+	        <option value="option">최신 순</option>
+	        <option value="option">모금액 많은 순</option>
+	        <option value="option">모금액 적은 순</option>
+	        <option value="option">모금률 높은 순</option>
+	        <option value="option">종료 임박 순</option>
+	      </select>
+	    </div>
+	    <button id="writeButton" class="write-btn">글쓰기</button>
+	  </div>
 	</div>
-	<button id="donae_writeButton" class="write-btn">글쓰기</button> <!-- 글쓰기 버튼 추가 -->
-  </div> <!-- content_header 끝 -->
 
 	<div class="container-card">
 	  <div class="card-container">

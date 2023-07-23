@@ -48,9 +48,9 @@ public class FundingController {
 	//     return new ModelAndView("funding/fun_view", "fundingDTO", fundingDTO);
 	// }
 
-	@RequestMapping(value = "fun_writeform", method = RequestMethod.GET)
+	@RequestMapping(value = "fun_writeForm", method = RequestMethod.GET)
 	public String fun_write_Form() {
-		return "funding/fun_writeform";
+		return "funding/fun_writeForm";
 	}
 	
 	@PostMapping(value = "fun_write")
@@ -212,13 +212,9 @@ public class FundingController {
 	 * fundingService.getBoardListByRewardPercet) }
 	 */
 	
-	
-	
 	@PostMapping(value="orderbydate")
 	@ResponseBody
 	public List<FundingDTO> orderbydate(@RequestParam String option) {
-		System.out.println(option);
-		
 		return fundingService.orderbydate(option);
 	}
 	

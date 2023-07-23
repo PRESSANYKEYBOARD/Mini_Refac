@@ -28,7 +28,8 @@ $(document).ready(function() {
         	oEditors.getById["boardFContent"].exec("UPDATE_CONTENTS_FIELD", []); 
             event.preventDefault(); // 기본 제출 이벤트 중단
             
-            var formData = new FormData(document.getElementById('fun_writeform'));
+            var formData = new FormData(document.getElementById('fun_writeForm'));
+            console.log(formData);
 
             $.ajax({
                 url : "/Hangeulum/funding/fun_write",
