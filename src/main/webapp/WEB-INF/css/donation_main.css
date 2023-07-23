@@ -169,7 +169,7 @@ a.headerSubSpan:hover{
 }
 
 #content2 .container {
-    background: linear-gradient(135deg, #1aa850, #27d14d, #10c838); /* 수정: 그라데이션 배경을 부드럽게 처리 */
+  background: linear-gradient(135deg, #1aa850, #27d14d, #10c838); /* 수정: 그라데이션 배경을 부드럽게 처리 */
 }
 
 #content2 .container > div.category {
@@ -283,13 +283,18 @@ a.headerSubSpan:hover{
 /* 메인 콘텐츠 시작 */
 .main_content {
   width: 1140px;
-  margin: 60px auto 0;
+  margin: 10px auto 0;
 }
 
 /* 추가: 모금함 헤더 공통 스타일 */
 .main_content .content_header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+}
+
+.sort-write-container { /* 새로운 CSS 클래스 추가 */
+  display: flex;
   align-items: center;
 }
 
@@ -306,11 +311,12 @@ a.headerSubSpan:hover{
 
 /* 리스트 박스 전체 */
 #selectbox {
-  display: inline-block;
-  position: relative;
-  vertical-align: top;
-  height: 40px;
-  margin-bottom: 30px;
+	margin-top: 30px;
+	display: inline-block;
+	position: relative;
+	vertical-align: top;
+	height: 40px;
+	margin-bottom: 30px;
 }
 
 /* 글쓰기 버튼 */
@@ -326,6 +332,13 @@ a.headerSubSpan:hover{
   margin-left: 10px;
   border-radius: 4px;
   cursor: pointer;
+  transition: all 0.3s; /* 애니메이션 효과 추가 */
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23); /* 그림자 효과 추가 */
+}
+
+.write-btn:hover {
+  background-color: #66BB6A; /* 호버시 버튼 색 변경 */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.25); /* 그림자 증가 효과 추가 */
 }
 /* 카드 시작부분 */
 
@@ -491,11 +504,11 @@ float: right;
 }
 
 .footer_menu_right ul {
-list-style-type: none;
-color: #828282;
-margin: 0;
-padding: 0;
-min-width: 1140px;
+	list-style-type: none;
+	color: #828282;
+	margin: 0;
+	padding: 0;
+	min-width: 1140px;
 }
 
 .footer_menu_right ul li {

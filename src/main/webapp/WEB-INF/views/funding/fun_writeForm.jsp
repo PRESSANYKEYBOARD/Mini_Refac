@@ -7,7 +7,7 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="/Hangeulum/css/donation_writeform44.css" />
+<link rel="stylesheet" href="/Hangeulum/css/fun_writeForm.css" />
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 	
@@ -39,15 +39,22 @@
             </div>
         </div>
     </div>
-</div>
+</div>	
+
+	<%--End Header--%>
+
+	<%--For Header Height--%>
+	<div style="padding-top: 70px;"></div>
+	
+	<%--Start SubHeader--%>
 
 	<!-- post -->
 	<div class="post">
-		<form id="fun_writeform">
+		<form id="fun_writeForm">
 
-			<input type="hidden" name="userId" id="userId" value="{sessionScope.userId}">
+			<input type="hidden" name="userId" id="userId" value="hong">
 
-<!-- 			<div class="form-group_title">
+	<!-- 			<div class="form-group_title">
 				<label for="title">아이디</label> <input type="text"
 					class="form-control" id="userId" name="userId">
 			</div> -->
@@ -112,11 +119,11 @@
 				<input type="number" class="form-control" name="boardFRewardPrice" placeholder="금액을 입력하세요.">
 			</div>
 
-	      <div class="form-group">
-	      	  <label for="post_period_count">준비된 상품 수량 설정</label>
-	          <input type="text" class="form-control" id="boardFTotRewardCnt" name="boardFTotRewardCnt" required>
-	      </div>
-<!-- 			<div id="additional-rewards">
+		<div class="form-group">
+			<label for="post_period_count">준비된 상품 수량 설정</label>
+			<input type="text" class="form-control" id="boardFTotRewardCnt" name="boardFTotRewardCnt" required>
+		</div>
+	<!-- 			<div id="additional-rewards">
 				여기에 추가적인 상품 입력란이 동적으로 생성됩니다.
 			</div>
 
@@ -131,16 +138,13 @@
 			<div class="form-group">
 				<label for="editor">내용</label>
 				<textarea id="boardFContent" name="boardFContent" rows="10"
-					cols="100"></textarea>
+					cols="100" style="width=100%"></textarea>
 			</div>
-
-			<!--    	 	이미지 파일 선택 및 미리보기
-    	<input type="file" id="fileName"> -->
-
-			<button type="submit" class="btn-primary" id="writeBtn" name="writeBtn" style="width: 20%; font-weight: bold">작성 완료</button>
-			<button type="reset" class="btn-secondary">취소</button>
-		</form>
-</div>
+		    
+		    <button type="submit" class="btn-primary" id="writeBtn" name="writeBtn">작성 완료</button>
+		    <button type="reset" class="btn-secondary">취소</button>
+		  </form>
+		</div>
 <script type="text/javascript" src="/Hangeulum/smartEditor/js/HuskyEZCreator.js" charset="utf-8"></script>
 <script type="text/javascript" src="/Hangeulum/js/fun_startEnd.js"></script><!-- 펀딩 종료여부 -->
 <script type="text/javascript" src="/Hangeulum/js/fun_write.js"></script><!-- 펀딩 라이트 작성.js -->

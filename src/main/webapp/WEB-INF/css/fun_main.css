@@ -69,7 +69,13 @@
 
 .container text-center { /* 부트스트랩 카드 높이를 맞출려고 하는 CSS 코드 */
  	white-space: nowrap; 
-} 
+}
+
+/* 슬라이드 속성 */
+.custom-carousel-container {
+  max-width: 1140px;
+  margin: auto;
+}
 
 /*Start Header*/
 #header {
@@ -186,10 +192,10 @@ a.headerSubSpan:hover{
 /*End subHeader*/
 
 .category { /* 하위 메뉴 */
-	width: 1055px;
-    margin: 54px auto 0px;
-    background-color: rgb(255, 255, 255);
-    text-align: center;
+  width: 1140px;
+  margin: 0 auto;
+  background-color: rgb(255, 255, 255);
+  text-align: right;
 }
 
 .FundingHomeCategory_item { /* 카테고리  */
@@ -223,23 +229,48 @@ button, input[type=button], input[type=checkbox]+label, input[type=radio]+label,
     cursor: pointer;
 } /* 버튼 속성 추가 */
 
-.dropdown { /* 드롭다운 리스트 */
-    margin-bottom: 20px; /* 여백 주기 */
-    display: inlline-block;
-    position: relative;
-    vertical-align: top;
-    text-align: right;
-    padding-right: 40px;
+.dropdown {
+  position: relative;
+  display: inline-block;
+  vertical-align: top; /* 티어에 추가 */
 }
 
-.selectbox { /* 셀렉트 박스 굳이 적용 안해도 될 것 같긴 함 */
-	position: static;
-    float: right;
-    margin-top: 30px;
-    background-color: white;
-    width: fit-content;
-    height: 40px;
-    color: black;
+.dropdown label {
+  display: none;
+}
+
+#selectbox,
+#selectbox1,
+#selectbox2 {
+	margin-top: 30px;
+	display: inline-block;
+	position: relative;
+	vertical-align: top;
+	height: 40px;
+	margin-bottom: 30px;
+}
+
+.button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin-left: 10px;
+  margin-top: 30px; /* 여백 추가 */
+  margin-bottom: 30px; /* 여백 추가 */
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s; /* 애니메이션 효과 추가 */
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23); /* 그림자 효과 추가 */
+}
+
+.button:hover {
+  background-color: #66BB6A; /* 호버시 버튼 색 변경 */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.25); /* 그림자 증가 효과 추가 */
 }
 
 .content { /* 본문 영역 */
