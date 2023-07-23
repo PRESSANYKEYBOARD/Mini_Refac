@@ -50,9 +50,9 @@
 
 	<!-- post -->
 	<div class="post">
-		<form id="fun_writeForm">
+		<form id="fun_writeForm" name="fun_writeForm">
 
-			<input type="hidden" name="userId" id="userId" value="hong">
+			<input type="hidden" name="userId" id="userId" value="hong" disabled>
 
 	<!-- 			<div class="form-group_title">
 				<label for="title">아이디</label> <input type="text"
@@ -90,13 +90,13 @@
 			</div>
 
 			<div class="form-group">
-				<label for="post_period_start">펀딩 개시 시작일 선택하세요.</label> <input
+				<label for="post_period_start">펀딩 개시 시작일을 선택하세요.</label> <input
 					type="date" class="form-control" id="post_period_start"
 					name="post_period_start">
 			</div>
 
 			<div class="form-group">
-				<label for="post_period_end">펀딩 개시 종료일 선택하세요</label> <input
+				<label for="post_period_end">펀딩 개시 종료일을 선택하세요</label> <input
 					type="date" class="form-control" id="boardFExpireDate"
 					name="boardFExpireDate">
 			</div>
@@ -120,7 +120,7 @@
 			</div>
 
 		<div class="form-group">
-			<label for="post_period_count">준비된 상품 수량 설정</label>
+			<label for="post_period_count">준비된 상품 수량을 설정하세요.</label>
 			<input type="text" class="form-control" id="boardFTotRewardCnt" name="boardFTotRewardCnt" required>
 		</div>
 	<!-- 			<div id="additional-rewards">
@@ -136,13 +136,13 @@
 			</div> -->
 
 			<div class="form-group">
-				<label for="editor">내용</label>
+				<label for="editor">내용을 입력하세요.</label>
 				<textarea id="boardFContent" name="boardFContent" rows="10"
 					cols="100" style="width=100%"></textarea>
 			</div>
 		    
 		    <button type="submit" class="btn-primary" id="writeBtn" name="writeBtn">작성 완료</button>
-		    <button type="reset" class="btn-secondary">취소</button>
+		    <button type="button" class="btn-secondary" onClick="location.href='/Hangeulum/funding/fun_main'">취소</button>
 		  </form>
 		</div>
 <script type="text/javascript" src="/Hangeulum/smartEditor/js/HuskyEZCreator.js" charset="utf-8"></script>

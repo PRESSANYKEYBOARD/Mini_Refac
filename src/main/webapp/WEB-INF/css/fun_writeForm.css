@@ -162,7 +162,7 @@ textarea {
 }
 
 button[type="submit"],
-button[type="reset"] {
+button[type="button"] {
   width: 100%;
   padding: 10px 0;
   font-weight: bold;
@@ -183,13 +183,13 @@ button[type="submit"]:hover {
   background-color: #008f2a;
 }
 
-button[type="reset"] {
+button[type="button"] {
   background-color: white;
   color: black;
   border: 1px solid #545b62;
 }
 
-button[type="reset"]:hover {
+button[type="button"]:hover {
   background-color: #f1f1f1;
 }
 

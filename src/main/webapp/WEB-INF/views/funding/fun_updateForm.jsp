@@ -9,52 +9,49 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="reset" href="/Hangeulum/css/reset.css" />
 <link rel="stylesheet" href="/Hangeulum/css/fun_writeForm.css" />
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-<script type="text/javascript"
-	src="http://code.jquery.com/jquery-3.6.4.min.js"></script>
-<script
-	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	
+<link rel="reset" href="/Hangeulum/css/styleReset.css" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 <title>Document</title>
 </head>
 <body>
 
-	<!-- 헤더시작 -->
-	<div>
-		<div id="header">
-			<div class="headerContent">
-				<div class="logo">
-					<a href="#"></a>
-				</div>
-				<img src="/Hangeulum/image/funmain_image/logo_main.png" alt="로고"
-					width="250" height="60">
-				<div class="menu">
-					<ul>
-						<li><a href="">기부</a></li>
-						<li><a href="/Hangeulum/funding/fun_main">펀딩</a></li>
-						<li><a href="">고객센터</a></li>
-					</ul>
-				</div>
+<div>
+    <div id="header">
+        <div class="headerContent">
+            <a href="/Hangeulum/"><img src="/Hangeulum/image/logo.png" alt="로고" width="250" height="60"></a>
+            <div class="menu">
+                <ul>
+                    <li><a href="/Hangeulum/donation/donation_main">기부</a></li>
+                    <li><a href="/Hangeulum/funding/fun_main">펀딩</a></li>
+                    <li><a href="/Hangeulum/support/noticeList">고객센터</a></li>
+                </ul>
+            </div>
+    
+            <div class="header-r">
+                <a href="#" class="login_btn">로그인</a>
+                <span class="header-bar"></span>
+                <a href="#" class="search_btn">
+                    <img src="/Hangeulum/image/enlargement.png" alt="enlargement.png">
+                </a>
+            </div>
+        </div>
+    </div>
+</div>	
 
-				<div class="header-r">
-					<a href="/Hangeulum/user/loginForm" class="login_btn">로그인</a> <span class="header-bar"></span>
-					<a href="#" class="search_btn"> <img
-						src="/Hangeulum/image/funmain_image/enlargement.png"
-						alt="enlargement.png">
-					</a>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- 헤더 끝 -->
+	<%--End Header--%>
+
+	<%--For Header Height--%>
+	<div style="padding-top: 70px;"></div>
+	
+	<%--Start SubHeader--%>
 
 	<!-- post -->
 	<div class="post">
-		<form id="fun_updateform" name="fun_updateform">
+		<form id="fun_updateForm" name="fun_updateForm">
 		
 		<input type="hidden" id="boardFSeq" name="boardFSeq" value="${fundingDTO.boardFSeq}">
 
@@ -66,22 +63,22 @@
 			</div> -->
 			
 			<div class="form-group_title">
-				<label for="thumnail">썸네일로 수정할 이미지를 선택하세요.</label> 
+				<label for="thumnail">변경할 썸네일 이미지를 선택하세요.</label> 
 				<input type="file" class="form-control" id="boardFThumbnail" name="boardFile">
 			</div>
 			
 			<div class="form-group">
-				<label for="company">수정할 회사 이미지를 선택하세요.</label> 
+				<label for="company">변경할 회사 이미지를 선택하세요.</label> 
 				<input type="file" class="form-control" id="fileName" name="companyFile">
 			</div>
 			
 			<div class="form-group">
-				<label for="company_text">사명을 수정하세요.</label> 
+				<label for="company_text">변경할 사명을 입력하세요.</label> 
 				<input type="text" class="form-control" id="comName" name="comName">
 			</div>
 			
 			<div class="form-group">
-				<label for="company_text">펀딩 페이지에 노출되는 회사 슬로건을 변경하세요.</label> 
+				<label for="company_text">변경할 펀딩 페이지에 노출되는 회사 슬로건을 입력하세요.</label> 
 				<input type="text" class="form-control" id="comText" name="comText" >
 			</div>
 			
@@ -91,17 +88,17 @@
 			</div>
 
 			<div class="form-group">
-				<label for="goal_amount">목표금액을 변경하세요.</label> 
+				<label for="goal_amount">변경할 목표금액을 입력하세요.</label> 
 				<input type="text" class="form-control" id="boardFGoalAmount" name="boardFGoalAmount">
 			</div>
 
 			<div class="form-group">
-				<label for="post_period_start">변경할 펀딩 개시 시작일 선택하세요.</label> 
+				<label for="post_period_start">변경할 펀딩 개시 시작일을 선택하세요.</label> 
 				<input type="date" class="form-control" id="post_period_start" name="post_period_start">
 			</div>
 
 			<div class="form-group">
-				<label for="post_period_end">변경할 펀딩 개시 종료일 선택하세요</label> 
+				<label for="post_period_end">변경할 펀딩 개시 종료일을 선택하세요</label> 
 				<input type="date" class="form-control" id="boardFExpireDate" name="boardFExpireDate">
 			</div>
 
@@ -116,13 +113,13 @@
 			</div>
 
 			<div class="form-group">
-				<label for="reward">변경 상품</label>
+				<label for="reward">변경할 상품</label>
 				<input type="text" class="form-control" name="boardFRewardSelect" placeholder="상품을 입력하세요.">
 				<input type="number" class="form-control" name="boardFRewardPrice" placeholder="금액을 입력하세요.">
 			</div>
 
 	      <div class="form-group">
-	      	  <label for="post_period_count">준비된 상품 수량 변경</label>
+	      	  <label for="post_period_count">변경할 준비된 상품 수량을 입력하세요.</label>
 	          <input type="text" class="form-control" id="boardFTotRewardCnt" name="boardFTotRewardCnt" required>
 	      </div>
 <!-- 			<div id="additional-rewards">
@@ -138,7 +135,7 @@
 			</div> -->
 
 			<div class="form-group">
-				<label for="editor">내용</label>
+				<label for="editor">수정할 내용을 입력하세요.</label>
 				<textarea id="boardFContent" name="boardFContent" rows="10" cols="100" value="${update.boardFContent}"></textarea>
 			</div>
 

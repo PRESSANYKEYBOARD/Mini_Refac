@@ -1,6 +1,7 @@
 # 디렉토리
 /.settings
 /.vscode
+/target
 
 # 보안 설정
 src/main/java/spring/db.properties

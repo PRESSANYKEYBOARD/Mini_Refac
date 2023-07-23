@@ -81,12 +81,12 @@ public class FundingController {
 	    fundingService.write(fundingDTO);
 	}
 	
-	@RequestMapping(value = "fun_updateform", method = RequestMethod.GET)
+	@RequestMapping(value = "fun_updateForm", method = RequestMethod.GET)
 	public String fun_updateform(@RequestParam int boardFSeq, Model model) throws Exception {
 		FundingDTO fundingDTO = fundingService.getBoard(boardFSeq);
 	    model.addAttribute("fundingDTO", fundingDTO);
 	    model.addAttribute("boardFSeq", boardFSeq); // 모델에 boardFSeq 값을 담음
-	    return "funding/fun_updateform";
+	    return "funding/fun_updateForm";
 	}
 	
 	@PostMapping(value = "fun_update")
