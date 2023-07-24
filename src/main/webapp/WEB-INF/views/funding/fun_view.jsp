@@ -19,37 +19,36 @@
 <div>
     <div id="header">
         <div class="headerContent">
-            <div class="logo"><a href ="#"></a></div>
-            <img src="/Hangeulum/image/after_image/logo_main.png" alt="로고" width="250" height="60">
+            <a href="/Hangeulum/"><img src="/Hangeulum/image/logo.png" alt="로고" width="250" height="60"></a>
             <div class="menu">
                 <ul>
-                    <li><a href="">기부</a></li>
+                    <li><a href="/Hangeulum/donation/donation_main">기부</a></li>
                     <li><a href="/Hangeulum/funding/fun_main">펀딩</a></li>
-                    <li><a href="">고객센터</a></li>
+                    <li><a href="/Hangeulum/support/noticeList">고객센터</a></li>
                 </ul>
             </div>
     
             <div class="header-r">
-                <a href="/Hangeulum/user/loginForm" class="login_btn">로그인</a>
+                <a href="#" class="login_btn">로그인</a>
                 <span class="header-bar"></span>
                 <a href="#" class="search_btn">
-                    <img src="/Hangeulum/image/after_image/enlargement.png" alt="enlargement.jpg">
+                    <img src="/Hangeulum/image/enlargement.png" alt="enlargement.jpg">
                 </a>
-            </div> <!-- header-r -->
-        </div> <!-- header1 컨테이너 -->
-    </div>
-	<!--Header End-->
+            </div>
+        </div>
+	</div> <!-- header1 끝 -->
 	
-	<div class="header2"> 
-		<div class="container">
-			<div class="menu2">
-				<ul>
-	                <li><a href="/Hangeulum/funding/fun_main">전체 펀딩</a></li>
-	                <li><a href="/Hangeulum/funding/fun_after">펀딩 후기</a></li>
-	            </ul>
-			</div> <!-- menu2 끝 -->
-		</div> <!-- container 끝 -->
-	</div> <!-- header2 끝 -->
+	<%--End Header--%>
+
+	<%--For Header Height--%>
+	<div style="padding-top: 70px;"></div>
+	
+	<%--Start SubHeader--%>
+	
+	<div class="headerSub">
+		<a href="/Hangeulum/funding/fun_main" class="headerSubSpan" style="color: #00ab33; font-weight: 700;">전체 펀딩</a></li>
+        <a href="/Hangeulum/funding/fun_after2" class="headerSubSpan">펀딩 후기</a>
+	</div> <!-- container 끝 -->
 	
 	<div class="header3">
 		<div class="header3_img">

@@ -51,8 +51,8 @@
 	<!-- post -->
 	<div class="post">
 		<form id="fun_writeForm" name="fun_writeForm">
-
-			<input type="hidden" name="userId" id="userId" value="hong" disabled>
+	
+			<input type="text" name="userId" id="userId" value="hong">
 
 	<!-- 			<div class="form-group_title">
 				<label for="title">아이디</label> <input type="text"
@@ -150,6 +150,7 @@
 <script type="text/javascript" src="/Hangeulum/js/fun_write.js"></script><!-- 펀딩 라이트 작성.js -->
 <script type="text/javascript">
 console.log(${sessionScope.userId});
+console.log(userId);
 </script>
 </body>
 </html>

@@ -99,18 +99,18 @@ select{
 	text-align : center;
 }
 
-/*Header Start*/
+/*Start Header*/
 #header {
-    border-bottom:1px solid #ddd;
+    border-bottom: 1px solid #ddd;
     position: fixed;
     width: 100%;
     margin: auto;
     background-color: white;
-    Z-index:1000;
+    Z-index: 1000;
 }
     
 #header .headerContent{
-    display:flex;
+    display: flex;
     align-items: center;
     width: 1140px;
     margin: auto;
@@ -121,21 +121,21 @@ select{
 }
     
 #header .headerContent > div.logo a{
-    margin:0;
+    margin: 0;
     font-size: 30px;
     font-weight: bold;
-    color:yellowgreen;
+    color: yellowgreen;
     text-decoration: none;
 }
     
 #header .headerContent > div.menu{
-    flex:1;
+    flex: 1;
     min-width: 780px;
 }
     
 #header .headerContent > div.menu ul {
     display: flex;
-    justify-content:center;
+    justify-content: center;
     list-style: none;
     margin: 0;
     margin-right: 170px;
@@ -181,55 +181,37 @@ div.header-r > a.search_btn > img{
     vertical-align: top;
     margin-top: 1px;
 }
+    
+/* div #header div.menu a:hover {
+	color: #00ab33 !important;
+} */
+    
+/*End Header*/
 
-/*Header End*/
+/*Start subHeader*/
 
-.header2  { /* 하위 메뉴 시작 */
-    position: relative;
-    z-index: 1;
-    min-height: 50px;
-    margin-bottom: -1px;
-    padding: 0 5px;
+div.headerSub{ 
+    height: 50px;
+    text-align: center;
+    padding-left: 200px;
     border-bottom: 1px solid rgba(0,0,0,.12);
-    text-align: center;
-} 
-
-.header2 .container {
-	min-width: 1400px;
+    line-height: 3;
+    padding-right: 210px;
 }
 
-.menu2 { /* 하위 메뉴  */
-    padding-top: 70px;
-    flex: 1;
-}
-
-.menu2 ul { /* 하위 메뉴 */
-    display: flex;
-    position: relative;
-    justify-content: center;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    padding-right: 60px;
-}
-
-.menu2 ul li { /* 하위 메뉴 */
-    margin: 10px;
-    margin-left: 50px;
-}
-
-.menu2 ul li a { /* 하위 메뉴 */
-    display: block;
-    font-size: 15px;
-    color:gray;
-    text-decoration: none;   
-}
-
-.menu2 ul li a:hover { /* 하위 메뉴 */
-    color: yellowgreen;
+a.headerSubSpan{
     text-decoration: none;
-    text-align: center;
+    color: #202020;
+    padding: 0 22px 0 22px;
 }
+
+a.headerSubSpan:hover{
+    color: #00ab33;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+/*End subHeader*/
 
 .header3 { /* header3 시작 */
     width: 1140px;

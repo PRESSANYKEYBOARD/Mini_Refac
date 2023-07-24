@@ -164,11 +164,11 @@ a.headerSubSpan:hover{
 
 /* 카테고리 */
 #content2 {
-  width: auto;
   height: 140px;
 }
 
 #content2 .container {
+	width: 1140px;
   background: linear-gradient(135deg, #1aa850, #27d14d, #10c838); /* 수정: 그라데이션 배경을 부드럽게 처리 */
 }
 
@@ -340,29 +340,6 @@ a.headerSubSpan:hover{
   background-color: #66BB6A; /* 호버시 버튼 색 변경 */
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.25); /* 그림자 증가 효과 추가 */
 }
-/* 카드 시작부분 */
-
-.donationcard_text{
-  padding-left: 160px;
-}
-
-.select-container {
-    overflow: hidden;
-    clear: both;
-    min-width: 800px;
-    padding-right:50px;
-    padding-bottom:10px;
-  }
-
-  /* #selectbox {
-    position: static;
-    float: right;
-    margin-top: 30px;
-    background-color: white;
-    width: fit-content;
-    height: 40px;
-    color: black;
-} */
 
 /* 카드 시작 */
 .container-card {

@@ -1,52 +1,74 @@
-$(document).ready(function() {
-    var now = new Date();
+//천 단위마다 ,찍기
+//문자열이여야 하며, Int형일 경우 반드시 문자열인 String형으로 변환해야 한다.
+function addComma(value) {
+  if (typeof value === "number") {
+    value = String(value); //Int 형을 문자열로 변환
+  }
+  
+  value = value.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  return value;
+}
 
-    function renderFundingList(fundings) {
-        var fundingList = "";
-        for (var i = 0; i < fundings.length; i++) {
-            var funding = fundings[i];
-            var expireDate = new Date(funding.boardFExpireDate);
-            var diffInDays = Math.round((expireDate - now) / (1000 * 60 * 60 * 24));
-            fundingList +=
-                "<div class='col-md-4 col-sm-6'>" +
-                "<div class='card' style='width: 18rem;'>" +
-                "<img src='/Hangeulum/storage/" +
-                funding.boardFThumbnail +
-                "' class='card-img-top' alt='끼에엨'>" +
-                "<div class='card-body'>" +
-                "<h5 class='card-title'>" +
-                funding.boardFSubject +
-                "</h5>" +
-                "<p class='card-text'>" +
-                funding.comName +
-                "</p>" +
-                "<a href='/Hangeulum/funding/fun_view/" + funding.boardFSeq + "' class='btn btn-primary'>펀딩 참여하기</a>" +
-                "</div>" +
-                "<ul class='list-group list-group-flush'>" +
-                "<li class='list-group-item'>" +
-                "<div class='progress'>" +
-                "<div class='progress-bar bg-success progress-bar-striped progress-bar-animated' role='progressbar'" +
-                "style='width: " +
-                60 +
-                "%;' aria-valuenow='" +
-                funding.progress +
-                "' aria-valuemin='0' aria-valuemax='100'>" +
-                60 +
-                "%</div>" +
-                "</div>" +
-                "</li>" +
-                "<li class='list-group-item'><span>" +
-                funding.boardFGoalAmount +
-                "</span>원</li>" +
-                "</ul>" +
-                "<div class='card-footer'><span>" +
-                diffInDays +
-                "</span>일 남음</div>" +
-                "</div>" +
-                "</div>";
-        }
-        $("#funding-list").empty().append(fundingList);
+$(document).ready(function () {
+
+	var now = new Date();
+
+	function renderFundingList(fundings) {
+		var fundingList = "";
+		for (var i = 0; i < fundings.length; i++) {
+	  		var funding = fundings[i];
+	  		var expireDate = new Date(funding.boardFExpireDate);
+			var diffInDays = Math.round((expireDate - now) / (1000 * 60 * 60 * 24));
+			var progress = funding.progress;
+			var currentAmount = addComma(String(funding.currentAmount));
+			var goalAmount = addComma(String(funding.boardFGoalAmount));
+	
+			var card = $("<div/>")
+				.addClass("card")
+				.append(
+				$("<img/>")
+					.attr("src", "/Hangeulum/storage/" + funding.boardFThumbnail)
+					.attr("alt", "Image")
+				)
+        .append(
+          $("<div/>")
+             .addClass("card-body")
+             .append($("<h2/>").addClass("card-title").text(funding.boardFSubject))
+             .append($("<h4/>").text(funding.comName))
+             .append($("<p/>").addClass("card-content").text(funding.description))
+             .append(
+              $("<div/>")
+                .addClass("card-progress")
+                .append(
+                  $("<div/>")
+                    .addClass("progress_bar")
+                    .css("width", progress + "%")
+                )
+            )
+             .append($("<p/>").addClass("card-percent").text(progress + "%"))
+             .append(
+              $("<p/>")
+                .addClass("price")
+                .text("₩" + goalAmount)
+            )
+             .append(
+              $("<a/>")
+                .attr("href", "/Hangeulum/funding/fun_view/" + funding.boardFSeq)
+                .addClass("card-button")
+                .text("펀딩 참여하기")
+            	)
+            )
+	          .append(
+	          $("<div/>")
+	            .addClass("card-footer")
+	            .append($("<span/>").text(diffInDays + "일 남음"))
+        );
+
+      fundingList += card.prop("outerHTML");
     }
+    
+    $(".card-container").empty().append(fundingList);
+  }
 
     // 초기 페이지 로드시 펀딩 리스트를 불러옵니다.
     $.ajax({

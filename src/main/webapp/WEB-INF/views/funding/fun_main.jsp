@@ -1,15 +1,18 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<!DOCTYPE html>  
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-
-<html xmlns:th="http://www.thymeleaf.org">
+<html>
 <head>
-<link rel="stylesheet" href="/Hangeulum/css/fun_main.css">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<link rel="reset" href="/Hangeulum/css/styleReset.css" />
+
+<script src="https://use.fontawesome.com/releases/v6.4.0/js/all.js"></script>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+
+<link rel="reset" href="/Hangeulum/css/styleReset.css" />
+<link rel="stylesheet" href="/Hangeulum/css/fun_main.css">
+
 <meta charset="UTF-8">
 <title>펀딩 메인 페이지</title>
 
@@ -17,11 +20,9 @@
 	/*a tag 전역 설정*/
 	a {text-decoration: none;}
 </style>
-
 </head>
 <body>
 <!--Header Start-->
-
 <div>
     <div id="header">
         <div class="headerContent">
@@ -92,7 +93,7 @@
 		</div> <!-- 슬라이드 끝 -->
 	</div> <!-- custom-carousel-container 끝 -->
 	
-	<form id="orderbyForm" name="orderbyForm">	
+	<div role="main" id="main_content" class="main_content">
 		<div class="category">
 		  <div class="dropdown">
 		    <label for="selectbox1"></label>
@@ -113,17 +114,34 @@
 		  </div>
 		</div>
 		 
-			<div class="content">
-			  <div class="container text-center">
-			    <div class="row" id="funding-list">
-			    </div> <!-- row -->
-			  </div> <!-- container text-center -->
-			</div> <!-- content 끝 -->
-				
-		</form>
+<%-- 	<div class="container-card">
+		  <div class="card-container">
+		    카드 예시
+		    <div class="card">
+		      <img src="https://via.placeholder.com/150" alt="Image">
+		      <div class="card-body">
+		        <h2 class="card-title">카드 제목</h2>
+		        <h4>부제목</h4>
+		        <p class="card-content">카드 내용을 설명하는 텍스트입니다. 내용은 여기에 작성하십시오.</p>
+		        <div class="progress">
+		          <div class="progress_bar" style="width: 60%;"></div>
+		        </div>
+		        <p class="percent">60%</p>
+		        <p class="price">₩10,000 / ₩20,000</p>
+		      </div>
+		    </div>
+		  </div>
+		</div> --%>
 		
-		<%--Start Footer--%>
-
+		<div class="container-card">
+	      <div class="card-container">
+	        <!-- 이 부분은 동적으로 카드가 생성됩니다. -->
+	      </div>
+	    </div>
+	    <!-- 여기에 jQuery 및 기타 자바스크립트 파일 등록 -->	
+	</div>
+	
+<%--Start Footer--%>
 <div class="footer">
     <div class="footer_menu">
         <!--<div class="footer_menu_left"></div>-->
