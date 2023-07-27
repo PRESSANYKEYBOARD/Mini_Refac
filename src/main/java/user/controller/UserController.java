@@ -2,6 +2,7 @@ package user.controller;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.List;
 import java.util.Map;
 
 import javax.security.auth.message.callback.PrivateKeyCallback.Request;
@@ -21,6 +22,8 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import board.bean.BoardDDTO;
+import board.bean.BoardFDTO;
 import mail.service.MailService;
 import user.bean.UserDTO;
 import user.bean.UserImageDTO;
@@ -35,6 +38,8 @@ public class UserController {
 	@Autowired
 	MailService mailService = null;
 	
+	
+	
 	@GetMapping("joinForm")
 	public String joinForm() {
 		
@@ -44,7 +49,7 @@ public class UserController {
 	@PostMapping("join")
 	@ResponseBody
 	public void join(@ModelAttribute UserDTO userDTO) {
-		System.out.println(userDTO.getUseremail());
+		System.out.println("유저 회원가입"+userDTO.getUseremail());
 		
 		userService.join(userDTO);
 		
@@ -248,12 +253,7 @@ public class UserController {
 		return filename;
 	
 		}
-	
-	
-	
-	
-	
-	
+
 	
 	@GetMapping(value="mypageIndex")
 	public String mypageIndex() {
@@ -293,27 +293,22 @@ public class UserController {
 	//회원탈퇴
 	
 	  @PostMapping(value="delete")
-	 
 	  @ResponseBody public void delete(@RequestParam Map<String,String> map){
 	  String userid = map.get("userid"); //System.out.println(userid);
 	  userService.delete(map); }
 
-	
-	  
-	  
+
 	    @GetMapping(value="deleterepwd")
 	    public String deleterepwd() {
 	    	
 	    	return "user/deleteRepwd";
 	    }
 	
-
-	    
-	    
 		  //회원탈퇴
 		  
 		  @PostMapping(value="delete2")
-		  @ResponseBody public String delete2(@RequestParam String userid){ return
+		  @ResponseBody 
+		  public String delete2(@RequestParam String userid){ return
 		  userService.delete2(userid); }
 	    
 		  @PostMapping(value="deleteFinal")
@@ -321,5 +316,28 @@ public class UserController {
 		  public void deleteFinal(@RequestParam Map<String, Object> map){
 			  userService.deleteFinal(map);
 	    
-}
+		  }
+		  
+		  @PostMapping(value="activemain")
+		  @ResponseBody
+		  public Map<String,String> activemain() {
+			  System.out.println("액티브메인오니?");
+			  return userService.activemain();
+		  }
+		  
+		  @PostMapping(value="card_list")
+		  @ResponseBody
+		  public List<BoardDDTO> card_list(){
+			  
+			  return userService.card_list();
+		  }
+		  
+		  
+		  @PostMapping(value="card_list_funding")
+		  @ResponseBody
+		  public List<BoardFDTO> card_list_funding(){
+			  return userService.card_list_funding();
+		  }
+		  
+		  
 }
