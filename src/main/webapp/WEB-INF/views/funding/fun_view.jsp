@@ -247,7 +247,7 @@
 					<ul>
 				        <li><a href="">스토리</a></li>
 				        <li><a href="">소식·후기</a></li>
-				        <li><a href="/Hangeulum/funding/fun_updateform?boardFSeq=${fundingDTO.boardFSeq}">게시글 수정하기</a></li>
+				        <li><a href="/Hangeulum/funding/fun_updateForm?boardFSeq=${fundingDTO.boardFSeq}">게시글 수정하기</a></li>
 		        		<li><a href="/Hangeulum/funding/fun_delete">게시글 삭제하기</a></li>
 		            </ul>
 				</div> <!-- hidden_list -->
