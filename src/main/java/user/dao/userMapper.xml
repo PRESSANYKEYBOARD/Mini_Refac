@@ -88,11 +88,7 @@
 	</select>
 	
 	<select id="card_list_funding" resultType="boardF">
-		select * from boardf
+		select * from boardF
 	</select>
 	
-	
-
-
- 
  </mapper>

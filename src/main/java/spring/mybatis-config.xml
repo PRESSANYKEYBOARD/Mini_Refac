@@ -5,6 +5,8 @@
  
 <configuration>  <!-- config 설정 시작 -->
    <typeAliases>
+   	  <typeAlias type="board.bean.BoardDDTO" alias="boardd" />
+   	  <typeAlias type="board.bean.BoardFDTO" alias="boardF" />
       <typeAlias type="user.bean.UserDTO" alias="user" />
       <typeAlias type="board.bean.FundingDTO" alias="funding" />
    </typeAliases>
