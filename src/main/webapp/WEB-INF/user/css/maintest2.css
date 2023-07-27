@@ -176,16 +176,13 @@ div.tmp_for_bg{
 }
 
 .fundingtext p{
-	padding-left:20px;
-	padding-top:30px;
 	font-size:23px;
 	font-weight:bold;
 }
 
-.fundingtext a{
+.fundingtext p a{
 	text-decoration:none;
 	color:black;
-	
 }
 
 .donationtext p a{
@@ -390,6 +387,7 @@ div.header-r > a.search_btn > img{
 .donation-status-item-1{
 	display:inline-block;
 	margin-bottom:15px;
+	margin-left:50px;
 	vertical-align:top;
 	
 }
@@ -413,13 +411,24 @@ div.header-r > a.search_btn > img{
 	
 }
 
+.card-body > span {
+   overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 .card-body{
-	
 	padding: 21px 20px 0;
+	height:500px;
+}
+
+.card-body > a {
+	text-decoration:none;
+	color:black;
 }
 
 .progress{
-	height: 5px;
+	height: 10px;
     margin-top: 13px;
     background-color: #e8e8e8;
 }
@@ -435,7 +444,7 @@ div.header-r > a.search_btn > img{
 .donation_percent{
 	display: inline-block;
     margin-top: 10px;
-    font-size: 17px;
+    font-size: 10px;
     letter-spacing: -.2px;
     color: #00ab33;
     padding:0;
@@ -448,8 +457,6 @@ div.header-r > a.search_btn > img{
 	
 }
 
-
-
 .donationcard_text{
 	float: right;
     margin-top: 11px;
@@ -457,19 +464,6 @@ div.header-r > a.search_btn > img{
     color: #333;
 }
 
-.card-body p{
-	height: 25px;
-    overflow: hidden;
-    -webkit-line-clamp: 1;
-    -webkit-box-orient: vertical;
-    text-overflow: ellipsis;
-    display: -webkit-box;
-	
-}
-
-.card-body{
-	padding:10px 10px 0;
-}
 
 
 .donation_text_money{
@@ -487,6 +481,33 @@ div.header-r > a.search_btn > img{
 	vertical-align:top;
 	
 }
+
+	  
+	    
+.donation-status-money{
+	display:inline-block;
+	font-size:33px;
+	font-weight:700;
+	color:#fff;
+	vertical-align:top;
+}	 
+
+.funding-status-point{
+	display:inline-block;
+	font-size:33px;
+	font-weight:700;
+	color:#fff;
+	vertical-align:top;
+} 
+
+.funding-status-money{
+	display:inline-block;
+	font-size:33px;
+	font-weight:700;
+	color:#fff;
+	vertical-align:top;
+}
+	    
 
 
 

@@ -105,6 +105,7 @@
                 <li>
                    <button>#강릉산불</button>
                 </li>
+                
                 <li>
                    <button>#기업이랑 기부</button>
                 </li>
@@ -122,272 +123,9 @@
 </div>
 
 
-<!-- Grid start  -->
+<!-- Grid start -->
       <!-- Grid는 총 컬럼의 개수가 12개이다 -->
-      <div class="container text-center">
-        <div class="row">
-          <div class="col-md-4 col-sm-6" > <!--  중간크기 화면까지는 제대로 3개씩 보여줌 보이다가 더 작은 화면에서는 사진이 1개로 보여짐 //모든 div를 이거로 바꿔줘야함//화면의 너비에 따라 바꿔주면 됨 -->
-            <div onclick="cardclick()" class="card" style="width: 18rem;">
-           <img src="https://t1.kakaocdn.net/friends/prod/product/20230307100106001_8809922502072_AW_00.jpg">
-              <div class="card-body">
-                <h5 class="card-title">123</h5>
-                <p class="card-text">bfojpindjopenjdfopjfenbopjfjnboprjfngrbjp</p>
-                   <!--progress-->
-                  <div class="progress" aria-label="모금률">
-                  	<span class="progress_bar" style="width:27%;"></span>
-                  </div>
-                  
-                  <strong class="donation_percent">
-                  	34
-                 	%
-                  </strong>
-                  
-                  <strong class="donationcard_text">
-                   2,725,000원
-                  </strong>
-                  
-                  <!--  -->
-                 </div>
-            </div>
-            </div>
-          <!-- *************************  -->
-          <div class="col-md-4 col-sm-6">
-           <div class="card" style="width: 18rem;">
-        <img src="https://t1.kakaocdn.net/friends/prod/product/20230307100106001_8809922502072_AW_00.jpg">
-           <div class="card-body">
-             <h5 class="card-title">제목</h5>
-             <p class="card-text">내용</p>
-                <!--progress-->
-                  <div class="progress" aria-label="모금률">
-                  	<span class="progress_bar" style="width:27%;"></span>
-                  </div>
-                  
-                  <strong class="donation_percent">
-                  	34
-                 	%
-                  </strong>
-                  
-                  <strong class="donationcard_text">
-                   2,725,000원
-                  </strong>
-                  
-                  <!--  -->
-              </div>
-         </div>
-         </div>
-          <!-- *************************   반응형으로 크기에 따라 사진이 자동 조절되어서 보임--> 
-          <div class="col-md-4 col-sm-6"> 
-           <div class="card" style="width: 18rem;">
-        <img src="https://t1.kakaocdn.net/friends/prod/product/20230307100106001_8809922502072_AW_00.jpg">
-           <div class="card-body">
-             <h5 class="card-title">제목</h5>
-             <p class="card-text">내용</p>
-               <!--progress-->
-                  <div class="progress" aria-label="모금률">
-                  	<span class="progress_bar" style="width:27%;"></span>
-                  </div>
-                  
-                  <strong class="donation_percent">
-                  	34
-                 	%
-                  </strong>
-                  
-                  <strong class="donationcard_text">
-                   2,725,000원
-                  </strong>
-                  
-                  <!--  -->
-           </div>
-
-         </div>
-         </div>
-		
-		
-
-		<!-- 펀딩텍스트 -->
-		<div class="fundingtext">
-		
-		<a href="#"><p>소셜벤처를 먼저 만나는 펀딩></p></a>
-	
-		</div>
-	
-	
-	<!-- test -->
-		 <div class="container text-center">
-		<div class="row">
-	
-          <!-- *************************  -->
-          <div class="col-md-4 col-sm-6">
-            <div class="card" style="width: 18rem;">
-         <img src="https://t1.kakaocdn.net/friends/prod/product/20230307100106001_8809922502072_AW_00.jpg">
-            <div class="card-body">
-              <h5 class="card-title">제목</h5>
-              <p class="card-text">내용</p>
-                <!--progress-->
-                  <div class="progress" aria-label="모금률">
-                  	<span class="progress_bar" style="width:27%;"></span>
-                  </div>
-                  
-                  <strong class="donation_percent">
-                  	34
-                 	%
-                  </strong>
-                  
-                  <strong class="donationcard_text">
-                   2,725,000원
-                  </strong>
-                  
-                  <!--  -->
-               </div>
-          </div>
-          </div>
-          
-             <!-- *************************  -->
-             <div class="col-md-4 col-sm-6">
-                <div class="card" style="width: 18rem;">
-             <img src="https://t1.kakaocdn.net/friends/prod/product/20230307100106001_8809922502072_AW_00.jpg">
-                <div class="card-body">
-                  <h5 class="card-title">제목</h5>
-                  <p class="card-text">내용</p>
-                    <!--progress-->
-                  <div class="progress" aria-label="모금률">
-                  	<span class="progress_bar" style="width:27%;"></span>
-                  </div>
-                  
-                  <strong class="donation_percent">
-                  	34
-                 	%
-                  </strong>
-                  
-                  <strong class="donationcard_text">
-                   2,725,000원
-                  </strong>
-                  
-                  <!--  -->
-                   </div>
-              </div>
-              </div>
-
-                 <!-- *************************  -->
-          <div class="col-md-4 col-sm-6">
-           <div class="card" style="width: 18rem;">
-         <img src="https://t1.kakaocdn.net/friends/prod/product/20230307100106001_8809922502072_AW_00.jpg">
-           <div class="card-body">
-              <h5 class="card-title">제목</h5>
-              <p class="card-text">123</p>
-                  <!--progress-->
-                  <div class="progress" aria-label="모금률">
-                  	<span class="progress_bar" style="width:27%;"></span>
-                  </div>
-                  
-                  <strong class="donation_percent">
-                  	34
-                 	%
-                  </strong>
-                  
-                  <strong class="donationcard_text">
-                   2,725,000원
-                  </strong>
-                  
-                  <!--  -->
-                
-               </div>
-               
-          </div>
-          </div>
-
-</div>
-</div>	
-
-
-
-             <!-- *************************  -->
-             <div class="col-md-4 col-sm-6">
-                <div class="card" style="width: 18rem;">
-                
-             
-             <img src="https://t1.kakaocdn.net/friends/prod/product/20230307100106001_8809922502072_AW_00.jpg">
-               
-                <div class="card-body">
-                  <h5 class="card-title">123456</h5>
-                  <p class="card-text"></p>
-                     <!--progress-->
-                  <div class="progress" aria-label="모금률">
-                  	<span class="progress_bar" style="width:80%;"></span>
-                  </div>
-                  
-                
-                  <strong class="donation_percent">
-                  	50
-                 	%
-                  </strong>
-                  
-                  <strong class="donationcard_text">
-                   2,725,000원
-                  </strong>
-                  </div>
-                  <!--  -->
-                   
-              </div>
-              </div>
-
-                 <!-- *************************  -->
-          <div class="col-md-4 col-sm-6">
-            <div class="card" style="width: 18rem;">
-         <img src="https://t1.kakaocdn.net/friends/prod/product/20230307100106001_8809922502072_AW_00.jpg">
-            <div class="card-body">
-              <h5 class="card-title">제목</h5>
-              <p class="card-text">내용</p>
-                 <!--progress-->
-                  <div class="progress" aria-label="모금률">
-                  	<span class="progress_bar" style="width:27%;"></span>
-                  </div>
-                  
-                  <strong class="donation_percent">
-                  	34
-                 	%
-                  </strong>
-                  
-                  <strong class="donationcard_text">
-                   2,725,000원
-                  </strong>
-                  
-                  <!--  -->
-               </div>
-          </div>
-          </div>
-
-             <!-- *************************  -->
-             <div class="col-md-4 col-sm-6">
-                <div class="card" style="width: 18rem;">
-             <img src="https://t1.kakaocdn.net/friends/prod/product/20230307100106001_8809922502072_AW_00.jpg">
-                <div class="card-body">
-                  <h5 class="card-title">제목</h5>
-                  <p class="card-text">내용</p>
-                     <!--progress-->
-                  <div class="progress" aria-label="모금률">
-                  	<span class="progress_bar" style="width:27%;"></span>
-                  </div>
-                  
-                  <strong class="donation_percent">
-                  	34
-                 	%
-                  </strong>
-                  
-                  <strong class="donationcard_text">
-                   2,725,000원
-                  </strong>
-                  
-                  <!--  -->
-                   </div>
-              </div>
-              </div>
-     
-        </div>
-        
-      </div>
-	<br><br>
-      <!-- Grid end  -->
+    
 
 
 
@@ -401,7 +139,7 @@
 		<dl class="donation-status-list">
 			<div class="donation-status-item-1">
 				<dt class="donation-status-term">기부참여</dt>
-				<dd class="donation-status-data">
+				<dd class="donation-status-count">
 					<span class="donation-status-point">
 						<span>1,539</span>
 					</span>
@@ -411,8 +149,8 @@
 			</div>
 			<div class="donation-status-item-1">
 					<dt class="donation-status-term">기부금액</dt>
-					<dd class="donation-status-data">
-					<span class="donation-status-point">
+					<dd class="donation-status-money2">
+					<span class="donation-status-money">
 						<span>4,981,000</span>
 					</span>
 					"원"
@@ -422,8 +160,8 @@
 			</div>
 			<div class="donation-status-item-1">
 				<dt class="donation-status-term">펀딩 참여</dt>
-					<dd class="donation-status-data">
-					<span class="donation-status-point">
+					<dd class="funding-status-count">
+					<span class="funding-status-point">
 						<span>22</span>
 					</span>
 					"명"
@@ -434,8 +172,8 @@
 			<div class="donation-status-item-1">
 			
 			<dt class="donation-status-term">참여 금액</dt>
-					<dd class="donation-status-data">
-					<span class="donation-status-point">
+					<dd class="funding-status-money2">
+					<span class="funding-status-money">
 						<span>1,062,300</span>
 					</span>
 					"원"
