@@ -1,6 +1,7 @@
 package user.dao;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
@@ -12,6 +13,8 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import ascii.AES256;
+import board.bean.BoardDDTO;
+import board.bean.BoardFDTO;
 import user.bean.UserDTO;
 import user.bean.UserImageDTO;
 
@@ -81,9 +84,6 @@ public class UserDAOMybatis implements UserDAO {
 
 	@Override
 	public String kakaologin(String kakao_email) {
-	
-		
-
 		
 		String userid=sqlsession.selectOne("userSQL.kakaologin",kakao_email);
 		
@@ -112,12 +112,7 @@ public class UserDAOMybatis implements UserDAO {
 		System.out.println("업데이트완료!!");
 	}
 	
-	
-	
-	
-	
-	
-	
+
 	
 	@Override
 	public void profileimage(UserImageDTO userImageDTO) {
@@ -177,6 +172,37 @@ public class UserDAOMybatis implements UserDAO {
 	public int passChk(UserDTO userDTO) {
 		int result = sqlsession.selectOne("userSQL.passChk", userDTO);
 		return result;
+	}
+
+	@Override
+	public Map<String,String> activemain() {
+		
+		Map<String,String> map = new HashMap<String,String>();
+		
+		String fundingActive = sqlsession.selectOne("userSQL.fundingactive");
+		String donationActive = sqlsession.selectOne("userSQL.donationactive");
+		String fundingCount = sqlsession.selectOne("userSQL.fundingcount");
+		String donationCount = sqlsession.selectOne("userSQL.donationcount");
+		
+
+		map.put("donationactive", donationActive);
+		map.put("fundingactive", fundingActive);
+		map.put("fundingcount", fundingCount);
+		map.put("donationcount", donationCount);
+		
+		return map;
+	}
+
+	@Override
+	public List<BoardDDTO> card_list() {
+		
+		return sqlsession.selectList("userSQL.card_list");
+	}
+
+	@Override
+	public List<BoardFDTO> card_list_funding() {
+		
+		return sqlsession.selectList("userSQL.card_list_funding");
 	}
 	
 	

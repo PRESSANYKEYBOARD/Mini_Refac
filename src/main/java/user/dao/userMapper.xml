@@ -65,10 +65,31 @@
  	<delete id="deleteFinal" parameterType="java.util.Map">
   		delete from userinfo where userid=#{userid} and userpassword=#{userpassword}
     </delete>
+    
+    <select id="fundingactive" resultType="String">
+    	select sum(fundingactive) from userinfo
+    </select>
+	
+	<select id="donationactive" resultType="String">
+		select sum(donationactive) from userinfo
+	</select>
+	
+	<select id="fundingcount" resultType="String">
+		select count(userid) from userinfo where fundingactive !=0
+	</select>
 	
 	
+	<select id="donationcount" resultType="String">
+		select count(userid) from userinfo where donationactive !=0
+	</select>
 	
+	<select id="card_list" resultType="boardD">
+		select * from boardd
+	</select>
 	
+	<select id="card_list_funding" resultType="boardF">
+		select * from boardf
+	</select>
 	
 	
 

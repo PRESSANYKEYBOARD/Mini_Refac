@@ -16,5 +16,7 @@ public class UserDTO {
 	private String userphone;
 	private String gender;
 	private String useremail;
+	private int donationactive;
+	private int fundingactive;
 	
 }
