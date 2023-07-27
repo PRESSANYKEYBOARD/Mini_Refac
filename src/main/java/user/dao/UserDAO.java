@@ -1,5 +1,6 @@
 package user.dao;
 
+import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
@@ -7,6 +8,8 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.ui.Model;
 
+import board.bean.BoardDDTO;
+import board.bean.BoardFDTO;
 import user.bean.UserDTO;
 import user.bean.UserImageDTO;
 
@@ -43,15 +46,16 @@ public interface UserDAO {
 	//비밀번호 체크
 	public int passChk(UserDTO userDTO);
 	
-	
-	
-	
-	
-	
-	
+
 	public String delete2(String userid);
 
 	public void deleteFinal(Map<String, Object> map);
+
+	public Map<String,String> activemain();
+
+	public List<BoardDDTO> card_list();
+
+	public List<BoardFDTO> card_list_funding();
 	
 	
 	

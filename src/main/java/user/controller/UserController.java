@@ -269,15 +269,12 @@ public class UserController {
 		return "user/updateForm";
 	}
 	
-	
 	  @PostMapping(value="getUser")
 	  
 	  @ResponseBody public UserDTO getUser(@RequestParam String id) { return
 	  userService.getUser(id); }
 	 	
-	
-	
-	
+
 	  @PostMapping(value="update")
 	  
 	  @ResponseBody public void update(@ModelAttribute UserDTO userDTO){
@@ -288,8 +285,7 @@ public class UserController {
 		return "user/deleteForm";
 	}
 	
-	
-	
+
 	//회원탈퇴
 	
 	  @PostMapping(value="delete")

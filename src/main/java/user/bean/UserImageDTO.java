@@ -8,7 +8,6 @@ import lombok.Setter;
 @Getter
 public class UserImageDTO {
 	
-	
 	private String filename;
 	private String userid;
 	private int fileseq;
