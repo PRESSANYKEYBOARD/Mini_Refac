@@ -54,13 +54,7 @@
 		<form id="fun_updateForm" name="fun_updateForm">
 		
 		<input type="hidden" id="boardFSeq" name="boardFSeq" value="${fundingDTO.boardFSeq}">
-
-			<input type="text" name="userId" id="userId" value="{sessionScope.userId}">
-			<input type="text" name="fileName">
-<!-- 			<div class="form-group_title">
-				<label for="title">아이디</label> <input type="text"
-					class="form-control" id="userId" name="userId">
-			</div> -->
+			<input type="hidden" name="userId" id="userId" value="{sessionScope.userId}">
 			
 			<div class="form-group_title">
 				<label for="thumnail">변경할 썸네일 이미지를 선택하세요.</label> 

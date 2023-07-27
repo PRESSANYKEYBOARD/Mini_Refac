@@ -10,65 +10,82 @@ function addComma(value) {
 }
 
 $(document).ready(function () {
-
 	var now = new Date();
 
 	function renderFundingList(fundings) {
 		var fundingList = "";
 		for (var i = 0; i < fundings.length; i++) {
-	  		var funding = fundings[i];
-	  		var expireDate = new Date(funding.boardFExpireDate);
-			var diffInDays = Math.round((expireDate - now) / (1000 * 60 * 60 * 24));
-			var progress = funding.progress;
-			var currentAmount = addComma(String(funding.currentAmount));
-			var goalAmount = addComma(String(funding.boardFGoalAmount));
-	
-			var card = $("<div/>")
-				.addClass("card")
-				.append(
-				$("<img/>")
-					.attr("src", "/Hangeulum/storage/" + funding.boardFThumbnail)
-					.attr("alt", "Image")
-				)
-        .append(
-          $("<div/>")
-             .addClass("card-body")
-             .append($("<h2/>").addClass("card-title").text(funding.boardFSubject))
-             .append($("<h4/>").text(funding.comName))
-             .append($("<p/>").addClass("card-content").text(funding.description))
-             .append(
-              $("<div/>")
-                .addClass("card-progress")
-                .append(
-                  $("<div/>")
-                    .addClass("progress_bar")
-                    .css("width", progress + "%")
-                )
-            )
-             .append($("<p/>").addClass("card-percent").text(progress + "%"))
-             .append(
-              $("<p/>")
-                .addClass("price")
-                .text("₩" + goalAmount)
-            )
-             .append(
-              $("<a/>")
-                .attr("href", "/Hangeulum/funding/fun_view/" + funding.boardFSeq)
-                .addClass("card-button")
-                .text("펀딩 참여하기")
-            	)
-            )
-	          .append(
-	          $("<div/>")
-	            .addClass("card-footer")
-	            .append($("<span/>").text(diffInDays + "일 남음"))
-        );
+			(function (i) {
+				var funding = fundings[i];
+				var expireDate = new Date(funding.boardFExpireDate);
+				var diffInDays = Math.round((expireDate - now) / (1000 * 60 * 60 * 24));
+				var progress = funding.progress;
+				var currentAmount = addComma(String(funding.currentAmount));
+				var goalAmount = addComma(String(funding.boardFGoalAmount));
+				var cardClass = diffInDays >= 0 ? "card" : "card expired";
+				var daysText;
 
-      fundingList += card.prop("outerHTML");
-    }
-    
-    $(".card-container").empty().append(fundingList);
-  }
+				if (diffInDays >= 0) {
+					daysText = diffInDays + "일 남음";
+				} else {
+					daysText = Math.abs(diffInDays) + "일 지남";
+				}
+
+				var card = $("<div/>")
+					.addClass(cardClass)
+					.append(
+						$("<img/>")
+							.attr("src", "/Hangeulum/storage/" + funding.boardFThumbnail)
+							.attr("alt", "Image")
+					)
+					.append(
+						$("<div/>")
+							.addClass("card-body")
+							.append($("<h2/>").addClass("card-title").text(funding.boardFSubject))
+							.append($("<h4/>").text(funding.comName))
+							.append($("<p/>").addClass("card-content").text(funding.description))
+							.append(
+								$("<div/>")
+									.addClass("card-progress")
+									.append(
+										$("<div/>")
+											.addClass("progress_bar")
+											.css("width", progress + "%")
+									)
+							)
+							.append($("<p/>").addClass("card-percent").text(progress + "%"))
+							.append(
+								$("<p/>")
+									.addClass("price")
+									.text("₩" + goalAmount)
+							)
+							.append(
+								$("<a/>")
+									.attr("href", "/Hangeulum/funding/fun_view/" + funding.boardFSeq)
+									.addClass("card-button")
+									.css("pointer-events", diffInDays >= 0 ? "auto" : "none")
+									.text(diffInDays >= 0 ? "펀딩 참여하기" : "펀딩 종료")
+							)
+					)
+					.append(
+						$("<div/>")
+							.addClass("card-footer")
+							.append($("<span/>").text(daysText))
+					);
+
+				card.click(function () {
+					if (diffInDays >= 0) {
+						window.location.href = "/Hangeulum/funding/fun_view/" + funding.boardFSeq;
+					}
+				});
+
+				fundingList += card.prop("outerHTML");
+			})(i);
+		}
+
+		$(".card-container").empty().append(fundingList);
+	}
+
 
     // 초기 페이지 로드시 펀딩 리스트를 불러옵니다.
     $.ajax({
