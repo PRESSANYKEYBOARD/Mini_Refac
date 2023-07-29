@@ -58,7 +58,7 @@
 			
 			<div class="form-group_title">
 				<label for="thumnail">변경할 썸네일 이미지를 선택하세요.</label> 
-				<input type="file" class="form-control" id="boardFThumbnail" name="boardFile">
+				<input type="file" class="form-control" id="boardFThumbnail" name="boardFile" value="${fundingDTO.boardFThumbnail}">
 			</div>
 			
 			<div class="form-group">
@@ -68,22 +68,22 @@
 			
 			<div class="form-group">
 				<label for="company_text">변경할 사명을 입력하세요.</label> 
-				<input type="text" class="form-control" id="comName" name="comName">
+				<input type="text" class="form-control" id="comName" name="comName" value="${fundingDTO.comName}">
 			</div>
 			
 			<div class="form-group">
 				<label for="company_text">변경할 펀딩 페이지에 노출되는 회사 슬로건을 입력하세요.</label> 
-				<input type="text" class="form-control" id="comText" name="comText" >
+				<input type="text" class="form-control" id="comText" name="comText" value="${fundingDTO.comText}">
 			</div>
 			
 			<div class="form-group">
 				<label for="title" style="width: 50%;">변경할 제목</label>
-				<input type="text" class="form-control" id="boardFSubject" name="boardFSubject">
+				<input type="text" class="form-control" id="boardFSubject" name="boardFSubject" value="${fundingDTO.boardFSubject}">
 			</div>
 
 			<div class="form-group">
 				<label for="goal_amount">변경할 목표금액을 입력하세요.</label> 
-				<input type="text" class="form-control" id="boardFGoalAmount" name="boardFGoalAmount">
+				<input type="text" class="form-control" id="boardFGoalAmount" name="boardFGoalAmount" value="${fundingDTO.boardFGoalAmount}">
 			</div>
 
 			<div class="form-group">
@@ -93,7 +93,7 @@
 
 			<div class="form-group">
 				<label for="post_period_end">변경할 펀딩 개시 종료일을 선택하세요</label> 
-				<input type="date" class="form-control" id="boardFExpireDate" name="boardFExpireDate">
+				<input type="date" class="form-control" id="boardFExpireDate" name="boardFExpireDate" value="${fundingDTO.boardFExpireDate}">
 			</div>
 
 			<div class="form-group">
@@ -103,18 +103,18 @@
 
 			<div class="form-group">
 				<label for="post_period_send">변경할 예상 발송일을 설정하세요.</label> 
-				<input type="date" class="form-control" id="boardFSendDate" name="boardFSendDate">
+				<input type="date" class="form-control" id="boardFSendDate" name="boardFSendDate" value="${fundingDTO.boardFSendDate}">
 			</div>
 
 			<div class="form-group">
 				<label for="reward">변경할 상품</label>
-				<input type="text" class="form-control" name="boardFRewardSelect" placeholder="상품을 입력하세요.">
-				<input type="number" class="form-control" name="boardFRewardPrice" placeholder="금액을 입력하세요.">
+				<input type="text" class="form-control" name="boardFRewardSelect" placeholder="상품을 입력하세요." value="${fundingDTO.boardFRewardSelect}">
+				<input type="number" class="form-control" name="boardFRewardPrice" placeholder="금액을 입력하세요." value="${fundingDTO.boardFRewardPrice}">
 			</div>
 
 	      <div class="form-group">
 	      	  <label for="post_period_count">변경할 준비된 상품 수량을 입력하세요.</label>
-	          <input type="text" class="form-control" id="boardFTotRewardCnt" name="boardFTotRewardCnt" required>
+	          <input type="text" class="form-control" id="boardFTotRewardCnt" name="boardFTotRewardCnt" value="${fundingDTO.boardFTotRewardCnt}" required>
 	      </div>
 <!-- 			<div id="additional-rewards">
 				여기에 추가적인 상품 입력란이 동적으로 생성됩니다.
@@ -130,14 +130,14 @@
 
 			<div class="form-group">
 				<label for="editor">수정할 내용을 입력하세요.</label>
-				<textarea id="boardFContent" name="boardFContent" rows="10" cols="100" value="${update.boardFContent}"></textarea>
+				<textarea id="boardFContent" name="boardFContent" rows="10" cols="100">${fundingDTO.boardFContent}</textarea>
 			</div>
 
 			<!--    	 	이미지 파일 선택 및 미리보기
     	<input type="file" id="fileName"> -->
 
-			<button type="submit" class="btn-primary" id="updateBtn" name="updateBtn" style="width: 20%; font-weight: bold">수정 완료</button>
-			<button type="reset" class="btn-secondary">취소</button>
+			<button type="submit" class="btn-primary" id="updateBtn" name="updateBtn">수정 완료</button>
+			<button type="button" class="btn-secondary" onClick="location.href='/Hangeulum/funding/fun_main'">취소</button>
 		</form>
 </div>
 <script type="text/javascript" src="/Hangeulum/smartEditor/js/HuskyEZCreator.js" charset="utf-8"></script>

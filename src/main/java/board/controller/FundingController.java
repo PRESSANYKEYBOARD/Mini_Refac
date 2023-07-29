@@ -38,15 +38,15 @@ public class FundingController {
 		return "funding/fun_main";
 	}
 	
-	 //게시글 보기
-	 //@PathVariable 어노테이션을 이용하여 URL 경로에 해당 번호를 포함하여 전달
-	 //예를 들어, URL 경로가 "/funding/{boardFSeq}"일 때, {boardFSeq} 자리에 해당 글 번호를 넣어주면 된다. 
-	 //이를 받아 컨트롤러에서는 @PathVariable을 사용하여 해당 변수에 값을 할당할 수 있다.
-	 @RequestMapping(value = "fun_view/{boardFSeq}", method = RequestMethod.GET)
-	 public ModelAndView fun_view(@PathVariable("boardFSeq") int boardFSeq) {
-	     FundingDTO fundingDTO = fundingService.getBoard(boardFSeq);
-	     return new ModelAndView("funding/fun_view", "fundingDTO", fundingDTO);
-	 }
+	//게시글 보기
+	//@PathVariable 어노테이션을 이용하여 URL 경로에 해당 번호를 포함하여 전달
+	//예를 들어, URL 경로가 "/funding/{boardFSeq}"일 때, {boardFSeq} 자리에 해당 글 번호를 넣어주면 된다. 
+	//이를 받아 컨트롤러에서는 @PathVariable을 사용하여 해당 변수에 값을 할당할 수 있다.
+	@RequestMapping(value = "fun_view/{boardFSeq}", method = RequestMethod.GET)
+	public ModelAndView fun_view(@PathVariable("boardFSeq") int boardFSeq) {
+		FundingDTO fundingDTO = fundingService.getBoard(boardFSeq);
+	    return new ModelAndView("funding/fun_view", "fundingDTO", fundingDTO);
+	}
 
 	@RequestMapping(value = "fun_writeForm", method = RequestMethod.GET)
 	public String fun_write_Form() {
@@ -103,8 +103,6 @@ public class FundingController {
 	    String companyPath = session.getServletContext().getRealPath("/WEB-INF/storage/");
 	    String thumbnailPath = session.getServletContext().getRealPath("/WEB-INF/storage/");
 	    
-	    System.out.println(thumbnailPath);
-	    
 	    // 새로운 파일 업로드
 	    File newFile = new File(thumbnailPath, fileName);
 	    boardFile.transferTo(newFile);
@@ -132,12 +130,6 @@ public class FundingController {
 	    fundingDTO.setBoardFSeq(boardFSeq); // 수정할 게시글의 번호를 set 해줌
 	    fundingDTO.setFileName(companyName);
 	    fundingDTO.setBoardFThumbnail(fileName);
-	    
-	    System.out.println(fundingDTO.getBoardFSeq());
-	    System.out.println(fundingDTO.getFileName());
-	    System.out.println(fundingDTO.getBoardFThumbnail());
-	    System.out.println(fundingDTO.getBoardFRewardSelect());
-	    System.out.println(fundingDTO.getBoardFRewardPrice());
 	    
 	    fundingService.update(fundingDTO);
 	}

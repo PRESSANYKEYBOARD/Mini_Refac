@@ -18,7 +18,7 @@
 
 <style>
 	/*a tag 전역 설정*/
-	a {text-decoration: none;}
+	a {text-decoration: none !important;}
 </style>
 </head>
 <body>

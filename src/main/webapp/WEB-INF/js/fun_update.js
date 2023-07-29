@@ -3,7 +3,7 @@ $(document).ready(function() {
 	nhn.husky.EZCreator.createInIFrame({
 	    oAppRef: oEditors,
 	    elPlaceHolder: "boardFContent", // textarea의 name태그
-	    sSkinURI: "/Hangeulum/smartEditor/SmartEditor2Skin.html",  // 본인 경로게 맞게 수정
+	    sSkinURI: "/Hangeulum/smartEditor/SmartEditor2Skin.html",  // 본인 경로에 맞게 수정
 	    fCreator: "createSEditor2",
 	    
 	    htParams : {
