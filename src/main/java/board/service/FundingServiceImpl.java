@@ -59,7 +59,6 @@ public class FundingServiceImpl implements FundingService {
 
 	@Override
 	public List<FundingDTO> orderbydate(String option) {
-		
 		return fundingDAO.orderbydate(option);
 	}
 
