@@ -440,18 +440,25 @@ a.headerSubSpan:hover{
     float: left;
 }
 
-.funding_go_button { /* 펀딩 참여/종료 버튼 */
-    display: inline-block;
-    width: 350px;
-    height: 54px;
-    background-color: #07c8ff;
-    border: 1px solid rgba(0,0,0,.02);
-    border-radius: 3px;
-    font-size: 19px;
-    font-weight: 700;
-    color: #fff;
-    letter-spacing: -.3px;
-    margin-right: 100px;
+.funding_go_button {
+	display: inline-block;
+	width: 350px;
+	height: 54px;
+	background-color: #4CAF50; /* 새로운 색상 지정 */
+	border: 1px solid rgba(0,0,0,.02);
+	border-radius: 3px;
+	font-size: 19px;
+	font-weight: 700;
+	color: #fff;
+	letter-spacing: -.3px;
+	margin-right: 100px;
+	cursor: pointer; /* 마우스 커서 효과 추가 */
+  	transition: all 0.3s; /* 변화 효과 추가 */
+}
+
+.funding_go_button:hover {
+	background-color: #66BB6A;
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.25);
 }
 
 .funding_go_button a { /* 내부의 a태그 */
@@ -778,10 +785,11 @@ a.headerSubSpan:hover{
     vertical-align: top;
 }
 
-.hidden_title { /* 히든 타이틀 */
-    display: inline-block;
-    margin-top: 2px;
-    vertical-align: top;
+.hidden_title {
+  display: inline-block;
+  margin-top: 2px;
+  vertical-align: top;
+  max-width: calc(100% - 300px); /* 참여하기 버튼과 이미지의 너비를 계산해 제한 */
 }
 
 .hidden_fungo { /* 히든 펀딩참여하기 */
@@ -807,15 +815,15 @@ a.headerSubSpan:hover{
 .hidden_subject { /* 히든의 제목 */
 	overflow: hidden;
     text-overflow: ellipsis;
-    white-space: nowrap;
+    white-space: normal; /* 변경: nowrap에서 normal로 변경 */
     display: block;
-    max-width: 635px;
+    max-width: 500px;
     margin-top: 7px;
-    /* font-family: NanumSquareWebFont,dotum,Sans-serif; */
     font-size: 20px;
     font-weight: 900;
     line-height: 1.1;
     letter-spacing: -.3px;
+    position: fixed;
 }
 
 .hidden_fungo { /* 스크롤을 내렸을 때 펀딩 참여하기 버튼 div */
@@ -828,13 +836,20 @@ a.headerSubSpan:hover{
     display: inline-block;
     width: 270px;
     height: 52px;
-    background-color: #07c8ff;
+    background-color: #4CAF50; /* 새로운 색상 지정 */
     border: 1px solid rgba(0,0,0,.02);
     border-radius: 3px;
     font-size: 19px;
     font-weight: 700;
     color: #fff;
     letter-spacing: -.3px;
+    cursor: pointer; /* 마우스 커서 효과 추가 */
+  	transition: all 0.3s; /* 변화 효과 추가 */
+}
+
+.hidden_button:hover {
+	background-color: #66BB6A;
+  	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.25)
 }
 
 .hidden_list { /* 스크롤을 내릴 때 리스트 */
@@ -851,6 +866,8 @@ a.headerSubSpan:hover{
     margin: 0;
     padding: 0;
     padding-right: 38px;
+    text-overflow: ellipsis;
+/*    	white-space: nowrap; 글씨 자동 줄바꿈 방지 */
 }
 
 .hidden_list ul li {
