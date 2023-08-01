@@ -60,6 +60,7 @@ body {
 @media (max-width: 639px) {
   .title { font-size: 12px; }
 } 
+
 /* 반응형 웹 */
 
 /* .btn-close {
@@ -95,6 +96,7 @@ body {
 }
 
 select{
+	margin-top: 10px;
 	width: 350px;
 	text-align : center;
 }
@@ -287,7 +289,7 @@ a.headerSubSpan:hover{
     display: inline-block;
     position: absolute;
     height: 100%;
-    background-color: #0f92e0;
+    background-color: #4CAF50; /* 새로운 색상 지정 */
 }
 
 .credit_goal { /* 목표금액 메인 */
@@ -471,6 +473,10 @@ a.headerSubSpan:hover{
 .donae {
 	display: inline-block;
 	font-size: 13px;
+}
+
+.donae #selectbox {
+	font-size: 15px;
 }
 
 .content { /* content 전체 내용 */
@@ -663,19 +669,40 @@ a.headerSubSpan:hover{
 	padding-left: 10px;
 }
 
-.funding_reward { /* 리워드 선택부터 가상 계좌 선택까지의 영역 */
-    position: relative;
-    width: 348px;
-    margin-top: 18px;
-    border-top: 1px solid rgba(0,0,0,.05);
-    padding-top: 18px;
-}
-
-.funding_reward_list { /* .funding_reward의 ul */
+.funding_reward_list {
 	list-style: none;
 	margin-top: 1px;
     border: 1px solid #000;
     border-width: 1px 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #fff;
+}
+
+.funding_reward_list li {
+    position: relative;
+    padding: 5px 10px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-image: linear-gradient(to right, transparent 0%, #ddd 50%, transparent 100%);
+    background-size: 100% 1px;
+    background-repeat: no-repeat;
+    background-position: bottom;
+}
+
+.funding_reward_list li:last-child {
+    border-bottom: none;
+}
+
+.funding_reward_list li strong {
+    font-weight: bold;
+}
+
+.price {
+    color: #333;
+    font-size: 14px;
 }
 
 .funding_reward_list li { /* .funding_reward의 ul 밑의 li 요소들 */
@@ -684,8 +711,7 @@ a.headerSubSpan:hover{
 }
 
 .funding_reward_list span {
-	position: absolute;
-    right: 0;
+    margin-right: 10px;
     bottom: 27px;
     font-size: 15px;
 }
@@ -732,7 +758,7 @@ a.headerSubSpan:hover{
 
 .reward_cham1_left { /* ~원 펀딩 참여 */
     margin-right: 4px;
-    color: #0091ff;
+    color: #4CAF50; /* 새로운 색상 지정 */
 }
 
 .reward_cham1_right { /* 남은 수량 */
@@ -1155,7 +1181,6 @@ display: inline-block;
     line-height: 17px;
     color: #828282;
     text-align: left;
-    
 }
 
 .agree_choice { /* 선택 동의 */
@@ -1196,8 +1221,15 @@ display: inline-block;
     height: 50px;
     padding-top: 3px;
     font-size: 14px;
-    font-weight: 700;
+	font-weight: 700;
+	background-color: #c4c4c4; /* 배경색 지정 */
+    color: #5d5d5d; /* 글자색 지정 */
     letter-spacing: -1px;
+    cursor: pointer;
+    transition: all 0.3s; /* 변화 효과 추가 */
+    border-width: 1px 0; /* 테두리 두께 수정 */
+    border-style: solid; /* 테두리 스타일 수정 */
+    border-color: transparent; /* 테두리 색상을 투명하게 변경 */
 }
 
 .button_agree { /* 동의 버튼 */
@@ -1210,12 +1242,26 @@ display: inline-block;
     color: #fff;
     letter-spacing: -1px;
 	margin-left: 16px;
-    background-color: #50bcdf;
+    background-color: #4CAF50; /* 새로운 색상 지정 */
+    cursor: pointer;
+    transition: all 0.3s; /* 변화 효과 추가 */
+    border-width: 1px 0; /* 테두리 두께 수정 */
+    border-style: solid; /* 테두리 스타일 수정 */
+    border-color: transparent; /* 테두리 색상을 투명하게 변경 */
+}
+
+.button_disagree:hover {
+	background-color: #a0a0a0; /* 마우스 오버 시 배경색 변경 */
+}
+
+.button_agree:hover {
+	background-color: #66BB6A;
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.25);
 }
 
 .btn-close { /* 모달 창 닫기 버튼 */
     position: relative;
     display: inline-block;
-    width: 60px;
+    width: 30px;
     height: 60px;
 }

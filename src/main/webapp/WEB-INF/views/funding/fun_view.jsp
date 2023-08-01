@@ -12,7 +12,7 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 
 <link rel="reset" href="/Hangeulum/css/styleReset.css" />
-<link rel="stylesheet" href="/Hangeulum/css/fun_view.css">
+<link rel="stylesheet" href="/Hangeulum/css/funding/fun_view.css">
 <meta name="viewport" content="width=device-width,initial-scale=1">	
 <meta charset="UTF-8">
 <title>Insert title here</title>
@@ -69,7 +69,7 @@
 					<span class="bar" style="width: 100%;"></span>				
 				</div> <!-- bar_main -->
 				<div class="credit_goal">
-					<span class="credit">${fundingDTO.boardFGoalAmount}원 목표</span>
+					<span class="credit"><fmt:formatNumber type="number" value="${fundingDTO.boardFGoalAmount}" pattern="#,###"/>원 목표</span>
 				</div> <!-- credit_main -->
 				<div class="credit_much">
 					<span class="much">원</span>
@@ -111,7 +111,7 @@
 							    <button type="button" class="plus">증가</button>
 							</div> <!-- count-wrap _count -->
 						</div>
-						<span class="price">${fundingDTO.boardFRewardPrice }원</span>
+						<span class="price"><fmt:formatNumber type="number" value="${fundingDTO.boardFRewardPrice}" pattern="#,###"/>원</span>
 					</li>
 				</ul> <!-- funding_reward_list -->	
 			</div> <!-- funding_reward -->
@@ -167,7 +167,7 @@
 				<div class="content_guide_inner2">
 					<h5><strong><img src="/Hangeulum/image/funmain_image/cal.png" alt="끼에엨">결제 및 발송 예정일</strong></h5>
 					<ul>
-						<li><span>1차 결제 : , 예상 발송일 : 2023.05.??</span></li>
+						<li><span>1차 결제 : ${fundingDTO.boardFExpireDate }, 예상 발송일 : ${fundingDTO.boardFSendDate }</span></li>
 					</ul>
 				</div> <!-- content_guide_inner2 -->
 			</div> <!-- content_guide -->
@@ -217,7 +217,7 @@
 			
 			<div class="reward_cham">
 				<div class="reward_cham1_left">
-					<strong><span>${fundingDTO.boardFRewardPrice }</span>원 펀딩 참여</strong>
+					<strong><span><fmt:formatNumber type="number" value="${fundingDTO.boardFRewardPrice}" pattern="#,###"/></span>원 펀딩 참여</strong>
 				</div> <!-- reward_cham_left -->
 				<div class="reward_cham1_right">
 					<span>${fundingDTO.boardFTotRewardCnt }</span>개 남음
@@ -351,17 +351,36 @@
 				
 			    <div class="agree_button">
 			  		<button class="button_disagree">비동의</button>
-			    	<button class="button_agree">동의</button>
+			    	<button class="button_agree" onClick="location.href='/Hangeulum/funding/fun_payment/${fundingDTO.boardFSeq}'">동의</button>
 			   </div>
 	  	  </div> <!-- 모달 끝 -->
 	  	  
 	   </div> <!-- 전체 요소 끝 -->
-<script>
-	// ${}태그를 사용하기 위해서 script 태그에 직접 작성해야함!
-	// .js 파일을 사용하면 안 됨
-	
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+    function fun_view() {
+      $.ajax({
+        type: "GET",
+        url: "/Hangeulum/funding/fun_view/" + ${boardFSeq},
+        dataType: "json",
+        success: function(data) {
+          console.log(data);
+          $(".company_text1").text(data.boardFCompanyName);
+          $(".company_text2").text(data.boardFIntro);
+          $(".much").text(data.boardFNowAmount.toLocaleString() + "원");
+          var percent = (data.boardFNowAmount / data.boardFGoalAmount) * 100;
+          $(".per").text(percent.toFixed(0) + "%");
+          $(".bar").css("width", percent.toFixed(0) + "%");
+        },
+        error: function(xhr, status, error) {
+          console.log(xhr.error);
+        }
+      });
+    }
+
 	var now = new Date();
-	
 	// boardFExpireDate를 Date 형식으로 변환합니다.
 	var expireDate = new Date("${fundingDTO.boardFExpireDate}");
 	const date = new Date("${fundingDTO.boardFExpireDate}");
@@ -376,34 +395,16 @@
 	document.getElementById('hidden_d-day').innerText = diffInDays;
 	document.getElementById('point1').innerText = formattedDate;
 	
-	// 게시글 삭제
-	function deleteBoard() {
-		  var confirmed = confirm("정말로 삭제하시겠습니까?");
-
-		  if (confirmed) {
-		    $.ajax({
-		      url: "/Hangeulum/funding/fun_delete",
-		      type: "POST",
-		      data: { boardFSeq: "${fundingDTO.boardFSeq}" },
-		      success: function () {
-		        alert("펀딩 게시글 삭제 완료");
-		        // 이동할 페이지 주소
-		        location.href = "/Hangeulum/funding/fun_main";
-		      },
-		      error: function (xhr, status, error) {
-		        console.error(error);
-		      },
-		    });
-		  }
-		}
+	// Call the fun_view function after everything is ready
+	fun_view();
+});
 </script>
-<script type="text/javascript" src="http://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-<script type="text/javascript" src="/Hangeulum/js/fun_view.js"></script>
-<script type="text/javascript" src="/Hangeulum/js/count_price.js"></script> <!-- 수량 가격에 맞게.... -->
-<script type="text/javascript" src="/Hangeulum/js/list.js"></script> <!-- 리스트가 바뀐다. -->
-<script type="text/javascript" src="/Hangeulum/js/scroll.js"></script> <!-- 스크롤을 내리면? -->
-<script type="text/javascript" src="/Hangeulum/js/modal.js"></script> <!-- 참여하기 버튼을 누르면 모달창이 뜬다. -->
-<script type="text/javascript" src="/Hangeulum/js/checkbox.js"></script> <!-- 펀딩 참여하기 - checkbox -->
+<script type="text/javascript" src="/Hangeulum/js/funding/fun_view.js"></script>
+<script type="text/javascript" src="/Hangeulum/js/funding/count_price.js"></script> <!-- 수량 가격에 맞게.... -->
+<script type="text/javascript" src="/Hangeulum/js/funding/list.js"></script> <!-- 리스트가 바뀐다. -->
+<script type="text/javascript" src="/Hangeulum/js/funding/scroll.js"></script> <!-- 스크롤을 내리면? -->
+<script type="text/javascript" src="/Hangeulum/js/funding/modal.js"></script> <!-- 참여하기 버튼을 누르면 모달창이 뜬다. -->
+<script type="text/javascript" src="/Hangeulum/js/funding/checkbox.js"></script> <!-- 펀딩 참여하기 - checkbox -->
 </body>
 </html>

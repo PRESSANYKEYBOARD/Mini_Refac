@@ -49,7 +49,7 @@ public class FundingController {
 	}
 
 	@RequestMapping(value = "fun_writeForm", method = RequestMethod.GET)
-	public String fun_write_Form() {
+	public String fun_writeForm() {
 		return "funding/fun_writeForm";
 	}
 	
@@ -132,6 +132,12 @@ public class FundingController {
 	    fundingDTO.setBoardFThumbnail(fileName);
 	    
 	    fundingService.update(fundingDTO);
+	}
+	
+	@RequestMapping(value = "fun_payment/{boardFSeq}", method = RequestMethod.GET)
+	public ModelAndView fun_payment(@PathVariable("boardFSeq") int boardFSeq) {
+		FundingDTO fundingDTO = fundingService.getBoard(boardFSeq);
+	    return new ModelAndView("funding/fun_payment", "fundingDTO", fundingDTO);
 	}
 	
 	@GetMapping(value = "fun_getBoard")
