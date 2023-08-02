@@ -25,7 +25,7 @@
             <a href="/Hangeulum/"><img src="/Hangeulum/image/logo.png" alt="로고" width="250" height="60"></a>
             <div class="menu">
                 <ul>
-                    <li><a href="/Hangeulum/donation/donation_main">기부</a></li>
+                    <li><a href="/Hangeulum/donation/dona_main">기부</a></li>
                     <li><a href="/Hangeulum/funding/fun_main">펀딩</a></li>
                     <li><a href="/Hangeulum/support/noticeList">고객센터</a></li>
                 </ul>

@@ -19,32 +19,28 @@
  	
  	<insert id="donationWrite" parameterType="board.bean.BoardDDTO">
  		INSERT INTO boardD VALUES(SEQ_BOARDD.NEXTVAL
-							, #{fileName, jdbcType=VARCHAR}
-							, #{bdExpireDate, jdbcType=DATE}
-							, #{bdSubject, jdbcType=VARCHAR}
+							, #{fileName}
+							, #{bdExpireDate}
+							, #{bdSubject}
 							, #{bdGoalAmount}
 							, #{bdCumulativeAmount}
-							, #{bdContent,jdbcType=VARCHAR}
-							, #{bdTagName, jdbcType=VARCHAR}
-							, #{bdDonaGroup, jdbcType=VARCHAR}
+							, #{bdContent}
+							, #{bdTagName}
+							, #{bdDonaGroup}
 							, #{bdImg}
 							, #{bdThumbImg}
 							, #{categorydona}
-							, #{bdStartDate, jdbcType=DATE})
-
+							, #{bdStartDate}
+							)
  	</insert>
  	
- 	
- 	<select id="card_view" resultType="board.bean.BoardDDTO">
- 		select bdSeq,fileName,bdsubject, bdcumulativeamount, bdcontent, bddonagroup from boardd order by bdSeq desc
+ 	<select id="donationGetBoard" parameterType="int" resultType="board.bean.BoardDDTO">
+ 		SELECT * FROM boardD where bdSeq = #{bdSeq} 
  	</select>
  	
- 	
- 	<select id="boardview_list" parameterType="String" resultType="board.bean.BoardDDTO">
- 		select * from boardD where bdseq = #{bdseq}
- 	</select>
- 	
-
+ 	<select id="donationGetBoardList" resultType="board.bean.BoardDDTO">
+	    SELECT * FROM boardD ORDER BY bdSeq DESC
+	</select>
 
  	<select id="donationUpdateLoad" parameterType="String" resultType="board.bean.BoardDDTO">
  		select * from boardD where bdSeq = #{bdSeq}

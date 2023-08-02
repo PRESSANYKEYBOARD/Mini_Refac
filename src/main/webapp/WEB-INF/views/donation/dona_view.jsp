@@ -1,31 +1,36 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<!DOCTYPE html>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<!DOCTYPE html>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+
 <html>
 <head>
-<link rel="stylesheet" href="/Hangeulum/css/donation_view.css">
-<meta name="viewport" content="width=device-width,initial-scale=1">	
+
+<c:set var="bdseq" value="${boardDDTO.bdSeq}" />
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+
+<link rel="reset" href="/Hangeulum/css/styleReset.css" />
+<link rel="stylesheet" href="/Hangeulum/css/dona_view.css">
+<meta name="viewport" content="width=device-width,initial-scale=1">	
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>도네이션 게시글</title>
 </head>
 <body>
 <!--Header Start-->
 
-<%-- <input type="hidden" value="${boardDDTO.bdSeq}" id="bdSeq" name="bdSeq"> --%>
-<input type="text" value="admin" id="userid" name="userid" />
+<input type="hidden" value="admin" id="userid" name="userid" />
+
 <div>
     <div id="header">
         <div class="headerContent">
-            <div class="logo"><a href ="#"></a></div>
-            <img src="/Hangeulum/image/logo.png" alt="로고" width="250" height="60">
+            <a href="/Hangeulum/"><img src="/Hangeulum/image/logo.png" alt="로고" width="250" height="60"></a>
             <div class="menu">
                 <ul>
-                    <li><a href="">기부</a></li>
-                    <li><a href="">펀딩</a></li>
-                    <li><a href="">고객센터</a></li>
+                    <li><a href="/Hangeulum/donation/dona_main">기부</a></li>
+                    <li><a href="/Hangeulum/funding/fun_main">펀딩</a></li>
+                    <li><a href="/Hangeulum/support/noticeList">고객센터</a></li>
                 </ul>
             </div>
     
@@ -35,11 +40,22 @@
                 <a href="#" class="search_btn">
                     <img src="/Hangeulum/image/enlargement.png" alt="enlargement.jpg">
                 </a>
-            </div> <!-- header-r -->
-        </div> <!-- header1 컨테이너 -->
-    </div>
-	<!--Header End-->
-	ㄴ
+            </div>
+        </div>
+	</div> <!-- header1 끝 -->
+	
+	<%--End Header--%>
+
+	<%--For Header Height--%>
+	<div style="padding-top: 70px;"></div>
+	
+	<%--Start SubHeader--%>
+	
+	<div class="headerSub">
+		<a href="/Hangeulum/funding/fun_main" class="headerSubSpan" style="color: #00ab33; font-weight: 700;">전체 펀딩</a></li>
+        <a href="/Hangeulum/funding/fun_after2" class="headerSubSpan">펀딩 후기</a>
+	</div> <!-- container 끝 -->
+	
 <!-- 	<div class="header2"> 
 		<div class="container">
 			<div class="menu2">
@@ -53,12 +69,11 @@
 	
 	<div class="header3">
 		<div class="header3_img">
-			<h3 class="title">${bdSubject }</h3>
+			<h3 class="title">${donation.bdSubject }</h3>
 			<img src="/Hangeulum/image/after_image/after01.jpg" width="668px" height="401px">
 		</div> <!-- header3 이미지 끝 -->
 		
-		
-		
+
 		<!-- 첫 단 오른쪽 콘텐츠 시작  -->
 		<div class="header3_summary">
 			<div class="graph-wrap">
@@ -93,109 +108,14 @@
 	<div class="content">
 		<div class="content_left">
 			<div class="content_left1">
-			</div>
-			
-			<input type="text" id=bdSeq value="${bdseq }" >
-			<%--location.href='/Hangeulum/support/noticeView?seq=' + noticeSeq
-			value: query param과 동일하게 작성--%>
-			<input type="text" id="userId" value="${sessionScope.userid}" >
-			
+			</div>	
 						
 		<div class="modifyAndDelBtnDiv">
         	<button type="button" class="btn-secondary" id="modifyBtn" name="modifyBtn" style="width: 20%; font-weight: bold">수정</button>
         	<button type="button" class="btn-third" id="delBtn" name="delBtn" style="width: 20%; font-weight: bold">삭제</button>
 		</div>
-		</div> <!-- 3번째 내용 끝-->
-		
-	</div>
-			
-			
-			
-	<!-- 		
-			<div class="content_guide">
-				<h4>기부 사용 계획</h4>
-				<div class=content_guide_inner1>
-
-	<style>
-		table {
-			border-collapse: collapse;
-			width: 80%;
-			margin: auto;
-		}
-		th, td {
-			border: 1px solid black;
-			padding: 10px;
-			text-align: center;
-		}
-		th {
-			background-color: #f2f2f2;
-		}
-	</style>
-	<p>여러분들의 소중한 기부금은 아래와 같이 사용됩니다.</p>
-	<table>
-		<thead>
-			<tr>
-				<th>구분</th>
-				<th>사업비</th>
-				<th>집행금액</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr>
-				<td>아동 가정 생계지원</td>
-				<td>15,000,000원</td>
-				<td>15,000,000원</td>
-			</tr>
-			<tr>
-				<td>아동 가정 교육지원</td>
-				<td>5,000,000원</td>
-				<td>5,000,000원</td>
-			</tr>
-			<tr>
-				<td colspan="2">총 집행금액</td>
-				<td>20,000,000원</td>
-			</tr>
-		</tbody>
-	</table>
-	<p>목표금액인 20,000,000원을 모두 모금하여 정상적으로 사업을 진행할 수 있게 되었습니다.</p>
-				
-			
-					<ul>
-						<li>리워드는 해당 프로젝트 개설자가 제공합니다.</li>
-						<li>100% 달성 시에만 아래 지정일에 결제됩니다.</li>
-					</ul>
-				</div> content_guide_inner1
-				<div class="content_guide_inner2">
-					<h5><strong><img src="/Hangeulum/image/funmain_image/cal.png" alt="사진">사업대상 및 기대효과 </strong></h5>
-						
-						<table>
-							<thead>
-								<tr>
-									<th>사업 기간</th>
-									<th>사업 대상</th>
-									<th>기대 효과</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td>2023.06.05 ~ 2023.12.31</td>
-									<td>취약계층 아동•청소년</td>
-									<td>아동 가정 생계지원으로 인한 환경 개선<br>
-										아동 지원을 통한 교육환경 개선</td>
-								</tr>
-							</tbody>
-						</table>
-					
-				</div> content_guide_inner2
-			</div> content_guide
-			 -->
-	
-			
-			
-			
-			
-			 <!--Footer-->
-
+	</div> <!-- 3번째 내용 끝-->	
+</div>
 
 <div class="footer">
     <div class="footer_menu">
@@ -232,7 +152,7 @@
             </div>
         </div>
     </div>
-
+</div>
 
 <!--Footer End-->
 			

@@ -6,14 +6,13 @@ import board.bean.BoardDDTO;
 import board.bean.FormQDTO;
 
 public interface DonationService {
+
+	public void write(BoardDDTO boardDDTO);
+
+	public BoardDDTO getBoard(int bdSeq);
 	
-
-	public void donationWrite(BoardDDTO boardDDTO);
-
-	public List<BoardDDTO> card_view();
-
-	public BoardDDTO boardview_list(String bdseq);
-
+	public List<BoardDDTO> getBoardList();
+	
 	public BoardDDTO donation_update_load(String bdseq);
 
 	public BoardDDTO donationUpdateLoad(String bdSeq);
@@ -25,6 +24,5 @@ public interface DonationService {
 	public List<BoardDDTO> getRelatedPostsByCategory(String categorydona);
 
 	public List<BoardDDTO> CardChildList(String child);
-
 
 }

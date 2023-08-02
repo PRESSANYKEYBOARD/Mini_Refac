@@ -10,10 +10,8 @@ $(document).ready(function(){
 			   //   'pg': $('#pg').val()},
 		dataType: 'json',
 		success: function(data){
-			console.log(JSON.stringify(data));
-			
+		
 			// 본문
-			
 			$('span#contentViewTitleSpan').text(data.noticeSubject);
 			$('span#contentViewTitleDateSpan').text(moment(data.noticeDate, "YY/MM/DD").format('YYYY-MM-DD'));			
 			$('span#contentViewContInnerSpan').text(data.noticeContent);

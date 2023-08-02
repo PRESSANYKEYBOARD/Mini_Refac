@@ -1,0 +1,200 @@
+
+/* 반응형 웹 */
+.title { font-size: 18px; }
+
+@media (max-width: 1023px) {
+  .title { font-size: 16px; }
+}
+
+@media (max-width: 767px) {
+  .title { font-size: 14px; }
+}
+
+@media (max-width: 639px) {
+  .title { font-size: 12px; }
+} /* 반응형 웹 */
+
+/*Header Start*/
+#header {
+    border-bottom: 1px solid #ddd;
+    position: fixed;
+    width: 100%;
+    margin: auto;
+    background-color: white;
+    Z-index: 1000;
+}
+    
+#header .headerContent{
+    display: flex;
+    align-items: center;
+    width: 1140px;
+    margin: auto;
+}
+    
+#header .headerContent > div.logo h1{
+    margin: 0;
+}
+    
+#header .headerContent > div.logo a{
+    margin: 0;
+    font-size: 30px;
+    font-weight: bold;
+    color: yellowgreen;
+    text-decoration: none;
+}
+    
+#header .headerContent > div.menu{
+    flex: 1;
+    min-width: 780px;
+}
+    
+#header .headerContent > div.menu ul {
+    display: flex;
+    justify-content:center;
+    list-style: none;
+    margin: 0;
+    margin-right: 170px;
+    padding: 0;
+}
+    
+#header .headerContent > div.menu ul li{
+    margin-left: 50px;
+    margin-right: 30px;
+}
+    
+#header .headerContent > div.menu ul li a{
+    display: block;
+    padding: 20px 0;
+    font-size: 20px;
+    font-weight: 800;
+    color: black;
+    text-decoration: none;
+}
+
+div.header-r{
+    min-width: 90px;
+}
+    
+div.header-r > a{
+    text-decoration: none;
+    color: black;
+}
+    
+div.header-r > span.header-bar{
+    display: inline-block;
+    width: 1px;
+    height: 16px;
+    margin: 1px 1px 3px 1px;
+   	background-color: #d8d8d8;
+    vertical-align: middle;
+    content: '';
+}
+    
+div.header-r > a.search_btn > img{
+    width: 23px;
+    height: 23px;
+    vertical-align: top;
+    margin-top: 1px;
+}
+    
+/*Header End*/
+
+div.header-r{
+    min-width: 90px;
+}
+    
+div.header-r > a{
+    text-decoration: none;
+    color: black;
+}
+    
+div.header-r > span.header-bar{
+    display: inline-block;
+    width: 1px;
+    height: 16px;
+    margin: 1px 1px 3px 1px;
+   	background-color: #d8d8d8;
+    vertical-align: middle;
+    content: '';
+}
+    
+div.header-r > a.search_btn > img{
+    width: 23px;
+    height: 23px;
+    vertical-align: top;
+    margin-top: 1px;
+}
+    
+/*Header End*/
+
+.post {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 30px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+.form-group,
+.form-group_title {
+  margin-bottom: 20px;
+}
+      
+input[type="text"],
+input[type="number"],
+input[type="date"],
+input[type="file"]
+{
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+}
+
+/* 조절 실패하면 스마트 에디터 우측이 짤리게 됨 ㅋㅋㅋㅋ */
+textarea {
+	width: 1076px;
+}
+
+button[type="submit"],
+button[type="button"] {
+  width: 100%;
+  padding: 10px 0;
+  font-weight: bold;
+  font-size: 14px;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  text-align: center;
+  margin: 0 0 10px;
+}
+
+button[type="submit"] {
+  background-color: #00ab33;
+  color: white;
+}
+
+button[type="submit"]:hover {
+  background-color: #008f2a;
+}
+
+button[type="button"] {
+  background-color: white;
+  color: black;
+  border: 1px solid #545b62;
+}
+
+button[type="button"]:hover {
+  background-color: #f1f1f1;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 10px;
+}

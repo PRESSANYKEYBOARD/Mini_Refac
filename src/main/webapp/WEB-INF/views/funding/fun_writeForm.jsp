@@ -7,7 +7,6 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script type="text/javascript" src="http://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 	
 <link rel="reset" href="/Hangeulum/css/styleReset.css" />
@@ -24,7 +23,7 @@
             <a href="/Hangeulum/"><img src="/Hangeulum/image/logo.png" alt="로고" width="250" height="60"></a>
             <div class="menu">
                 <ul>
-                    <li><a href="/Hangeulum/donation/donation_main">기부</a></li>
+                    <li><a href="/Hangeulum/donation/dona_main">기부</a></li>
                     <li><a href="/Hangeulum/funding/fun_main">펀딩</a></li>
                     <li><a href="/Hangeulum/support/noticeList">고객센터</a></li>
                 </ul>
@@ -80,8 +79,8 @@
 			</div>
 			
 			<div class="form-group">
-				<label for="title" style="width: 50%;">제목</label> <input type="text"
-					class="form-control" id="boardFSubject" name="boardFSubject">
+				<label for="title">제목을 입력하세요.</label> 
+				<input type="text" class="form-control" id="boardFSubject" name="boardFSubject">
 			</div>
 
 			<div class="form-group">
@@ -148,7 +147,5 @@
 <script type="text/javascript" src="/Hangeulum/smartEditor/js/HuskyEZCreator.js" charset="utf-8"></script>
 <script type="text/javascript" src="/Hangeulum/js/funding/fun_startEnd.js"></script><!-- 펀딩 종료여부 -->
 <script type="text/javascript" src="/Hangeulum/js/funding/fun_write.js"></script><!-- 펀딩 라이트 작성.js -->
-<script type="text/javascript">
-</script>
 </body>
 </html>

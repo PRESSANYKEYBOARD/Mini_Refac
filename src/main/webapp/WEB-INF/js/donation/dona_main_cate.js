@@ -1,5 +1,4 @@
 $(function(){
-   		alert('hi');
    		var html;
    		
    		$.ajax({
@@ -58,7 +57,6 @@ $(function(){
 
 
 $('.category-link-total').click(function(){
-   		alert('hi');
    		var html;
    		
    		$('.container-card .card').remove();
