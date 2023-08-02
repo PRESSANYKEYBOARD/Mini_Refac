@@ -12,6 +12,7 @@ import board.bean.FundingDTO;
 @Repository
 @Transactional
 public class FundingDAOMybatis implements FundingDAO {
+	
 	@Autowired
 	private SqlSession sqlSession;
 

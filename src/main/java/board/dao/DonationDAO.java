@@ -7,12 +7,12 @@ import board.bean.FormQDTO;
 
 public interface DonationDAO {
 
-	public void donationWrite(BoardDDTO boardDDTO);
+	public void write(BoardDDTO boardDDTO);
 
-	public List<BoardDDTO> card_view();
-
-	public BoardDDTO boardview_list(String bdseq);
-
+	public BoardDDTO getBoard(int bdSeq);
+	
+	public List<BoardDDTO> getBoardList();
+	
 	public BoardDDTO donation_update_load(String bdseq);
 
 	public BoardDDTO donationUpdateLoad(String bdSeq);
@@ -24,5 +24,6 @@ public interface DonationDAO {
 	public List<BoardDDTO> getRelatedPostsByCategory(String categorydona);
 
 	public List<BoardDDTO> CardChildList(String child);
+
 
 }

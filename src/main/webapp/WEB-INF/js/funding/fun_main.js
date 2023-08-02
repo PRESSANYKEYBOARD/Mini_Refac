@@ -1,8 +1,8 @@
-//천 단위마다 ,찍기
-//문자열이여야 하며, Int형일 경우 반드시 문자열인 String형으로 변환해야 한다.
+// 천 단위마다 ,찍기
+// 문자열이여야 하며, Int형일 경우 반드시 문자열인 String형으로 변환해야 한다.
 function addComma(value) {
   if (typeof value === "number") {
-    value = String(value); //Int 형을 문자열로 변환
+    value = String(value); // Int 형을 문자열로 변환
   }
   
   value = value.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
@@ -22,8 +22,6 @@ function renderFundingList(fundings) {
             var goalAmount = addComma(String(funding.boardFGoalAmount));
             var cardClass = diffInDays >= 0 ? "card" : "card expired";
             var daysText;
-            
-            var cardClass = "card";
             
             if (diffInDays >= 0) {
             	daysText = diffInDays + "일 남음";
@@ -117,6 +115,11 @@ $(document).ready(function () {
     }
 
     loadFundingList();
+    
+    // 글쓰기 버튼
+	$("#writeButton").click(function() {
+		window.location.href = "/Hangeulum/funding/fun_writeForm";
+	});
 
     // selectbox의 값을 변경할 때마다 펀딩 리스트를 정렬하여 불러옵니다.
     $('#selectbox2').on('change', function() {

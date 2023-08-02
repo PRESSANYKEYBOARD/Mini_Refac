@@ -14,53 +14,22 @@ public class DonationServiceImpl implements DonationService {
 
 	@Autowired
 	DonationDAO donationDAO;
-	
-
 
 	@Override
-	public void donationWrite(BoardDDTO boardDDTO) {
-		donationDAO.donationWrite(boardDDTO);
-		
+	public void write(BoardDDTO boardDDTO) {
+		donationDAO.write(boardDDTO);
 	}
 
 	@Override
-	public List<BoardDDTO> card_view() {
-		List<BoardDDTO> list = donationDAO.card_view();
-		
-		
-		return list;
+	public BoardDDTO donationUpdateLoad(String bdSeq) {
+	   return donationDAO.donationUpdateLoad(bdSeq);
 	}
 
 	@Override
-	public BoardDDTO boardview_list(String bdseq) {
-		
-		return donationDAO.boardview_list(bdseq);
+	public void donationDelete(String bdSeq) {
+		donationDAO.donationDelete(bdSeq);
 	}
 
-
-	   @Override
-	   public BoardDDTO donationUpdateLoad(String bdSeq) {
-		   System.out.println(bdSeq);
-	      return donationDAO.donationUpdateLoad(bdSeq);
-	   }
-
-	   @Override
-	   public void donationDelete(String bdSeq) {
-	      donationDAO.donationDelete(bdSeq);
-	   }
-
-	   
-	   
-	   
-	   
-	   
-	   
-	   
-	   
-	   
-	   
-	   
-	   
 	@Override
 	public BoardDDTO donation_update_load(String bdseq) {
 		// TODO Auto-generated method stub
@@ -71,30 +40,28 @@ public class DonationServiceImpl implements DonationService {
 	public void UpdateDonation(BoardDDTO boardDDTO) {
 	      donationDAO.UpdateDonation(boardDDTO);
 
-		
 	}
-	
-	
-	
-	
-	
+
 	@Override
 	public List<BoardDDTO> getRelatedPostsByCategory(String categorydona) {
 		// TODO Auto-generated method stub
 		 return donationDAO.getRelatedPostsByCategory(categorydona);
 	}
 	
-	
-	
 	@Override
 	public List<BoardDDTO> CardChildList(String child) {
-		
+
 		return donationDAO.CardChildList(child);
 	}
-	
-	
-	
-	
-	
+
+	@Override
+	public BoardDDTO getBoard(int bdSeq) {
+		return donationDAO.getBoard(bdSeq);
+	}
+
+	@Override
+	public List<BoardDDTO> getBoardList() {
+		return donationDAO.getBoardList();
+	}
 
 }

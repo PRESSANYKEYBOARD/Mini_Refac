@@ -8,11 +8,6 @@ $(function(){
 		data: 'pg='+$('#pg').val(),
 		dataType: 'json', // 객체는 데이터로 주고받지 못함
 		success: function(data){
-			console.log(JSON.stringify(data));
-			
-			//$.each(data.list, function(index, items){ // ajax each 반복문
-			//	console.log(items.noticeSubject);
-			//});
 			
 			$.each(data.list, function(index, items){ // ajax each 반복문
 				$('<tr/>').append($('<td/>', {

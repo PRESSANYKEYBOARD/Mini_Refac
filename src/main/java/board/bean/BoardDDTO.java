@@ -17,8 +17,8 @@ public class BoardDDTO {
 //	private String bdIsExpired;
 	private String bdTagName;
 	private String bdDonaGroup;
-	private String bdImg;
-	private String bdThumbImg; 
+	private String bdImg; // 이미지
+	private String bdThumbImg; // 썸네일 이미지
 	private String categorydona;
 	private String bdStartDate;
 }

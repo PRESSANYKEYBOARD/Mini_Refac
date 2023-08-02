@@ -29,7 +29,7 @@
             <a href="/Hangeulum/"><img src="/Hangeulum/image/logo.png" alt="로고" width="250" height="60"></a>
             <div class="menu">
                 <ul>
-                    <li><a href="/Hangeulum/donation/donation_main">기부</a></li>
+                    <li><a href="/Hangeulum/donation/dona_main">기부</a></li>
                     <li><a href="/Hangeulum/funding/fun_main">펀딩</a></li>
                     <li><a href="/Hangeulum/support/noticeList">고객센터</a></li>
                 </ul>
@@ -108,7 +108,7 @@
 			    <option value="option2">참여금액 순</option>
 		      <option value="option3">종료임박 순</option>
 		    </select>
-		    <a href="/Hangeulum/funding/fun_writeForm" class="button">글쓰기</a>
+		    <button id="writeButton" class="write-btn">글쓰기</button>
 		  </div>
 		  <div>
 		  </div>

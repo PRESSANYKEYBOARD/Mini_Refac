@@ -277,6 +277,29 @@ button, input[type=button], input[type=checkbox]+label, input[type=radio]+label,
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.25); 
 }
 
+/* 글쓰기 버튼 */
+.write-btn {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin-top: 28px;
+  margin-left: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s; /* 애니메이션 효과 추가 */
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23); /* 그림자 효과 추가 */
+}
+
+.write-btn:hover {
+  background-color: #66BB6A; /* 호버시 버튼 색 변경 */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.25); /* 그림자 증가 효과 추가 */
+}
+
 /* 새로 추가된 스타일 */
 .button::before {
   content: "";

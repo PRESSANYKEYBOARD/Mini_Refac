@@ -14,7 +14,7 @@
         integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous">
     </script>
 
-    <link rel="stylesheet" href="/Hangeulum/user/css/maintest2.css">
+    <link rel="stylesheet" href="/Hangeulum/css/maintest2.css">
 </head>
 <body>
 
@@ -28,7 +28,7 @@
             <img src="/Hangeulum/image/한걸음로고.png" alt="로고" width="250" height="60">
             <div class="menu">
                 <ul>
-                    <li><a href="/Hangeulum/donation/donation_main">기부</a></li>
+                    <li><a href="/Hangeulum/donation/dona_main">기부</a></li>
                     <li><a href="/Hangeulum/funding/fun_main">펀딩</a></li>
                     <li><a href="">고객센터</a></li>
                 </ul>

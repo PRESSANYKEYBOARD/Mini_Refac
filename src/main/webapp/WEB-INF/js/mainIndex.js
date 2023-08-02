@@ -1,31 +1,16 @@
 $(function(){
-
    $.ajax({
       type:'post',
       url:'/Hangeulum/user/activemain',
-      
-
-       success:function(data){
-          
-          console.log(JSON.stringify(data));
-     
-          console.log(data.fundingactive);
-          console.log(data.donationactive);
-          console.log(data.donationcount);
-          console.log(data.fundingcount);
-       
-       $('.donation-status-point > span').text(data.donationcount);
-       $('.donation-status-money > span').text(data.donationactive);
-       $('.funding-status-point > span').text(data.fundingcount);
-       $('.funding-status-money > span').text(data.fundingactive);
-    
-   
+       success:function(data){  
+	       $('.donation-status-point > span').text(data.donationcount);
+	       $('.donation-status-money > span').text(data.donationactive);
+	       $('.funding-status-point > span').text(data.fundingcount);
+	       $('.funding-status-money > span').text(data.fundingactive);
        },
-       
        error:function(err){
           console.log(err);
        }
-   
    });
    
    
@@ -35,30 +20,18 @@ $(function(){
       data:'userid='+$('#kakao_email').val(),
       
       success:function(data){
-         console.log(data);
-         
          $('.profile_img').attr('src','/Hangeulum/storage/' + data);
       },
-      
       error:function(err){
          console.log(err);
       }
-      
-
    });
-   
    
    $.ajax({
       type:'post',
       url:'/Hangeulum/user/card_list',
-      
       success:function(data){
-         
-         
-       
-         
-      $.each(data, function(index, items){
-          console.log(items.bdSeq);
+      	$.each(data, function(index, items){
      
      
          html =
@@ -66,7 +39,7 @@ $(function(){
   "<div class='card' style='width: 18rem;'>" +
   "<img src='/Hangeulum/storage/" + items.fileName + "'  width='287px' height='200px'> " +
   "<div class='card-body'>" +
-  "<a href='/Hangeulum/donation/donation_view?bdseq=" + items.bdSeq + "'><h5 class='card-title'>" + items.bdSubject + "</h5></a>" +
+  "<a href='/Hangeulum/donation/dona_view/' + items.bdSeq><h5 class='card-title'>" + items.bdSubject + "</h5></a>" +
   "<span class='card-text'>" + items.bdContent + "</span>" +
 
   "<div class='progress' aria-label='모금률'>" +
@@ -98,34 +71,11 @@ $('.donation .row').append(html);
       }
    });
    
-
-/*
    $.ajax({
       type:'post',
       url:'/Hangeulum/user/card_list_funding',
-      
       success:function(data){
-         console.log(JSON.stringify(data));
-      },
-      
-      error:function(err){
-         console.log(err);
-      },
-   });
-*/
-   
-   $.ajax({
-      type:'post',
-      url:'/Hangeulum/user/card_list_funding',
-      
-      
-      success:function(data){
-         
-        
-         
-      $.each(data, function(index, items){
-          console.log(items.boardFSubject);
-          console.log(items.boardFSeq);
+      	$.each(data, function(index, items){
           
          
          html =

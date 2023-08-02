@@ -11,13 +11,14 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 
 <link rel="reset" href="/Hangeulum/css/styleReset.css" />
-<link rel="stylesheet" href="/Hangeulum/css/donation_main.css" />
+<link rel="stylesheet" href="/Hangeulum/css/donation/dona_main.css" />
 
 <meta charset="UTF-8">
 <title>Donation_main</title>
+
 <style>
 	/*a tag 전역 설정*/
-	a {text-decoration: none;}
+	a {text-decoration: none !important;}
 </style>    
 </head>
 <body>
@@ -28,7 +29,7 @@
             <a href="/Hangeulum/"><img src="/Hangeulum/image/logo.png" alt="로고" width="250" height="60"></a>
             <div class="menu">
                 <ul>
-                    <li><a href="/Hangeulum/donation/donation_main">기부</a></li>
+                    <li><a href="/Hangeulum/donation/dona_main">기부</a></li>
                     <li><a href="/Hangeulum/funding/fun_main">펀딩</a></li>
                     <li><a href="/Hangeulum/support/noticeList">고객센터</a></li>
                 </ul>
@@ -156,10 +157,17 @@
 	    <button id="writeButton" class="write-btn">글쓰기</button>
 	  </div>
 	</div>
-
+	
 	<div class="container-card">
+      <div class="card-container">
+        <!-- 이 부분은 동적으로 카드가 생성됩니다. -->
+      </div>
+    </div>
+    <!-- 여기에 jQuery 및 기타 자바스크립트 파일 등록 -->	
+
+<!-- 	<div class="container-card">
 	  <div class="card-container">
-	    <!-- 카드 예시 -->
+	    카드 예시
 	    <div class="card">
 	      <img src="https://via.placeholder.com/150" alt="Image">
 	      <div class="card-body">
@@ -174,7 +182,7 @@
 	      </div>
 	    </div>
 	  </div>
-	</div>
+	</div> -->
 
 </div>
 
@@ -184,78 +192,6 @@
         	<a href="#" id="load"></a>
         </div>
     </div>
-
-	<script>
-		    $(function(){
-		  var cards = $("div.card"); // 모든 카드 요소를 가져옴
-		  var numToShow = 2; // 한번에 보여줄 갯수
-		  var numMore = 3; // 더 보여줄 갯수
-		
-		  // 초기 카드 요소를 보여줌
-		  cards.slice(0, numToShow).show();
-		
-		  // 더보기 버튼 클릭시 실행될 함수
-		  $("a#load").click(function(e){
-		    e.preventDefault();
-		
-		    // 남아있는 카드 갯수가 더 보여줄 갯수보다 작을 경우, 모든 카드 요소를 보여줌
-		    if(cards.filter(":hidden").length <= numMore){
-		      cards.filter(":hidden").show();
-		      $(this).remove(); // 더보기 버튼을 제거함
-		    }
-		    // 더 이상 보여줄 카드 요소가 없을 경우, 클릭 이벤트를 제거하고 알림창을 띄움
-		    else if(cards.filter(":hidden").length == 0){
-		      alert("게시물의 끝입니다.");
-		      $(this).off("click");
-		    }
-		    else {
-		      // 더 보여줄 카드 요소를 선택하고 보여줌
-		      cards.filter(":hidden").slice(0, numMore).show();
-		    }
-		  });
-		});
-		    </script>
-		    
-		    
-  
-    
-    
-   <!--  <script type="text/javascript">
-    $(function() {
-    	  var cards = $('.card');
-    	  var numToShow = 1; // 한번에 보여줄 갯수
-    	  var numMore = 1; // 더 보여줄 갯수
-    	  
-    	  cards.slice(numToShow).hide();
-    	  
-    	  $('#load').click(function(e) {
-    	    e.preventDefault();
-    	    cards.filter(':hidden').slice(0, numMore).show();
-    	    if (cards.filter(':hidden').length === 0) {
-    	      $('#load').fadeOut('slow');
-    	    }
-    	  });
-    	});
-    </script> -->
- 
- 
- 
-<!--     <script>
-
-/*     var numShownCards = 0;
-    var numHiddenCards = numTotalCards - numShownCards;
- */
-        $(function(){
-            $("div.card").slice(0, 6).show(); // 초기갯수
-            $("#load").click(function(e){ // 클릭시 more
-                e.preventDefault();
-                $("div.card:hidden").slice(0, 3).show(); // 클릭시 more 갯수 지정
-                    if($("div.card:hidden").length <= 0){ // 컨텐츠 남아있는지 확인
-                    alert("게시물의 끝입니다."); // 컨텐츠 없을시 alert 창 띄우기 
-                }
-            });
-        });
-        </script> -->
 
      <!--Footer-->
 <div class="footer">
@@ -294,15 +230,11 @@
     </div>
 </div>
 
-
 <!--Footer End-->
 
- <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.4.min.js"></script>
- <script type="text/javascript" src="/Hangeulum/js/donation_main.js"></script> <!-- -->
-  <script type="text/javascript" src="/Hangeulum/js/donation_main_cate.js"></script>
-
-
-
+<script type="text/javascript" src="http://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/Hangeulum/js/donation/dona_main.js"></script> <!-- -->
 
 </body>
 </html>

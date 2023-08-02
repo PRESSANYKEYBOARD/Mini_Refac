@@ -2,7 +2,7 @@ $(document).ready(function() {
     var oEditors = [];
 	nhn.husky.EZCreator.createInIFrame({
 	    oAppRef: oEditors,
-	    elPlaceHolder: "boardFContent", // textarea의 name태그
+	    elPlaceHolder: "bdContent", // textarea의 name태그
 	    sSkinURI: "/Hangeulum/smartEditor/SmartEditor2Skin.html",  // 본인 경로게 맞게 수정
 	    fCreator: "createSEditor2",
 	    
@@ -18,20 +18,20 @@ $(document).ready(function() {
 	
 	function pasteHTML(filepath) {
 	    var sHTML = '';
-	    oEditors.getById["boardFContent"].exec("PASTE_HTML", [sHTML]);
+	    oEditors.getById["bdContent"].exec("PASTE_HTML", [sHTML]);
 	}
     
     // 제출 버튼 클릭 이벤트 처리
     $('#writeBtn').on('click', function(event) {
         var confirmed = confirm("정말로 제출하시겠습니까?");
         if (confirmed) {
-        	oEditors.getById["boardFContent"].exec("UPDATE_CONTENTS_FIELD", []); 
+        	oEditors.getById["bdContent"].exec("UPDATE_CONTENTS_FIELD", []); 
             event.preventDefault(); // 기본 제출 이벤트 중단
             
-            var formData = new FormData(document.getElementById('fun_writeForm'));
+            var formData = new FormData(document.getElementById('dona_writeForm'));
 
             $.ajax({
-                url : "/Hangeulum/funding/fun_write",
+                url : "/Hangeulum/donation/dona_write",
                 type : "POST",
                 enctype : 'multipart/form-data',
                 processData: false, // 데이터를 처리하지 않음
@@ -40,7 +40,7 @@ $(document).ready(function() {
                 success : function() {
                     alert("펀딩 게시글 작성 완료");
                     // 이동할 페이지 주소
-                    location.href = "/Hangeulum/funding/fun_main";
+                    location.href = "/Hangeulum/donation/dona_main";
                 },
                 error : function(xhr, status, error) {
                     console.error(error);

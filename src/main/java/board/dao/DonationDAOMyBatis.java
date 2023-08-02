@@ -18,46 +18,21 @@ public class DonationDAOMyBatis implements DonationDAO {
 	@Autowired
 	private SqlSession sqlsession;
 	
-
 	@Override
-	public void donationWrite(BoardDDTO boardDDTO) {
-		System.out.println("===> " + boardDDTO.getBdExpireDate());
-		
-		System.out.println(boardDDTO.getFileName());
+	public void write(BoardDDTO boardDDTO) {;
 		boardDDTO.setFileName(boardDDTO.getFileName());
-		sqlsession.insert("donationSQL.donationWrite",boardDDTO);
-		
+		sqlsession.insert("donationSQL.donationWrite", boardDDTO);
 	}
-
 
 	@Override
-	public List<BoardDDTO> card_view() {
-		List<BoardDDTO> list = sqlsession.selectList("donationSQL.card_view");
-		return list;
+	public BoardDDTO donationUpdateLoad(String bdSeq) {
+	   	return sqlsession.selectOne("donationSQL.donationUpdateLoad", bdSeq);
 	}
-
-
-	@Override
-	public BoardDDTO boardview_list(String bdseq) {
-		
-		return sqlsession.selectOne("donationSQL.boardview_list",bdseq);
-	}
-
-
-	   @Override
-	   public BoardDDTO donationUpdateLoad(String bdSeq) {
-		   System.out.println("DAO:" + bdSeq);
-	      return sqlsession.selectOne("donationSQL.donationUpdateLoad", bdSeq);
-	   }
-
 	   
-		@Override
-		public void donationDelete(String bdSeq) {
-			sqlsession.delete("donationSQL.donationDelete", bdSeq);
-		}
-
-
-
+	@Override
+	public void donationDelete(String bdSeq) {
+		sqlsession.delete("donationSQL.donationDelete", bdSeq);
+	}
 
 	@Override
 	public BoardDDTO donation_update_load(String bdseq) {
@@ -65,37 +40,20 @@ public class DonationDAOMyBatis implements DonationDAO {
 		return null;
 	}
 
+	@Override
+	public BoardDDTO getBoard(int bdSeq) {
+		return sqlsession.selectOne("donationSQL.donationGetBoard", bdSeq);
+	}
 
-
+	@Override
+	public List<BoardDDTO> getBoardList() {
+		return sqlsession.selectList("donationSQL.donationGetBoardList");
+	}
 	
 	@Override
 	public void UpdateDonation(BoardDDTO boardDDTO) {
-		System.out.println("===> " + boardDDTO.getBdExpireDate());
-		
-		System.out.println("seq:" + boardDDTO.getBdSeq());
-		System.out.println(boardDDTO.getBdCumulativeAmount());
-		System.out.println(boardDDTO.getBdDonaGroup());
-		System.out.println(boardDDTO.getBdSubject());
-		System.out.println(boardDDTO.getBdGoalAmount());
-		System.out.println(boardDDTO.getBdImg());
-		System.out.println(boardDDTO.getBdTagName());
-		
-		
-		System.out.println(boardDDTO.getFileName());
-		//boardDDTO.setFileName(boardDDTO.getFileName());
 		sqlsession.update("donationSQL.UpdateDonation",boardDDTO);
-		
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
 	@Override
 	public List<BoardDDTO> getRelatedPostsByCategory(String categorydona) {
@@ -108,13 +66,8 @@ public class DonationDAOMyBatis implements DonationDAO {
 	public List<BoardDDTO> CardChildList(String child) {
 		return sqlsession.selectList("donationSQL.CardChildList",child);
 	}
-	
-	
-	
-	
-	
-	
-	
+
+
 
 }
 
