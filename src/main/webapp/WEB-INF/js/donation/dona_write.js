@@ -43,7 +43,10 @@ $(document).ready(function() {
                     location.href = "/Hangeulum/donation/dona_main";
                 },
                 error : function(xhr, status, error) {
-                    console.error(error);
+                    console.error('Error:', error);
+				    console.error('Status:', status);
+				    console.error('XHR:', xhr);
+				    alert('펀딩 게시글 작성에 실패하였습니다. 관리자에게 문의하세요.');
                 }
             });
         }

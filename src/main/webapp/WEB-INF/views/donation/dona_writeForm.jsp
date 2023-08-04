@@ -4,17 +4,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="reset" href="/Hangeulum/css/reset.css" />
-  <link rel="stylesheet" href="/Hangeulum/css/donation/dona_writeForm.css" />
- 
-  <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.4.min.js"></script>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-  <title>Document</title>
+<link rel="reset" href="/Hangeulum/css/styleReset.css" />
+<link rel="stylesheet" href="/Hangeulum/css/donation/dona_writeForm.css" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+
+<title>도네이션 게시글 작성</title>
 </head>
 <body>
 <div>
@@ -52,7 +51,7 @@
      
 		<div class="form-group_title">
 			<label for="thumnail">썸네일로 설정할 이미지를 선택하세요.</label> 
-			<input type="file" class="form-control" id="fileName" name="fileName">
+			<input type="file" class="form-control" id="bdImg" name="bdImgName">
 		</div>
      
       <div class="form-group">
@@ -108,6 +107,7 @@
  </form>
 </div>
 
+<script type="text/javascript" src="http://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script type="text/javascript" src="/Hangeulum/smartEditor/js/HuskyEZCreator.js" charset="utf-8"></script>
 <script type="text/javascript" src="/Hangeulum/js/donation/dona_write.js"></script><!-- 펀딩 라이트 작성.js -->
 <script type="text/javascript" src="/Hangeulum/js/donation/dona_startEnd.js"></script> <!-- 기부 종료여부 -->

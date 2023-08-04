@@ -33,7 +33,7 @@ public class DonationController {
 	@Autowired
 	DonationService donationService;
 
-	@Resource(name="uploadPath")
+	@Resource(name = "uploadPath")
 	private String uploadPath;
 
 	// 기부 메인 
@@ -78,50 +78,51 @@ public class DonationController {
 	@PostMapping(value = "dona_write")
 	@ResponseBody
 	public void dona_write(@ModelAttribute BoardDDTO boardDDTO, 
-							@RequestParam MultipartFile bdImg, 
-							HttpSession session) throws Exception {
-		
-		String imgUploadPath=session.getServletContext().getRealPath("/WEB-INF/storage");
-		
-		String ymdPath = UploadFileUtils.calcPath(imgUploadPath);
-		String fileName=null;
+	                        @RequestParam MultipartFile bdImgName,
+	                        MultipartFile bdThumbImgName,
+	                        HttpSession session) throws Exception {
+	    
+	    String bdImgUploadPath = session.getServletContext().getRealPath("/WEB-INF/storage");
+	    String bdTumbImgUploadPath = session.getServletContext().getRealPath("/WEB-INF/storage");
+	    String ymdPath = UploadFileUtils.calcPath(bdImgUploadPath);
+	    String fileName = null, fileName2 = null;
 
-		if(bdImg != null && !bdImg.isEmpty()) {
-		   fileName =  UploadFileUtils.fileUpload(imgUploadPath, bdImg.getOriginalFilename(), bdImg.getBytes(), ymdPath);   
-		
-		   File file2= new File(imgUploadPath,fileName);
-		   bdImg.transferTo(file2);
-		   boardDDTO.setFileName(fileName);
-		} else {
-		   fileName = uploadPath + File.separator + "images" + File.separator + "none.png";
-		}
+	    if (bdImgName != null && !bdImgName.isEmpty()) {
+	    	fileName = UploadFileUtils.fileUpload(bdImgUploadPath, bdImgName.getOriginalFilename(), bdImgName.getBytes(), ymdPath);
+	        File file1 = new File(bdImgUploadPath, fileName);
+	        bdImgName.transferTo(file1);
+	        boardDDTO.setBdImg(File.separator + "imgUpload" + ymdPath + File.separator + fileName);
+	    } else {
+	    	fileName = bdImgUploadPath + File.separator + "images" + File.separator + "none.png";
+	        boardDDTO.setBdImg(fileName);
+	    }
+	    
+	    if (bdThumbImgName != null && !bdThumbImgName.isEmpty()) {
+	        fileName2 = UploadFileUtils.fileUpload(bdTumbImgUploadPath, bdThumbImgName.getOriginalFilename(), bdThumbImgName.getBytes(), ymdPath);
+	        File file2 = new File(bdTumbImgUploadPath, fileName2);
+	        bdThumbImgName.transferTo(file2);
+	        boardDDTO.setBdThumbImg(File.separator + "imgUpload" + ymdPath + File.separator + "s" + File.separator + "s_" + fileName2);
+	    } else {
+	        fileName2 = bdTumbImgUploadPath + File.separator + "images" + File.separator + "none.png";
+	        boardDDTO.setBdThumbImg(fileName2);
+	    }
 
-		boardDDTO.setBdImg(File.separator + "imgUpload" + ymdPath + File.separator + fileName);
-		boardDDTO.setBdThumbImg(File.separator + "imgUpload" + ymdPath + File.separator + "s" + File.separator + "s_" + fileName);
-
-		donationService.write(boardDDTO);
+	    donationService.write(boardDDTO);
 	}
 
-	//4.오늘의 기부 
-	@GetMapping("today_donation")
-	public String today_donation() {
-		return "donation/today_donation";
-	}
+	/*
+	 * //4.오늘의 기부
+	 * 
+	 * @GetMapping("today_donation") public String today_donation() { return
+	 * "donation/today_donation"; }
+	 */
 
 	 // 게시물 수정 페이지로 이동
-   @GetMapping("dona_Update")
-   public String dona_update(@RequestParam String bdSeq, Model model) {
-      model.addAttribute("bdSeq", bdSeq); // param value 전달
-      return "donation/dona_update";
+	@RequestMapping("dona_Update")
+	public String dona_update(@RequestParam int bdSeq, Model model) {
+		model.addAttribute("bdSeq", bdSeq); // param value 전달
+		return "donation/dona_update";
    }
-   
-   // 글 불러오기
-   @PostMapping(value="donationUpdateLoad")
-   @ResponseBody
-   public BoardDDTO donationUpdateLoad(@RequestParam String bdSeq) {      
-      return donationService.donationUpdateLoad(bdSeq);   
-   }
-
    
 	//글 수정 
 	@PostMapping(value = "UpdateDonation")
@@ -163,7 +164,6 @@ public class DonationController {
    @PostMapping(value="donationDelete")
    @ResponseBody
    public void donationDelete(@RequestParam String bdSeq) {
-	   System.out.println("delete" + bdSeq);
       donationService.donationDelete(bdSeq);   
    }
 	
