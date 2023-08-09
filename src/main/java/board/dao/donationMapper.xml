@@ -18,7 +18,20 @@
  	
  	
  	<insert id="donationWrite" parameterType="board.bean.BoardDDTO">
- 		INSERT INTO boardD VALUES(SEQ_BOARDD.NEXTVAL
+ 		INSERT INTO boardD(bdSeq
+ 							, fileName
+ 							, bdExpireDate
+ 							, bdSubject
+ 							, bdGoalAmount
+ 							, bdCumulativeAmount
+ 							, bdContent
+ 							, bdTagName
+ 							, bdDonaGroup
+ 							, bdImg
+ 							, categorydona
+ 							, bdStartDate
+ 							)
+ 					VALUES(SEQ_BOARDD.NEXTVAL
 							, #{fileName}
 							, #{bdExpireDate}
 							, #{bdSubject}
@@ -28,7 +41,6 @@
 							, #{bdTagName}
 							, #{bdDonaGroup}
 							, #{bdImg}
-							, #{bdThumbImg}
 							, #{categorydona}
 							, #{bdStartDate}
 							)

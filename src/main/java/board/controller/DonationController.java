@@ -77,36 +77,32 @@ public class DonationController {
 
 	@PostMapping(value = "dona_write")
 	@ResponseBody
-	public void dona_write(@ModelAttribute BoardDDTO boardDDTO, 
+	public void dona_write(@ModelAttribute BoardDDTO boardDDTO,
 	                        @RequestParam MultipartFile bdImgName,
 	                        MultipartFile bdThumbImgName,
 	                        HttpSession session) throws Exception {
 	    
-	    String bdImgUploadPath = session.getServletContext().getRealPath("/WEB-INF/storage");
-	    String bdTumbImgUploadPath = session.getServletContext().getRealPath("/WEB-INF/storage");
-	    String ymdPath = UploadFileUtils.calcPath(bdImgUploadPath);
-	    String fileName = null, fileName2 = null;
-
-	    if (bdImgName != null && !bdImgName.isEmpty()) {
-	    	fileName = UploadFileUtils.fileUpload(bdImgUploadPath, bdImgName.getOriginalFilename(), bdImgName.getBytes(), ymdPath);
-	        File file1 = new File(bdImgUploadPath, fileName);
-	        bdImgName.transferTo(file1);
-	        boardDDTO.setBdImg(File.separator + "imgUpload" + ymdPath + File.separator + fileName);
-	    } else {
-	    	fileName = bdImgUploadPath + File.separator + "images" + File.separator + "none.png";
-	        boardDDTO.setBdImg(fileName);
-	    }
+	    // File upload paths for two images
+	    String bdImgUploadPath = session.getServletContext().getRealPath("/WEB-INF/storage/");
+	    String bdTumbImgUploadPath = session.getServletContext().getRealPath("/WEB-INF/storage/");
 	    
-	    if (bdThumbImgName != null && !bdThumbImgName.isEmpty()) {
-	        fileName2 = UploadFileUtils.fileUpload(bdTumbImgUploadPath, bdThumbImgName.getOriginalFilename(), bdThumbImgName.getBytes(), ymdPath);
-	        File file2 = new File(bdTumbImgUploadPath, fileName2);
-	        bdThumbImgName.transferTo(file2);
-	        boardDDTO.setBdThumbImg(File.separator + "imgUpload" + ymdPath + File.separator + "s" + File.separator + "s_" + fileName2);
-	    } else {
-	        fileName2 = bdTumbImgUploadPath + File.separator + "images" + File.separator + "none.png";
-	        boardDDTO.setBdThumbImg(fileName2);
-	    }
+	    // Get original filenames
+	    String bdImgOriginalFilename = bdImgName.getOriginalFilename();
+	    String bdThumbImgOriginalFilename = bdThumbImgName.getOriginalFilename();
+	    
+	    // Set image information to the DTO
+	    boardDDTO.setFileName(bdThumbImgOriginalFilename);
+	    boardDDTO.setBdImg(bdImgOriginalFilename);
 
+	    // Create File objects for saving the images
+	    File file1 = new File(bdImgUploadPath, bdImgOriginalFilename);
+	    File file2 = new File(bdTumbImgUploadPath, bdThumbImgOriginalFilename);
+	    
+	    // Save the images using MultipartFile
+	    bdImgName.transferTo(file1);
+	    bdThumbImgName.transferTo(file2);
+
+	    // Call the service method to save the data
 	    donationService.write(boardDDTO);
 	}
 

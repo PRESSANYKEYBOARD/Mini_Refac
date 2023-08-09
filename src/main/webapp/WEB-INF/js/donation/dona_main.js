@@ -60,7 +60,7 @@ function renderDonationList(donations) {
 					)
 					.append(
 						$("<a/>")
-							.attr("href", "/Hangeulum/funding/dona_view/" + donation.bdseq)
+							.attr("href", "/Hangeulum/donation/dona_view/" + donation.bdSeq)
 							.addClass("card-button")
 							.css("pointer-events", diffInDays >= 0 ? "auto" : "none")
 							.text(diffInDays >= 0 ? "도네이션 참여하기" : "도네이션 종료")
@@ -80,9 +80,8 @@ function renderDonationList(donations) {
 
             // 클로저 문제 해결을 위해 bdSeq를 data 속성으로 저장
             card.data("bdSeq", donation.bdSeq);
-
+          
             donationList += card.prop("outerHTML");
-
 		})(donations[i]);
 	}
 
