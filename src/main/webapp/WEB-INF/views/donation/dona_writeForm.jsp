@@ -51,9 +51,14 @@
      
 		<div class="form-group_title">
 			<label for="thumnail">썸네일로 설정할 이미지를 선택하세요.</label> 
+			<input type="file" class="form-control" id="fileName" name="bdThumbImgName">
+		</div>
+		
+		<div class="form-group">
+			<label for="thumnail">썸네일로 설정할 이미지를 선택하세요. 2</label> 
 			<input type="file" class="form-control" id="bdImg" name="bdImgName">
 		</div>
-     
+		
       <div class="form-group">
         <label for="title">제목을 입력하세요.</label>
         <input type="text" class="form-control" id="bdSubject" name="bdSubject" required>

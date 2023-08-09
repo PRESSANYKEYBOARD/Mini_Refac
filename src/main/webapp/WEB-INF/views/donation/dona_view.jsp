@@ -12,7 +12,7 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 
 <link rel="reset" href="/Hangeulum/css/styleReset.css" />
-<link rel="stylesheet" href="/Hangeulum/css/dona_view.css">
+<link rel="stylesheet" href="/Hangeulum/css/donation/dona_view.css">
 <meta name="viewport" content="width=device-width,initial-scale=1">	
 <meta charset="UTF-8">
 <title>도네이션 게시글</title>
@@ -69,7 +69,7 @@
 	
 	<div class="header3">
 		<div class="header3_img">
-			<h3 class="title">${donation.bdSubject }</h3>
+			<h3 class="title">${boardDDTO.bdSubject }</h3>
 			<img src="/Hangeulum/image/after_image/after01.jpg" width="668px" height="401px">
 		</div> <!-- header3 이미지 끝 -->
 		
@@ -85,7 +85,7 @@
                     <span class="progress_bar" style="width:27%;"></span>
                  </div>
 			</div>
-			<div class="bdExpiredate">2033.02.07~2023.05.31까지</div>
+			<div class="bdExpiredate"></div>
 			<div class="dbdday">
 			<strong class="dday">D-<span id="d-day"></span></strong>
 			</div>
@@ -102,8 +102,6 @@
 					<a href><button class="donation_btn">참여하기</button></a>
 				</div> 
 			</div> 
-			
-
 
 	<div class="content">
 		<div class="content_left">
@@ -248,15 +246,13 @@
 	  	  
 	   </div> <!-- 전체 요소 끝 -->
 	   
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 <script type="text/javascript" src="/Hangeulum/js/boardDview.js"></script> <!-- 펀딩 참여하기 - checkbox -->
 <script type="text/javascript" src="/Hangeulum/js/count_price.js"></script> <!-- 수량 가격에 맞게.... -->
 <script type="text/javascript" src="/Hangeulum/js/scroll.js"></script> <!-- 스크롤을 내리면? -->
 <script type="text/javascript" src="/Hangeulum/js/modal.js"></script> <!-- 참여하기 버튼을 누르면 모달창이 뜬다. -->
 <script type="text/javascript" src="/Hangeulum/js/checkbox.js"></script> <!-- 펀딩 참여하기 - checkbox -->
-
-
 <script type="text/javascript" src="/Hangeulum/js/viewToUpdate.js"></script> <!-- updateFormLoad -->
 
 <script type="text/javascript">
